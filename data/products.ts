@@ -52,69 +52,113 @@ export type Product = {
 };
 
 export const products: Product[] = [
-  {
-    slug: "alfa-850v-mobile-jammer",
-    name: "Mobile Drone UAV Jammer System",
-    category: "Electronic Warfare",
-    tagline: "Vehicle-mounted counter-UAV protection for mobile operations.",
-    shortDescription:
-      "Vehicle-mounted counter-UAV jammer for mobile and tactical missions.",
-    description:
-      "Advanced mobile jammer system designed for convoy protection, tactical deployment, and counter-UAV missions in dynamic operational environments.",
-    overview:
-      "The system is designed for mobile operational use where rapid deployment, platform integration, and wide-area RF suppression are required. It is suitable for tactical vehicles and mission-critical field environments.",
-    cover: "/images/products/alfa-850v-mobile-jammer.jpg",
-    gallery: [
-      "/images/products/alfa-850v-mobile-jammer.jpg",
-    ],
-    featured: true,
-    features: [
-      {
-        title: "Wide Frequency Coverage",
-        description:
-          "Supports broad-spectrum counter-UAV suppression for operational flexibility.",
-      },
-      {
-        title: "Vehicle Integration",
-        description:
-          "Designed for platform-mounted deployment on mobile tactical vehicles.",
-      },
-      {
-        title: "Rapid Deployment",
-        description:
-          "Suitable for field operations requiring fast readiness and active protection.",
-      },
-      {
-        title: "360° Operational Protection",
-        description:
-          "Structured to support wide-area protection during movement and static deployment.",
-      },
-    ],
-    useCases: [
-      "Convoy protection",
-      "Mobile tactical deployment",
-      "Critical infrastructure security",
-      "Operational field missions",
-    ],
-    specifications: [
-      { label: "Platform Type", value: "Vehicle-mounted" },
-      { label: "Deployment", value: "Mobile / Tactical" },
-      { label: "Coverage", value: "Wide-area RF suppression" },
-      { label: "Focus", value: "Counter-UAV missions" },
-    ],
-    documents: [
-      { title: "Product Brochure", url: "#" },
-    ],
-    videos: [
-      { title: "Operational Video", url: "#" },
-    ],
-    seo: {
-      title: "Mobile Drone UAV Jammer System | DefenceTech",
+ {
+  slug: "alfa-850v-mobile-jammer",
+  name: "ALFA 850V Mobile Drone UAV Jammer System",
+  category: "Electronic Warfare",
+
+  tagline:
+    "Vehicle-mounted counter-UAV protection system for mobile and tactical operations.",
+
+  shortDescription:
+    "A mobile electronic warfare system designed to detect and suppress UAV threats in real-time across dynamic operational environments.",
+
+  description:
+    "ALFA 850V is a vehicle-mounted electronic warfare system engineered to provide real-time protection against UAV threats. Designed for mobile operations, convoy security, and tactical deployments, the system delivers wide-area RF suppression and operational flexibility in complex environments.",
+
+  overview:
+    "The ALFA 850V Mobile Jammer is built for missions where mobility, rapid deployment, and continuous protection are critical. Integrated into tactical vehicles, the system enables effective counter-UAV capability while maintaining operational movement. Its architecture supports wide-band RF suppression, making it suitable for modern asymmetric threat environments where drones are actively used.",
+
+  cover: "/images/products/alfa-850v-mobile-jammer.jpg",
+
+  gallery: [
+    "/images/products/alfa-850v-mobile-jammer.jpg",
+  ],
+
+  featured: true,
+
+  features: [
+    {
+      title: "Wide-Band RF Suppression",
       description:
-        "Vehicle-mounted counter-UAV jammer system for tactical and mobile deployment.",
+        "Covers multiple frequency ranges used by commercial and tactical UAV systems, ensuring effective disruption of control and navigation signals.",
     },
+    {
+      title: "Vehicle-Mounted Integration",
+      description:
+        "Designed for seamless integration into tactical and security vehicles, enabling protection during movement and field operations.",
+    },
+    {
+      title: "Real-Time Threat Response",
+      description:
+        "Instant activation and response capability against UAV threats, minimizing risk in dynamic operational scenarios.",
+    },
+    {
+      title: "360° Operational Coverage",
+      description:
+        "Provides all-direction protection to secure convoys, personnel, and critical assets during both stationary and mobile deployment.",
+    },
+    {
+      title: "Rapid Deployment Capability",
+      description:
+        "Operational within minutes, supporting quick reaction missions and time-sensitive deployments.",
+    },
+    {
+      title: "Mission-Ready Architecture",
+      description:
+        "Engineered for reliability in harsh environments, including urban, rural, and high-risk operational zones.",
+    },
+  ],
+
+  useCases: [
+    "Military convoy protection",
+    "VIP and high-value asset security",
+    "Border and perimeter security operations",
+    "Critical infrastructure protection",
+    "Urban tactical operations",
+    "Counter-UAV field missions",
+  ],
+
+  specifications: [
+    { label: "System Type", value: "Mobile Electronic Warfare System" },
+    { label: "Platform", value: "Vehicle-mounted" },
+    { label: "Operational Mode", value: "Mobile / Stationary" },
+    { label: "Coverage", value: "360° protection" },
+    { label: "Frequency Range", value: "Multi-band RF suppression" },
+    { label: "Response Time", value: "Real-time activation" },
+    { label: "Integration", value: "Tactical vehicle compatible" },
+    { label: "Use Case", value: "Counter-UAV / RF denial" },
+  ],
+
+  documents: [
+    {
+      title: "Technical Specifications Document",
+      url: "/docs/alfa-850v-specs.pdf",
+    },
+    {
+      title: "Use Case & Operational Advantages",
+      url: "/docs/alfa-850v-use-cases.pdf",
+    },
+  ],
+
+  videos: [
+    {
+      title: "Operational Demonstration Video",
+      url: "#",
+    },
+    {
+      title: "Mobile Deployment Scenario",
+      url: "#",
+    },
+  ],
+
+  seo: {
+    title:
+      "ALFA 850V Mobile Drone Jammer | Vehicle-Mounted Counter UAV System",
+    description:
+      "ALFA 850V is a vehicle-mounted mobile jammer system designed for counter-UAV operations, convoy protection, and tactical electronic warfare missions.",
   },
-  {
+}
     slug: "vega-directional-jammer",
     name: "VEGA Multi-Band Directional Jammer",
     category: "Electronic Warfare",
