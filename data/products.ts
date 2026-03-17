@@ -144,61 +144,108 @@ export const products: Product[] = [
     },
   },
   {
-    slug: "vega-directional-jammer",
-    name: "VEGA Multi-Band Directional Jammer",
-    category: "Electronic Warfare",
-    tagline: "Long-range directional suppression against UAV and RF threats.",
-    shortDescription:
-      "High-power directional jammer for long-range electronic warfare missions.",
-    description:
-      "High-power modular jammer system with directional antenna architecture for long-range electronic warfare operations.",
-    overview:
-      "VEGA is positioned for advanced directional RF suppression where focused effect, modular architecture, and extended operational range are required.",
-    cover: "/images/products/vega-directional-jammer.jpg",
-    gallery: ["/images/products/vega-directional-jammer.jpg"],
-    featured: true,
-    features: [
-      {
-        title: "Directional Antenna Array",
-        description:
-          "Focused suppression architecture for controlled long-range effect.",
-      },
-      {
-        title: "Multi-Band Operation",
-        description:
-          "Built for broad electronic warfare scenarios with modular band structure.",
-      },
-      {
-        title: "Long-Range Suppression",
-        description:
-          "Designed to extend operational reach in demanding RF environments.",
-      },
-      {
-        title: "Mission-Specific Modularity",
-        description:
-          "Flexible architecture to support varying operational requirements.",
-      },
-    ],
-    useCases: [
-      "Counter-UAV operations",
-      "Strategic site protection",
-      "Field electronic warfare",
-      "Mission-specific RF denial",
-    ],
-    specifications: [
-      { label: "Architecture", value: "Directional / Modular" },
-      { label: "Mission Type", value: "Long-range EW" },
-      { label: "Deployment", value: "Field / Fixed / Mobile" },
-      { label: "Focus", value: "RF and UAV suppression" },
-    ],
-    documents: [{ title: "Technical Overview", url: "#" }],
-    videos: [{ title: "System Demonstration", url: "#" }],
-    seo: {
-      title: "VEGA Multi-Band Directional Jammer | DefenceTech",
+    {
+  slug: "vega-directional-jammer",
+  name: "VEGA Multi-Band Directional Jammer",
+  category: "Electronic Warfare",
+
+  tagline:
+    "Long-range directional suppression system for UAV, GNSS, and RF-based threats.",
+
+  shortDescription:
+    "A high-power directional electronic warfare system designed for long-range counter-UAV and RF suppression missions.",
+
+  description:
+    "VEGA is a multi-band directional jammer system developed for advanced electronic warfare operations. With high RF output, steerable directional antennas, and modular band architecture, the system is positioned to suppress UAV control links, GNSS signals, telemetry, video transmission, and other hostile RF activity across extended ranges.",
+
+  overview:
+    "Designed for mission environments where range, directional effect, and RF flexibility are critical, VEGA provides focused suppression against airborne and communication-based threats. Its modular architecture enables adaptation to different frequency requirements, while the directional antenna structure supports controlled long-range engagement in operationally demanding environments.",
+
+  cover: "/images/products/vega-directional-jammer.jpg",
+
+  gallery: [
+    "/images/products/vega-directional-jammer.jpg",
+  ],
+
+  featured: true,
+
+  features: [
+    {
+      title: "Directional RF Suppression",
       description:
-        "High-power directional jammer system for long-range electronic warfare and RF suppression.",
+        "Uses a high-gain directional antenna structure to focus jamming power toward targeted threats with greater precision and range.",
     },
+    {
+      title: "Multi-Band Architecture",
+      description:
+        "Supports a wide operational frequency structure for disrupting UAV links, GNSS, telemetry, video transmission, and other RF-based threats.",
+    },
+    {
+      title: "Long-Range Operational Effect",
+      description:
+        "Engineered for scenarios where extended suppression range and controlled directional coverage are operational priorities.",
+    },
+    {
+      title: "Modular Band Configuration",
+      description:
+        "Mission-specific band configuration enables adaptation to different operational environments and regional threat profiles.",
+    },
+    {
+      title: "Motorized Steering Capability",
+      description:
+        "Directional orientation can be aligned rapidly for more efficient targeting and field responsiveness.",
+    },
+    {
+      title: "Field-Ready Reliability",
+      description:
+        "Designed for demanding deployment conditions where ruggedization, continuity, and mission adaptability are essential.",
+    },
+  ],
+
+  useCases: [
+    "Long-range counter-UAV operations",
+    "Strategic site and perimeter protection",
+    "Electronic warfare support missions",
+    "Critical infrastructure defense",
+    "Military and tactical field deployment",
+    "Mission-specific RF denial operations",
+  ],
+
+  specifications: [
+    { label: "System Type", value: "Directional Electronic Warfare System" },
+    { label: "Frequency Coverage", value: "400 MHz – 6 GHz" },
+    { label: "Band Structure", value: "Up to 15 bands" },
+    { label: "RF Output Power", value: "1000 W total output" },
+    { label: "Antenna Type", value: "High-gain directional antenna" },
+    { label: "Steering", value: "Motorized directional orientation" },
+    { label: "Power Supply", value: "220 VAC" },
+    { label: "Effective Range", value: "Up to 20 km depending on environment and band" },
+  ],
+
+  documents: [
+    {
+      title: "Technical Specifications Document",
+      url: "#",
+    },
+    {
+      title: "Capability Overview",
+      url: "#",
+    },
+  ],
+
+  videos: [
+    {
+      title: "System Demonstration Video",
+      url: "#",
+    },
+  ],
+
+  seo: {
+    title: "VEGA Multi-Band Directional Jammer | Long-Range Counter UAV System",
+    description:
+      "VEGA is a high-power multi-band directional jammer designed for long-range counter-UAV, GNSS, telemetry, and RF suppression missions.",
   },
+},
   {
     slug: "barracuda-airborne-ew",
     name: "Barracuda Airborne EW UAV",
