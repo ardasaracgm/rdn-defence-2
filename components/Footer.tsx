@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="mt-24 border-t border-slate-200 bg-white">
       <div className="container-main grid gap-10 py-14 md:grid-cols-4">
         <div>
-          <div className="text-lg font-semibold">
+          <div className="text-lg font-semibold text-slate-950">
             DEFENCE<span className="text-blue-700">TECH</span>
           </div>
           <p className="mt-4 text-sm leading-7 text-slate-600">
