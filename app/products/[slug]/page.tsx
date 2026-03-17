@@ -156,7 +156,7 @@ export default async function ProductDetailPage({ params }: Props) {
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {product.features.map((feature) => (
                 <div key={feature.title} className="card-premium p-7">
                   <h3 className="text-xl font-semibold text-slate-950">
