@@ -48,14 +48,12 @@ export type Product = {
   };
 };
 
-/* 🔥 IMPORTS */
 import { alfa850vMobileJammer } from "./products/alfa-850v-mobile-jammer";
 import { vegaDirectionalJammer } from "./products/vega-directional-jammer";
 import { barracudaAirborneEw } from "./products/barracuda-airborne-ew";
 import { evagateC4i } from "./products/evagate-c4i";
 import { aiFaceRecognition } from "./products/ai-face-recognition";
 
-/* 🔥 ARRAY */
 export const products: Product[] = [
   alfa850vMobileJammer,
   vegaDirectionalJammer,
