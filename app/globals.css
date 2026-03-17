@@ -10,7 +10,6 @@
   --muted: #475569;
   --line: #e2e8f0;
   --primary: #1d4ed8;
-  --primary-2: #0f172a;
   --accent: #0ea5e9;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
@@ -38,10 +37,6 @@ body {
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   @apply rounded-3xl;
-}
-
-.text-muted {
-  color: var(--muted);
 }
 
 .grid-lines {
