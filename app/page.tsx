@@ -44,12 +44,15 @@ export default function HomePage() {
             </div>
 
             <h1 className="mt-7 max-w-4xl text-5xl font-bold leading-tight tracking-tight text-slate-950 md:text-6xl">
-              Integrated solutions for electronic warfare, UAV systems, AI security, and secure communication.
+              Integrated solutions for electronic warfare, UAV systems, AI
+              security, and secure communication.
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
-              We deliver high-technology defense and security solutions designed for operational resilience,
-              situational awareness, and mission-critical performance across land, air, and mobile environments.
+              We deliver high-technology defense and security solutions
+              designed for operational resilience, situational awareness, and
+              mission-critical performance across land, air, and mobile
+              environments.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -59,6 +62,7 @@ export default function HomePage() {
               >
                 Explore Products
               </Link>
+
               <Link
                 href="/contact"
                 className="rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
@@ -70,15 +74,27 @@ export default function HomePage() {
             <div className="mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
               <div className="card-premium p-5">
                 <div className="text-3xl font-bold text-slate-950">6+</div>
-                <p className="mt-2 text-sm text-slate-600">Core technology categories</p>
+                <p className="mt-2 text-sm text-slate-600">
+                  Core technology categories
+                </p>
               </div>
+
               <div className="card-premium p-5">
-                <div className="text-3xl font-bold text-slate-950">Land · Air · Mobile</div>
-                <p className="mt-2 text-sm text-slate-600">Operational deployment domains</p>
+                <div className="text-3xl font-bold text-slate-950">
+                  Land · Air · Mobile
+                </div>
+                <p className="mt-2 text-sm text-slate-600">
+                  Operational deployment domains
+                </p>
               </div>
+
               <div className="card-premium p-5">
-                <div className="text-3xl font-bold text-slate-950">AI + RF + C4I</div>
-                <p className="mt-2 text-sm text-slate-600">Integrated mission capability</p>
+                <div className="text-3xl font-bold text-slate-950">
+                  AI + RF + C4I
+                </div>
+                <p className="mt-2 text-sm text-slate-600">
+                  Integrated mission capability
+                </p>
               </div>
             </div>
           </div>
@@ -91,7 +107,8 @@ export default function HomePage() {
                     Operational Focus
                   </div>
                   <h2 className="mt-4 text-2xl font-bold text-slate-950">
-                    Mission-ready systems for modern defense and security environments.
+                    Mission-ready systems for modern defense and security
+                    environments.
                   </h2>
                 </div>
 
@@ -129,8 +146,12 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {categories.map((item) => (
               <div key={item.title} className="card-premium p-7">
-                <h3 className="text-xl font-semibold text-slate-950">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
+                <h3 className="text-xl font-semibold text-slate-950">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
@@ -208,8 +229,12 @@ export default function HomePage() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <h4 className="text-lg font-semibold text-slate-950">{item.title}</h4>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+                  <h4 className="text-lg font-semibold text-slate-950">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {item.text}
+                  </p>
                 </div>
               ))}
             </div>
@@ -219,17 +244,22 @@ export default function HomePage() {
 
       <section className="section-space">
         <div className="container-main">
-          <div className="card-premium overflow-hidden bg-[linear-gradient(135deg,#0f172a,#1e293b)] text-white">
+          <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] text-white shadow-[0_10px_30px_rgba(15,23,42,0.18)]">
             <div className="grid gap-8 p-10 md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">
                   Contact & Consultation
                 </div>
-                <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-                  Build the right technology stack for your mission requirements.
+
+                <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+                  Build the right technology stack for your mission
+                  requirements.
                 </h2>
+
                 <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
-                  From counter-UAV and electronic warfare systems to AI-powered surveillance and secure communication infrastructure, we can help you shape the right solution architecture.
+                  From counter-UAV and electronic warfare systems to AI-powered
+                  surveillance and secure communication infrastructure, we can
+                  help you shape the right solution architecture.
                 </p>
               </div>
 
@@ -240,6 +270,7 @@ export default function HomePage() {
                 >
                   Contact Us
                 </Link>
+
                 <Link
                   href="/solutions"
                   className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
