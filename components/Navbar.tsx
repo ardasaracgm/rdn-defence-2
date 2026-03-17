@@ -10,9 +10,9 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <div className="container-main flex h-20 items-center justify-between">
-        <Link href="/" className="text-lg font-semibold tracking-wide text-slate-900">
+        <Link href="/" className="text-lg font-semibold tracking-wide text-slate-950">
           DEFENCE<span className="text-blue-700">TECH</span>
         </Link>
 
