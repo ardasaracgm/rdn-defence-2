@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
         />
       </div>
 
-      <div className="p-6">
+      <div className="bg-white p-6">
         <div className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
           {product.category}
         </div>
