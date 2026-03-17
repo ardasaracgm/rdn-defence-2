@@ -1,1 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #e2e8f0;
+  --primary: #1d4ed8;
+  --primary-2: #0f172a;
+  --accent: #0ea5e9;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container-main {
+  @apply mx-auto w-full max-w-7xl px-6 md:px-8;
+}
+
+.section-space {
+  @apply py-20 md:py-24;
+}
+
+.card-premium {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  @apply rounded-3xl;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(29, 78, 216, 0.16), transparent 28%);
+}
