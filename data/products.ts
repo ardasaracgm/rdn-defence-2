@@ -158,7 +158,7 @@ export const products: Product[] = [
     description:
       "ALFA 850V is a vehicle-mounted mobile jammer system designed for counter-UAV operations, convoy protection, and tactical electronic warfare missions.",
   },
-}
+},
     slug: "vega-directional-jammer",
     name: "VEGA Multi-Band Directional Jammer",
     category: "Electronic Warfare",
