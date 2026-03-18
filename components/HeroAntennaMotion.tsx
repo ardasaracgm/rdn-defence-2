@@ -1,46 +1,21 @@
 "use client";
 
-type HeroVideo = {
-  file: string;
-  poster?: string;
-};
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-type HeroImage = {
+type Props = {
   src: string;
   alt: string;
 };
 
-type Props = {
-  video?: HeroVideo;
-  image: HeroImage;
-};
-
-export default function ProductHeroMedia({ video, image }: Props) {
-  if (video?.file) {
-    return (
-      <div className="relative aspect-[16/12] overflow-hidden bg-black">
-        <video
-          src={video.file}
-          poster={video.poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="h-full w-full object-cover"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-      </div>
-    );
-  }
+export default function HeroAntennaMotion({ src, alt }: Props) {
+  const { scrollY } = useScroll();
+  const rotate = useTransform(scrollY, [0, 600], [0, 12]);
+  const scale = useTransform(scrollY, [0, 600], [1, 1.05]);
 
   return (
-    <div className="relative aspect-[16/12] overflow-hidden bg-slate-200">
-      <img
-        src={image.src}
-        alt={image.alt}
-        className="h-full w-full object-cover"
-      />
-    </div>
+    <motion.div style={{ rotate, scale }} className="relative h-full w-full">
+      <Image src={src} alt={alt} fill className="object-cover" priority />
+    </motion.div>
   );
 }
