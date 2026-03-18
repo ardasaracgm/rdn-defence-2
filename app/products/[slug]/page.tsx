@@ -4,6 +4,7 @@ import { products } from "@/data/products";
 import ProductDocumentCard from "@/components/ProductDocumentCard";
 import ProductVideoPlayer from "@/components/ProductVideoPlayer";
 import ProductGallery from "@/components/ProductGallery";
+import ProductHeroMedia from "@/components/ProductHeroMedia";
 
 type Props = {
   params: Promise<{
