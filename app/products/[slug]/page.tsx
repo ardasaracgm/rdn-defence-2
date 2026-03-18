@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: product.seo?.title || `${product.name} | DefenceTech`,
-    description: product.seo?.description || product.shortDescription,
+    title: product.seo.title,
+    description: product.seo.description,
   };
 }
 
@@ -53,11 +53,9 @@ export default async function ProductDetailPage({ params }: Props) {
                 {product.name}
               </h1>
 
-              {product.tagline ? (
-                <p className="mt-4 max-w-3xl text-xl font-medium leading-8 text-slate-700">
-                  {product.tagline}
-                </p>
-              ) : null}
+              <p className="mt-4 max-w-3xl text-xl font-medium leading-8 text-slate-700">
+                {product.tagline}
+              </p>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
                 {product.description}
@@ -112,8 +110,8 @@ export default async function ProductDetailPage({ params }: Props) {
             <div className="card-premium overflow-hidden">
               <div className="aspect-[16/12] bg-slate-200">
                 <img
-                  src={product.cover}
-                  alt={product.name}
+                  src={product.media.hero}
+                  alt={product.media.heroAlt}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -248,7 +246,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 <div
                   key={spec.label}
                   className={`grid gap-2 px-6 py-5 md:grid-cols-[240px_1fr] ${
-                    index !== product.specifications!.length - 1
+                    index !== product.specifications.length - 1
                       ? "border-b border-slate-200"
                       : ""
                   }`}
@@ -266,7 +264,7 @@ export default async function ProductDetailPage({ params }: Props) {
         </section>
       ) : null}
 
-      {(product.documents?.length || product.videos?.length) ? (
+      {(product.media.documents?.length || product.media.videos?.length) ? (
         <section className="section-space">
           <div className="container-main grid gap-8 lg:grid-cols-2">
             <div className="card-premium p-8">
@@ -278,11 +276,13 @@ export default async function ProductDetailPage({ params }: Props) {
               </h3>
 
               <div className="mt-6 space-y-4">
-                {product.documents?.length ? (
-                  product.documents.map((doc) => (
+                {product.media.documents?.length ? (
+                  product.media.documents.map((doc) => (
                     <a
                       key={doc.title}
-                      href={doc.url}
+                      href={doc.file}
+                      target="_blank"
+                      rel="noreferrer"
                       className="block rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
                     >
                       {doc.title}
@@ -305,11 +305,13 @@ export default async function ProductDetailPage({ params }: Props) {
               </h3>
 
               <div className="mt-6 space-y-4">
-                {product.videos?.length ? (
-                  product.videos.map((video) => (
+                {product.media.videos?.length ? (
+                  product.media.videos.map((video) => (
                     <a
                       key={video.title}
-                      href={video.url}
+                      href={video.file}
+                      target="_blank"
+                      rel="noreferrer"
                       className="block rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
                     >
                       {video.title}
@@ -326,7 +328,7 @@ export default async function ProductDetailPage({ params }: Props) {
         </section>
       ) : null}
 
-      {product.gallery?.length ? (
+      {product.media.gallery?.length ? (
         <section className="section-space border-t border-slate-200 bg-white">
           <div className="container-main">
             <div className="max-w-3xl">
@@ -339,15 +341,15 @@ export default async function ProductDetailPage({ params }: Props) {
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {product.gallery.map((image, index) => (
+              {product.media.gallery.map((image, index) => (
                 <div
-                  key={`${image}-${index}`}
+                  key={`${image.src}-${index}`}
                   className="card-premium overflow-hidden"
                 >
                   <div className="aspect-[16/11] bg-slate-200">
                     <img
-                      src={image}
-                      alt={`${product.name} gallery ${index + 1}`}
+                      src={image.src}
+                      alt={image.alt}
                       className="h-full w-full object-cover"
                     />
                   </div>
