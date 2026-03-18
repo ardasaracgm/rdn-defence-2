@@ -112,14 +112,14 @@ export default async function ProductDetailPage({ params }: Props) {
             </div>
 
             <div className="card-premium overflow-hidden">
-              <div className="aspect-[16/12] bg-slate-200">
-                <img
-                  src={product.media.hero}
-                  alt={product.media.heroAlt}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
+  <ProductHeroMedia
+    video={product.media.videos?.find((v) => v.isHero)}
+    image={{
+      src: product.media.hero,
+      alt: product.media.heroAlt,
+    }}
+  />
+</div>
           </div>
         </div>
       </section>
