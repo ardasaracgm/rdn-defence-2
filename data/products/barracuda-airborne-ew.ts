@@ -4,6 +4,7 @@ export const barracudaAirborneEw: Product = {
   slug: "barracuda-airborne-ew",
   name: "Barracuda VTOL UAS",
   category: "Airborne Systems",
+  productType: "VTOL Airborne ISR & EW Platform",
 
   tagline:
     "Airborne ISR and electronic warfare platform designed for extended-range tactical missions.",
@@ -91,6 +92,24 @@ export const barracudaAirborneEw: Product = {
       value: "Directional airborne jammer integration, 400 MHz–6 GHz, up to 500 W RF output",
     },
     { label: "Deployment", value: "Runway-independent VTOL operation" },
+  ],
+
+  whyThisProduct: [
+    {
+      title: "Airborne Reach Beyond Ground Limits",
+      description:
+        "Barracuda brings ISR and EW capability above terrain obstacles, extending line-of-sight and operational awareness where ground systems are restricted.",
+    },
+    {
+      title: "Runway-Independent Tactical Flexibility",
+      description:
+        "Its VTOL architecture allows rapid deployment from remote terrain, tactical sites, and coastal zones without requiring conventional runway infrastructure.",
+    },
+    {
+      title: "One Platform, Multiple Mission Roles",
+      description:
+        "Barracuda combines endurance, payload flexibility, ISR capability, and airborne EW potential in a single adaptable platform.",
+    },
   ],
 
   media: {
