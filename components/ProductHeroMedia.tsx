@@ -1,14 +1,20 @@
 "use client";
 
+import HeroAntennaMotion from "./HeroAntennaMotion";
+
+type HeroVideo = {
+  file: string;
+  poster?: string;
+};
+
+type HeroImage = {
+  src: string;
+  alt: string;
+};
+
 type Props = {
-  video?: {
-    file: string;
-    poster?: string;
-  };
-  image: {
-    src: string;
-    alt: string;
-  };
+  video?: HeroVideo;
+  image: HeroImage;
 };
 
 export default function ProductHeroMedia({ video, image }: Props) {
@@ -22,29 +28,17 @@ export default function ProductHeroMedia({ video, image }: Props) {
           muted
           loop
           playsInline
+          preload="metadata"
           className="h-full w-full object-cover"
         />
-
-        {/* overlay gradient */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
     );
   }
 
   return (
-    <div className="aspect-[16/12] bg-slate-200">
-      import HeroAntennaMotion from "./HeroAntennaMotion";
-
-{
-  video ? (
-    <video ... />
-  ) : (
-    <HeroAntennaMotion
-      src={image.src}
-      alt={image.alt}
-    />
-  );
-}
+    <div className="relative aspect-[16/12] overflow-hidden bg-slate-200">
+      <HeroAntennaMotion src={image.src} alt={image.alt} />
     </div>
   );
 }
