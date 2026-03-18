@@ -96,7 +96,7 @@ export default async function ProductDetailPage({ params }: Props) {
                     Product Type
                   </div>
                   <div className="mt-2 text-base font-semibold text-slate-950">
-                    Advanced mission system
+                    {product.productType || "Advanced mission system"}
                   </div>
                 </div>
 
@@ -112,14 +112,14 @@ export default async function ProductDetailPage({ params }: Props) {
             </div>
 
             <div className="card-premium overflow-hidden">
-  <ProductHeroMedia
-    video={product.media.videos?.find((v) => v.isHero)}
-    image={{
-      src: product.media.hero,
-      alt: product.media.heroAlt,
-    }}
-  />
-</div>
+              <ProductHeroMedia
+                video={product.media.videos?.find((v) => v.isHero)}
+                image={{
+                  src: product.media.hero,
+                  alt: product.media.heroAlt,
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -174,6 +174,38 @@ export default async function ProductDetailPage({ params }: Props) {
         </section>
       ) : null}
 
+      {product.whyThisProduct?.length ? (
+        <section className="section-space border-t border-slate-200 bg-slate-50/60">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Why This Product
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Built for operational advantage, not just specifications.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                This platform is positioned to solve real deployment challenges in
+                security-sensitive and mission-critical environments.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.whyThisProduct.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section-space">
         <div className="container-main grid gap-10 lg:grid-cols-[1fr_.9fr]">
           <div>
@@ -215,43 +247,43 @@ export default async function ProductDetailPage({ params }: Props) {
             </p>
 
             <div className="mt-8 rounded-2xl bg-slate-950 p-6 text-white">
-  <div className="text-sm font-semibold uppercase tracking-[0.14em] text-sky-300">
-    Contact Our Team
-  </div>
-  <p className="mt-3 text-sm leading-7 text-slate-300">
-    Discuss project scope, product fit, and technical positioning for
-    your organization.
-  </p>
+              <div className="text-sm font-semibold uppercase tracking-[0.14em] text-sky-300">
+                Contact Our Team
+              </div>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                Discuss project scope, product fit, and technical positioning for
+                your organization.
+              </p>
 
-  <form
-    action="https://formspree.io/f/mwvralbn"
-    method="POST"
-    className="mt-6 space-y-3"
-  >
-    <input
-      name="name"
-      type="text"
-      placeholder="Your Name"
-      className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
-    />
+              <form
+                action="https://formspree.io/f/mwvralbn"
+                method="POST"
+                className="mt-6 space-y-3"
+              >
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                />
 
-    <input
-      name="email"
-      type="email"
-      placeholder="Email Address"
-      className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
-    />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                />
 
-    <input type="hidden" name="product" value={product.name} />
+                <input type="hidden" name="product" value={product.name} />
 
-    <button
-      type="submit"
-      className="w-full rounded-xl bg-white py-3 font-semibold text-slate-950 transition hover:opacity-90"
-    >
-      Request Pricing & Specs
-    </button>
-  </form>
-</div>
+                <button
+                  type="submit"
+                  className="w-full rounded-xl bg-white py-3 font-semibold text-slate-950 transition hover:opacity-90"
+                >
+                  Request Pricing & Specs
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -293,94 +325,94 @@ export default async function ProductDetailPage({ params }: Props) {
         <section className="section-space">
           <div className="container-main grid gap-8 lg:grid-cols-2">
             <div className="space-y-6">
-  <div className="card-premium p-8">
-    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-      Documents
-    </div>
-    <h3 className="mt-3 text-2xl font-bold text-slate-950">
-      Product documents and references.
-    </h3>
+              <div className="card-premium p-8">
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  Documents
+                </div>
+                <h3 className="mt-3 text-2xl font-bold text-slate-950">
+                  Product documents and references.
+                </h3>
 
-    <p className="mt-4 text-sm leading-7 text-slate-600">
-      Review technical documentation, capability overviews, manuals, and
-      supporting reference files for this product.
-    </p>
-  </div>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  Review technical documentation, capability overviews, manuals,
+                  and supporting reference files for this product.
+                </p>
+              </div>
 
-  {product.media.documents?.length ? (
-    product.media.documents.map((doc) => (
-      <ProductDocumentCard
-        key={doc.title}
-        title={doc.title}
-        file={doc.file}
-        kind={doc.kind}
-      />
-    ))
-  ) : (
-    <div className="card-premium p-8">
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
-        No documents added yet.
-      </div>
-    </div>
-  )}
-</div>
+              {product.media.documents?.length ? (
+                product.media.documents.map((doc) => (
+                  <ProductDocumentCard
+                    key={doc.title}
+                    title={doc.title}
+                    file={doc.file}
+                    kind={doc.kind}
+                  />
+                ))
+              ) : (
+                <div className="card-premium p-8">
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
+                    No documents added yet.
+                  </div>
+                </div>
+              )}
+            </div>
 
             <div className="space-y-6">
-  <div className="card-premium p-8">
-    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-      Videos
-    </div>
-    <h3 className="mt-3 text-2xl font-bold text-slate-950">
-      Product videos and demonstrations.
-    </h3>
+              <div className="card-premium p-8">
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  Videos
+                </div>
+                <h3 className="mt-3 text-2xl font-bold text-slate-950">
+                  Product videos and demonstrations.
+                </h3>
 
-    <p className="mt-4 text-sm leading-7 text-slate-600">
-      Review operational footage, technical presentation videos, and deployment
-      scenarios related to this product.
-    </p>
-  </div>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  Review operational footage, technical presentation videos, and
+                  deployment scenarios related to this product.
+                </p>
+              </div>
 
-  {product.media.videos?.length ? (
-    product.media.videos.map((video) => (
-      <ProductVideoPlayer
-        key={video.title}
-        title={video.title}
-        file={video.file}
-        poster={video.poster}
-      />
-    ))
-  ) : (
-    <div className="card-premium p-8">
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
-        No videos added yet.
-      </div>
-    </div>
-  )}
-</div>
+              {product.media.videos?.length ? (
+                product.media.videos.map((video) => (
+                  <ProductVideoPlayer
+                    key={video.title}
+                    title={video.title}
+                    file={video.file}
+                    poster={video.poster}
+                  />
+                ))
+              ) : (
+                <div className="card-premium p-8">
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
+                    No videos added yet.
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </section>
       ) : null}
 
       {product.media.gallery?.length ? (
-  <section className="section-space border-t border-slate-200 bg-white">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Gallery
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Product visuals.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          Review installation scenarios, deployment environments, and product
-          presentation visuals for this system.
-        </p>
-      </div>
+        <section className="section-space border-t border-slate-200 bg-white">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Gallery
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Product visuals.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Review installation scenarios, deployment environments, and
+                product presentation visuals for this system.
+              </p>
+            </div>
 
-      <ProductGallery images={product.media.gallery} />
-    </div>
-  </section>
-) : null}
+            <ProductGallery images={product.media.gallery} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="section-space">
         <div className="container-main">
@@ -399,23 +431,21 @@ export default async function ProductDetailPage({ params }: Props) {
                 </p>
               </div>
 
-<div className="flex flex-wrap gap-4">
-  <a
-    href="/contact"
-    className="rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:opacity-90"
-  >
-    Contact Us
-  </a>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="/contact"
+                  className="rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:opacity-90"
+                >
+                  Contact Us
+                </a>
 
-  <a
-    href="/products"
-    className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-  >
-    Browse Products
-  </a>
-</div>
-
-              
+                <a
+                  href="/products"
+                  className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Browse Products
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -423,4 +453,3 @@ export default async function ProductDetailPage({ params }: Props) {
     </main>
   );
 }
-
