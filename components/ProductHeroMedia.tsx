@@ -1,7 +1,5 @@
 "use client";
 
-import HeroAntennaMotion from "./HeroAntennaMotion";
-
 type HeroVideo = {
   file: string;
   poster?: string;
@@ -38,7 +36,11 @@ export default function ProductHeroMedia({ video, image }: Props) {
 
   return (
     <div className="relative aspect-[16/12] overflow-hidden bg-slate-200">
-      <HeroAntennaMotion src={image.src} alt={image.alt} />
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
