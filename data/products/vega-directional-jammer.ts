@@ -66,11 +66,11 @@ export const vegaDirectionalJammer: Product = {
     "Long-range counter-UAV operations",
     "Strategic perimeter protection",
     "Critical infrastructure defense",
-    "Border and coastal security support",
+    "Border security support",
+    "Airport security operations",
+    "Coastal security missions",
     "Military base and tactical site protection",
-    "Fixed electronic warfare deployment",
     "Mission-specific RF denial operations",
-    "High-value asset protection",
   ],
 
   specifications: [
@@ -80,7 +80,10 @@ export const vegaDirectionalJammer: Product = {
     { label: "Frequency Coverage", value: "400 MHz – 6 GHz" },
     { label: "Band Structure", value: "Up to 15 configurable bands" },
     { label: "RF Output Power", value: "1000 W total output" },
-    { label: "Antenna Type", value: "High-gain directional antenna array" },
+    {
+      label: "Antenna Type",
+      value: "High-gain directional antenna with motorized rotation",
+    },
     { label: "Steering", value: "Motorized directional orientation" },
     { label: "Power Supply", value: "220 VAC" },
     {
@@ -90,48 +93,51 @@ export const vegaDirectionalJammer: Product = {
   ],
 
   media: {
-    hero: "/products/vega/images/hero.webp",
+    hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
+
     gallery: [
       {
-        src: "/products/vega/images/hero.webp",
+        src: "/products/vega/images/vega-hero.webp",
         alt: "VEGA directional jammer hero view",
       },
       {
-        src: "/products/vega/images/field.webp",
-        alt: "VEGA deployed in an operational field environment",
-      },
-      {
-        src: "/products/vega/images/technical.webp",
-        alt: "VEGA technical product showcase",
-      },
-      {
-        src: "/products/vega/images/infrastructure.webp",
+        src: "/products/vega/images/vega-critical-infrastructure.webp",
         alt: "VEGA protecting critical infrastructure",
       },
       {
-        src: "/products/vega/images/perimeter.webp",
-        alt: "VEGA perimeter security deployment scenario",
+        src: "/products/vega/images/vega-border-security.webp",
+        alt: "VEGA border security deployment scenario",
+      },
+      {
+        src: "/products/vega/images/vega-airport-security.webp",
+        alt: "VEGA airport security deployment scenario",
+      },
+      {
+        src: "/products/vega/images/vega-coastal-security.webp",
+        alt: "VEGA coastal security deployment scenario",
       },
     ],
+
     videos: [
       {
         title: "VEGA Operational Overview",
         file: "/products/vega/videos/hero.mp4",
-        poster: "/products/vega/images/hero.webp",
+        poster: "/products/vega/images/vega-hero.webp",
         isHero: true,
       },
       {
         title: "System Demonstration Video",
         file: "/products/vega/videos/demo.mp4",
-        poster: "/products/vega/images/field.webp",
+        poster: "/products/vega/images/vega-border-security.webp",
       },
       {
         title: "Technical Showcase",
         file: "/products/vega/videos/technical.mp4",
-        poster: "/products/vega/images/technical.webp",
+        poster: "/products/vega/images/vega-critical-infrastructure.webp",
       },
     ],
+
     documents: [
       {
         title: "Technical Specifications Document",
