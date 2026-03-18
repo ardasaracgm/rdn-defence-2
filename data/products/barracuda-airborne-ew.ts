@@ -5,98 +5,116 @@ export const barracudaAirborneEw: Product = {
   name: "Barracuda Airborne EW UAV",
   category: "Airborne Systems",
 
-  tagline: "Airborne electronic warfare platform with ISR capability.",
+  tagline:
+    "Mission-adaptive VTOL airborne platform for electronic warfare, ISR, and tactical support.",
 
   shortDescription:
-    "A modular VTOL UAV designed for airborne electronic warfare and ISR.",
+    "A modular airborne electronic warfare platform designed for surveillance, RF mission support, and extended operational flexibility.",
 
   description:
-    "Barracuda is a mission-adaptive VTOL airborne platform structured for electronic warfare, surveillance, and high-value operational flexibility.",
+    "Barracuda is a VTOL airborne platform developed for advanced electronic warfare and ISR missions. Combining vertical take-off capability with mission-adaptive payload logic, the system is positioned to support surveillance, RF mission support, tactical overwatch, and high-value operational flexibility in complex environments.",
 
   overview:
-    "Unlike ground-only suppression systems, airborne EW platforms extend operational reach and improve line-of-sight effectiveness in complex environments. Barracuda positions electronic warfare, ISR, and hard-kill support in one airborne architecture.",
+    "Unlike ground-based systems limited by terrain and line-of-sight conditions, Barracuda extends mission reach from the air. It is designed for scenarios where mobility, elevated sensing, and adaptable payload integration are critical. The platform supports defense, perimeter, convoy, and field operations requiring persistent aerial presence and electronic support capability.",
 
   featured: true,
 
   features: [
     {
-      title: "VTOL Platform",
+      title: "VTOL Flight Architecture",
       description:
-        "Supports vertical take-off and landing in constrained deployment environments.",
+        "Supports vertical take-off and landing for deployment in restricted and infrastructure-limited environments.",
     },
     {
-      title: "ISR + EW Capability",
+      title: "ISR + EW Mission Capability",
       description:
-        "Combines surveillance and electronic warfare within a single airborne platform.",
+        "Combines airborne surveillance with mission-adaptive electronic warfare support in a single platform.",
     },
     {
-      title: "Mission Modularity",
+      title: "Modular Payload Integration",
       description:
-        "Adaptable structure for changing payload and mission requirements.",
+        "Can be configured for different payloads and mission profiles depending on the operational requirement.",
     },
     {
-      title: "High Endurance Architecture",
+      title: "Extended Mission Reach",
       description:
-        "Designed for persistent operational presence and mission continuity.",
+        "Provides elevated operational perspective and improved line-of-sight effectiveness compared to ground-only systems.",
     },
     {
-      title: "Low-RCS Airframe Logic",
+      title: "Persistent Airborne Presence",
       description:
-        "Positioned for improved survivability and reduced observability in contested environments.",
+        "Structured for long-endurance missions where continuous aerial support and situational awareness are required.",
     },
     {
-      title: "Airborne Spectrum Dominance",
+      title: "Mission-Ready Adaptability",
       description:
-        "Extends RF suppression into areas where terrain and urban density limit ground-based systems.",
+        "Designed for tactical, border, convoy, maritime, and infrastructure-related deployment scenarios.",
     },
   ],
 
   useCases: [
-    "Airborne electronic warfare",
-    "ISR missions",
+    "Airborne electronic warfare support",
+    "ISR and reconnaissance missions",
     "Convoy overwatch",
-    "Counter-UAV support operations",
-    "Mountainous and urban terrain missions",
-    "Maritime convoy protection",
+    "Border surveillance operations",
+    "Critical infrastructure monitoring",
+    "Tactical field support missions",
+    "Maritime and coastal observation",
+    "High-value asset overwatch",
   ],
 
   specifications: [
-    { label: "Platform", value: "VTOL UAV" },
-    { label: "Operational Role", value: "EW / ISR / airborne support" },
+    { label: "Platform Type", value: "VTOL Airborne Mission Platform" },
+    { label: "Operational Role", value: "EW / ISR / airborne tactical support" },
+    { label: "Take-Off & Landing", value: "Vertical take-off and landing (VTOL)" },
+    { label: "Payload Logic", value: "Mission-adaptive modular configuration" },
     { label: "Endurance", value: "Up to 8 hours" },
     { label: "Payload Capacity", value: "Up to 10 kg" },
-    {
-      label: "Communication Range",
-      value: "20 km standard / higher with upgraded setup",
-    },
-    { label: "Deployment", value: "Airborne" },
-    { label: "Propulsion", value: "Hybrid fixed-wing + VTOL support" },
-    { label: "Focus", value: "Mission-adaptive operations" },
+    { label: "Communication Range", value: "20 km standard, extendable by configuration" },
+    { label: "Deployment", value: "Airborne field and tactical operations" },
   ],
 
   media: {
-    hero: "/products/barracuda/images/hero.webp",
-    heroAlt: "Barracuda airborne EW UAV in flight",
+    hero: "/products/barracuda/images/barracuda-hero.webp",
+    heroAlt: "Barracuda airborne EW UAV in mission-ready configuration",
+
     gallery: [
       {
-        src: "/products/barracuda/images/hero.webp",
-        alt: "Barracuda airborne EW UAV hero image",
+        src: "/products/barracuda/images/barracuda-hero.webp",
+        alt: "Barracuda airborne EW UAV hero view",
       },
       {
-        src: "/products/barracuda/images/flight.webp",
-        alt: "Barracuda flight scenario",
+        src: "/products/barracuda/images/barracuda-flight.webp",
+        alt: "Barracuda in airborne deployment scenario",
       },
       {
-        src: "/products/barracuda/images/platform.webp",
-        alt: "Barracuda platform overview",
+        src: "/products/barracuda/images/barracuda-technical.webp",
+        alt: "Barracuda technical product showcase",
+      },
+      {
+        src: "/products/barracuda/images/barracuda-border.webp",
+        alt: "Barracuda border surveillance mission scenario",
+      },
+      {
+        src: "/products/barracuda/images/barracuda-infrastructure.webp",
+        alt: "Barracuda critical infrastructure monitoring scenario",
       },
     ],
+
     videos: [
       {
+        title: "Barracuda Operational Overview",
+        file: "/products/barracuda/videos/hero.mp4",
+        poster: "/products/barracuda/images/barracuda-hero.webp",
+        isHero: true,
+      },
+      {
         title: "Flight Demonstration",
-        file: "/products/barracuda/videos/flight-demo.mp4",
+        file: "/products/barracuda/videos/demo.mp4",
+        poster: "/products/barracuda/images/barracuda-flight.webp",
       },
     ],
+
     documents: [
       {
         title: "Technical Specifications",
@@ -117,8 +135,8 @@ export const barracudaAirborneEw: Product = {
   },
 
   seo: {
-    title: "Barracuda Airborne EW UAV | DefenceTech",
+    title: "Barracuda Airborne EW UAV | VTOL ISR & Electronic Warfare Platform",
     description:
-      "Mission-adaptive VTOL UAV for airborne electronic warfare, ISR, and advanced anti-drone support operations.",
+      "Barracuda is a mission-adaptive VTOL airborne platform for electronic warfare, ISR, convoy overwatch, border surveillance, and tactical field support.",
   },
 };
