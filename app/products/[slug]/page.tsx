@@ -216,15 +216,43 @@ export default async function ProductDetailPage({ params }: Props) {
             </p>
 
             <div className="mt-8 rounded-2xl bg-slate-950 p-6 text-white">
-              <div className="text-sm font-semibold uppercase tracking-[0.14em] text-sky-300">
-                Contact Our Team
-              </div>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Discuss project scope, product fit, and technical positioning for
-                your organization.
-              </p>
+  <div className="text-sm font-semibold uppercase tracking-[0.14em] text-sky-300">
+    Contact Our Team
+  </div>
+  <p className="mt-3 text-sm leading-7 text-slate-300">
+    Discuss project scope, product fit, and technical positioning for
+    your organization.
+  </p>
 
-            </div>
+  <form
+    action="https://formspree.io/f/mwvralbn"
+    method="POST"
+    className="mt-6 space-y-3"
+  >
+    <input
+      name="name"
+      type="text"
+      placeholder="Your Name"
+      className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+    />
+
+    <input
+      name="email"
+      type="email"
+      placeholder="Email Address"
+      className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+    />
+
+    <input type="hidden" name="product" value={product.name} />
+
+    <button
+      type="submit"
+      className="w-full rounded-xl bg-white py-3 font-semibold text-slate-950 transition hover:opacity-90"
+    >
+      Request Pricing & Specs
+    </button>
+  </form>
+</div>
           </div>
         </div>
       </section>
