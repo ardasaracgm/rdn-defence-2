@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
+import ProductDocumentCard from "@/components/ProductDocumentCard";
 import ProductVideoPlayer from "@/components/ProductVideoPlayer";
 
 type Props = {
