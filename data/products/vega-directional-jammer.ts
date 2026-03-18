@@ -93,7 +93,7 @@ export const vegaDirectionalJammer: Product = {
   ],
 
   media: {
-    hero: "/products/vega/images/vega-hero.webp",
+    hero: "public/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
 
     gallery: [
