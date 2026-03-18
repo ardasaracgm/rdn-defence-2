@@ -5,15 +5,12 @@ export default function ProductCard({ product }: { product: Product }) {
   const previewFeatures = product.features?.slice(0, 2) || [];
 
   return (
-    <Link
-      href={`/products/${product.slug}`}
-      className="group block h-full"
-    >
+    <Link href={`/products/${product.slug}`} className="group block h-full">
       <article className="card-premium flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
         <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
           <img
-            src={product.cover}
-            alt={product.name}
+            src={product.media.hero}
+            alt={product.media.heroAlt}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
           />
 
@@ -28,11 +25,9 @@ export default function ProductCard({ product }: { product: Product }) {
               {product.name}
             </h3>
 
-            {product.tagline ? (
-              <p className="mt-3 text-sm font-medium leading-6 text-slate-700">
-                {product.tagline}
-              </p>
-            ) : null}
+            <p className="mt-3 text-sm font-medium leading-6 text-slate-700">
+              {product.tagline}
+            </p>
 
             <p className="mt-4 text-sm leading-7 text-slate-600">
               {product.shortDescription}
