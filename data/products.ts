@@ -47,6 +47,11 @@ export type ProductSeo = {
   description: string;
 };
 
+export type ProductValuePoint = {
+  title: string;
+  description: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
