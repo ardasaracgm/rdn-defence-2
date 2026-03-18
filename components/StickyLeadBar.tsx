@@ -33,27 +33,36 @@ export default function StickyLeadBar() {
           <div className="w-full max-w-md rounded-2xl bg-white p-6">
             <h3 className="text-xl font-bold">Request Quote</h3>
 
-            <form className="mt-4 space-y-3">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full border p-3 rounded-xl"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border p-3 rounded-xl"
-              />
-              <input
-                type="text"
-                placeholder="Country"
-                className="w-full border p-3 rounded-xl"
-              />
+            <form
+  action="https://formspree.io/f/mwvralbn"
+  method="POST"
+  className="mt-4 space-y-3"
+>
+  <input
+    name="name"
+    type="text"
+    placeholder="Full Name"
+    className="w-full border p-3 rounded-xl"
+  />
 
-              <button className="w-full bg-slate-950 text-white py-3 rounded-xl">
-                Submit Request
-              </button>
-            </form>
+  <input
+    name="email"
+    type="email"
+    placeholder="Email"
+    className="w-full border p-3 rounded-xl"
+  />
+
+  <input
+    name="country"
+    type="text"
+    placeholder="Country"
+    className="w-full border p-3 rounded-xl"
+  />
+
+  <button className="w-full bg-slate-950 text-white py-3 rounded-xl">
+    Request Pricing
+  </button>
+</form>
 
             <button
               onClick={() => setOpen(false)}
