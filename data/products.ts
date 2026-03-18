@@ -26,6 +26,7 @@ export type ProductVideo = {
   title: string;
   file: string;
   poster?: string;
+  isHero?: boolean;
 };
 
 export type ProductImage = {
