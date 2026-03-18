@@ -296,34 +296,38 @@ export default async function ProductDetailPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="card-premium p-8">
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-                Videos
-              </div>
-              <h3 className="mt-3 text-2xl font-bold text-slate-950">
-                Product videos and demonstrations.
-              </h3>
+            <div className="space-y-6">
+  <div className="card-premium p-8">
+    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+      Videos
+    </div>
+    <h3 className="mt-3 text-2xl font-bold text-slate-950">
+      Product videos and demonstrations.
+    </h3>
 
-              <div className="mt-6 space-y-4">
-                {product.media.videos?.length ? (
-                  product.media.videos.map((video) => (
-                    <a
-                      key={video.title}
-                      href={video.file}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="block rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
-                    >
-                      {video.title}
-                    </a>
-                  ))
-                ) : (
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
-                    No videos added yet.
-                  </div>
-                )}
-              </div>
-            </div>
+    <p className="mt-4 text-sm leading-7 text-slate-600">
+      Review operational footage, technical presentation videos, and deployment
+      scenarios related to this product.
+    </p>
+  </div>
+
+  {product.media.videos?.length ? (
+    product.media.videos.map((video) => (
+      <ProductVideoPlayer
+        key={video.title}
+        title={video.title}
+        file={video.file}
+        poster={video.poster}
+      />
+    ))
+  ) : (
+    <div className="card-premium p-8">
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
+        No videos added yet.
+      </div>
+    </div>
+  )}
+</div>
           </div>
         </section>
       ) : null}
