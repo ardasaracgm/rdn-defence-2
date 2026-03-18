@@ -87,7 +87,11 @@ export default function ContactPage() {
               technology evaluations.
             </p>
 
-            <form className="mt-10 grid gap-5">
+            <<form
+  action="https://formspree.io/f/mwvralbn"
+  method="POST"
+  className="space-y-4"
+>>
               <div className="grid gap-5 md:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-sm font-semibold text-slate-800">
