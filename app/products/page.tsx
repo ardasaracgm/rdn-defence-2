@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { products, type ProductCategory } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import SectionTitle from "@/components/SectionTitle";
+import ProductHeroMedia from "@/components/ProductHeroMedia";
 
 const categories: Array<"All" | ProductCategory> = [
   "All",
