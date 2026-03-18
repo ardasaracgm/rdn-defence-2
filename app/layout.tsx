@@ -20,6 +20,7 @@ export default function RootLayout({
       <body className="bg-[var(--bg)] text-[var(--text)] antialiased">
         <Navbar />
         {children}
+        <StickyLeadBar />
         <Footer />
       </body>
     </html>
