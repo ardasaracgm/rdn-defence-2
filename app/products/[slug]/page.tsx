@@ -230,27 +230,37 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
 
       {product.specifications?.length ? (
-        <section className="section-space border-t border-slate-200 bg-white">
-          <div className="container-main">
-            <div className="max-w-3xl">
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-                Specifications
-              </div>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-                Technical and operational summary.
-              </h2>
-            </div>
+  <section className="section-space border-t border-slate-200 bg-white">
+    <div className="container-main">
+      <div className="max-w-3xl">
+        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+          Specifications
+        </div>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+          Technical and operational summary.
+        </h2>
+      </div>
 
-            <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-              {product.specifications.map((spec, index) => (
-                <div
-                  key={spec.label}
-                  className={`grid gap-2 px-6 py-5 md:grid-cols-[240px_1fr] ${
-                    index !== product.specifications.length - 1
-                      ? "border-b border-slate-200"
-                      : ""
-                  }`}
-                >
+      <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+        {product.specifications.map((spec, index, arr) => (
+          <div
+            key={spec.label}
+            className={`grid gap-2 px-6 py-5 md:grid-cols-[240px_1fr] ${
+              index !== arr.length - 1 ? "border-b border-slate-200" : ""
+            }`}
+          >
+            <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
+              {spec.label}
+            </div>
+            <div className="text-base font-medium text-slate-900">
+              {spec.value}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+) : null}
                   <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
                     {spec.label}
                   </div>
