@@ -17,14 +17,20 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
   const closeLightbox = () => setActiveIndex(null);
 
   const showPrev = () => {
-    if (activeIndex === null) return;
-    setActiveIndex((activeIndex - 1 + images.length) % images.length);
+    setActiveIndex((current) => {
+      if (current === null) return 0;
+      return (current - 1 + images.length) % images.length;
+    });
   };
 
   const showNext = () => {
-    if (activeIndex === null) return;
-    setActiveIndex((activeIndex + 1) % images.length);
+    setActiveIndex((current) => {
+      if (current === null) return 0;
+      return (current + 1) % images.length;
+    });
   };
+
+  if (!images.length) return null;
 
   return (
     <>
@@ -43,7 +49,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
               />
 
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent px-5 pb-5 pt-10">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 via-slate-950/25 to-transparent px-5 pb-5 pt-10">
                 <div className="text-sm font-medium text-white">{image.alt}</div>
               </div>
             </div>
@@ -51,38 +57,14 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
         ))}
       </div>
 
-      {activeIndex !== null ? (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/90 px-4 py-6"
-          onClick={closeLightbox}
-        >
-          <div
-            className="relative w-full max-w-6xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={closeLightbox}
-              className="absolute right-0 top-[-52px] rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-            >
-              Close
-            </button>
-
-            <div className="overflow-hidden rounded-3xl bg-black shadow-2xl">
-              <div className="aspect-[16/9] bg-slate-900">
-                <img
-                  src={images[activeIndex].src}
-                  alt={images[activeIndex].alt}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            </div>
-
-            <div className="mt-4 flex items-center justify-between gap-4">
+      {activeIndex !== null && (
+        <div className="fixed inset-0 z-[100] bg-black/90 p-4">
+          <div className="mx-auto flex h-full max-w-6xl flex-col justify-center">
+            <div className="mb-4 flex items-center justify-between gap-4">
               <button
                 type="button"
                 onClick={showPrev}
-                className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/20"
               >
                 Previous
               </button>
@@ -94,14 +76,32 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
               <button
                 type="button"
                 onClick={showNext}
-                className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                className="rounded-2xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/20"
               >
                 Next
               </button>
             </div>
+
+            <div className="relative overflow-hidden rounded-3xl bg-black">
+              <button
+                type="button"
+                onClick={closeLightbox}
+                className="absolute right-4 top-4 z-10 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20"
+              >
+                Close
+              </button>
+
+              <div className="aspect-[16/9] bg-slate-900">
+                <img
+                  src={images[activeIndex].src}
+                  alt={images[activeIndex].alt}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 }
