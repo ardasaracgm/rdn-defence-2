@@ -33,11 +33,18 @@ export default function ProductHeroMedia({ video, image }: Props) {
 
   return (
     <div className="aspect-[16/12] bg-slate-200">
-      <img
-        src={image.src}
-        alt={image.alt}
-        className="h-full w-full object-cover"
-      />
+      import HeroAntennaMotion from "./HeroAntennaMotion";
+
+{
+  video ? (
+    <video ... />
+  ) : (
+    <HeroAntennaMotion
+      src={image.src}
+      alt={image.alt}
+    />
+  );
+}
     </div>
   );
 }
