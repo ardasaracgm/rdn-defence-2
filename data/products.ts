@@ -56,6 +56,7 @@ export type Product = {
   slug: string;
   name: string;
   category: ProductCategory;
+  productType?: string;
 
   tagline: string;
   shortDescription: string;
@@ -67,12 +68,12 @@ export type Product = {
   features?: ProductFeature[];
   useCases?: string[];
   specifications?: ProductSpec[];
+  whyThisProduct?: ProductValuePoint[];
 
   media: ProductMedia;
   seo: ProductSeo;
 };
 
-/* imports */
 import { alfa850vMobileJammer } from "./products/alfa-850v-mobile-jammer";
 import { vegaDirectionalJammer } from "./products/vega-directional-jammer";
 import { barracudaAirborneEw } from "./products/barracuda-airborne-ew";
