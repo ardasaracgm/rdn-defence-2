@@ -4,17 +4,21 @@ export const vegaDirectionalJammer: Product = {
   slug: "vega-directional-jammer",
   name: "VEGA Multi-Band Directional Jammer",
   category: "Electronic Warfare",
+
   tagline:
     "Long-range directional suppression system for UAV, GNSS, and RF-based threats.",
+
   shortDescription:
     "A high-power directional electronic warfare system designed for long-range counter-UAV and RF suppression missions.",
+
   description:
     "VEGA is a multi-band directional jammer system developed for advanced electronic warfare operations. With high RF output, steerable directional antennas, and modular band architecture, the system is positioned to suppress UAV control links, GNSS signals, telemetry, video transmission, and other hostile RF activity across extended ranges.",
+
   overview:
     "Designed for mission environments where range, directional effect, and RF flexibility are critical, VEGA provides focused suppression against airborne and communication-based threats. Its modular architecture enables adaptation to different frequency requirements, while the directional antenna structure supports controlled long-range engagement in operationally demanding environments.",
-  cover: "/images/products/vega-directional-jammer.jpg",
-  gallery: ["/images/products/vega-directional-jammer.jpg"],
+
   featured: true,
+
   features: [
     {
       title: "Directional RF Suppression",
@@ -47,6 +51,7 @@ export const vegaDirectionalJammer: Product = {
         "Designed for demanding deployment conditions where ruggedization, continuity, and mission adaptability are essential.",
     },
   ],
+
   useCases: [
     "Long-range counter-UAV operations",
     "Strategic site and perimeter protection",
@@ -55,6 +60,7 @@ export const vegaDirectionalJammer: Product = {
     "Military and tactical field deployment",
     "Mission-specific RF denial operations",
   ],
+
   specifications: [
     { label: "System Type", value: "Directional Electronic Warfare System" },
     { label: "Frequency Coverage", value: "400 MHz – 6 GHz" },
@@ -68,11 +74,44 @@ export const vegaDirectionalJammer: Product = {
       value: "Up to 20 km depending on environment and band",
     },
   ],
-  documents: [
-    { title: "Technical Specifications Document", url: "#" },
-    { title: "Capability Overview", url: "#" },
-  ],
-  videos: [{ title: "System Demonstration Video", url: "#" }],
+
+  media: {
+    hero: "/products/vega/images/hero.webp",
+    heroAlt: "VEGA directional jammer system",
+    gallery: [
+      {
+        src: "/products/vega/images/hero.webp",
+        alt: "VEGA hero image",
+      },
+      {
+        src: "/products/vega/images/field.webp",
+        alt: "VEGA field deployment",
+      },
+      {
+        src: "/products/vega/images/technical.webp",
+        alt: "VEGA technical showcase",
+      },
+    ],
+    videos: [
+      {
+        title: "System Demonstration Video",
+        file: "/products/vega/videos/demo.mp4",
+      },
+    ],
+    documents: [
+      {
+        title: "Technical Specifications Document",
+        file: "/products/vega/docs/specifications.pdf",
+        kind: "pdf",
+      },
+      {
+        title: "Capability Overview",
+        file: "/products/vega/docs/capability-overview.pdf",
+        kind: "pdf",
+      },
+    ],
+  },
+
   seo: {
     title:
       "VEGA Multi-Band Directional Jammer | Long-Range Counter UAV System",
