@@ -268,34 +268,38 @@ export default async function ProductDetailPage({ params }: Props) {
       {(product.media.documents?.length || product.media.videos?.length) ? (
         <section className="section-space">
           <div className="container-main grid gap-8 lg:grid-cols-2">
-            <div className="card-premium p-8">
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-                Documents
-              </div>
-              <h3 className="mt-3 text-2xl font-bold text-slate-950">
-                Product documents and references.
-              </h3>
+            <div className="space-y-6">
+  <div className="card-premium p-8">
+    <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+      Documents
+    </div>
+    <h3 className="mt-3 text-2xl font-bold text-slate-950">
+      Product documents and references.
+    </h3>
 
-              <div className="mt-6 space-y-4">
-                {product.media.documents?.length ? (
-                  product.media.documents.map((doc) => (
-                    <a
-                      key={doc.title}
-                      href={doc.file}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="block rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
-                    >
-                      {doc.title}
-                    </a>
-                  ))
-                ) : (
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
-                    No documents added yet.
-                  </div>
-                )}
-              </div>
-            </div>
+    <p className="mt-4 text-sm leading-7 text-slate-600">
+      Review technical documentation, capability overviews, manuals, and
+      supporting reference files for this product.
+    </p>
+  </div>
+
+  {product.media.documents?.length ? (
+    product.media.documents.map((doc) => (
+      <ProductDocumentCard
+        key={doc.title}
+        title={doc.title}
+        file={doc.file}
+        kind={doc.kind}
+      />
+    ))
+  ) : (
+    <div className="card-premium p-8">
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-500">
+        No documents added yet.
+      </div>
+    </div>
+  )}
+</div>
 
             <div className="space-y-6">
   <div className="card-premium p-8">
