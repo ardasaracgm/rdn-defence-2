@@ -44,3 +44,4 @@ export default function ProductHeroMedia({ video, image }: Props) {
     </div>
   );
 }
+<div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
