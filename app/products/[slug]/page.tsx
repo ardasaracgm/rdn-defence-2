@@ -224,12 +224,6 @@ export default async function ProductDetailPage({ params }: Props) {
                 your organization.
               </p>
 
-              <a
-                href="/contact"
-                className="mt-6 inline-flex rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:opacity-90"
-              >
-                Request Consultation
-              </a>
             </div>
           </div>
         </div>
@@ -380,10 +374,17 @@ export default async function ProductDetailPage({ params }: Props) {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="/contact"
-                  className="rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:opacity-90"
-                >
-                  Request Consultation
+                  <form
+  action="https://formspree.io/f/mwvralbn"
+  method="POST"
+  className="mt-6 space-y-3"
+>
+  <input name="name" ... />
+  <input name="email" ... />
+  <input type="hidden" name="product" value={product.name} />
+
+  <button>Request Pricing & Specs</button>
+</form>
                 </a>
 
                 <a
