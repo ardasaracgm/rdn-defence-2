@@ -131,11 +131,7 @@ export const vegaDirectionalJammer: Product = {
         file: "/products/vega/videos/demo.mp4",
         poster: "/products/vega/images/vega-border-security.webp",
       },
-      {
-        title: "Technical Showcase",
-        file: "/products/vega/videos/technical.mp4",
-        poster: "/products/vega/images/vega-critical-infrastructure.webp",
-      },
+      
     ],
 
     documents: [
