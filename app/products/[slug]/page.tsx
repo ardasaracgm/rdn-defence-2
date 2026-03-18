@@ -339,36 +339,25 @@ export default async function ProductDetailPage({ params }: Props) {
       ) : null}
 
       {product.media.gallery?.length ? (
-        <section className="section-space border-t border-slate-200 bg-white">
-          <div className="container-main">
-            <div className="max-w-3xl">
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-                Gallery
-              </div>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-                Product visuals.
-              </h2>
-            </div>
+  <section className="section-space border-t border-slate-200 bg-white">
+    <div className="container-main">
+      <div className="max-w-3xl">
+        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+          Gallery
+        </div>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+          Product visuals.
+        </h2>
+        <p className="mt-5 text-lg leading-8 text-slate-600">
+          Review installation scenarios, deployment environments, and product
+          presentation visuals for this system.
+        </p>
+      </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {product.media.gallery.map((image, index) => (
-                <div
-                  key={`${image.src}-${index}`}
-                  className="card-premium overflow-hidden"
-                >
-                  <div className="aspect-[16/11] bg-slate-200">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
+      <ProductGallery images={product.media.gallery} />
+    </div>
+  </section>
+) : null}
 
       <section className="section-space">
         <div className="container-main">
