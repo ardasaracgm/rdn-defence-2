@@ -22,13 +22,7 @@ export default function StickyLeadBar() {
               Request Quote
             </button>
 
-            <a
-              href="https://wa.me/905XXXXXXXXX"
-              target="_blank"
-              className="rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold"
-            >
-              WhatsApp
-            </a>
+            
           </div>
         </div>
       </div>
