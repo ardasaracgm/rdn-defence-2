@@ -4,6 +4,7 @@ export const vegaDirectionalJammer: Product = {
   slug: "vega-directional-jammer",
   name: "VEGA Multi-Band Directional Jammer",
   category: "Electronic Warfare",
+  productType: "Directional Electronic Warfare System",
 
   tagline:
     "Long-range directional suppression system for UAV, GNSS, and RF-based threats.",
@@ -92,6 +93,24 @@ export const vegaDirectionalJammer: Product = {
     },
   ],
 
+  whyThisProduct: [
+    {
+      title: "Focused Effect Instead of Broad Waste",
+      description:
+        "VEGA uses directional suppression logic to concentrate RF effect on the threat axis, making it more suitable for controlled, high-value protection environments.",
+    },
+    {
+      title: "Built for Long-Range Security Missions",
+      description:
+        "Its motorized directional structure and high-power architecture position VEGA for perimeter defense, strategic site protection, and long-range counter-UAV roles.",
+    },
+    {
+      title: "Adaptable to Mission and Region",
+      description:
+        "The modular band structure allows the system to be aligned with regional frequencies, threat profiles, and deployment-specific operational needs.",
+    },
+  ],
+
   media: {
     hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
@@ -131,7 +150,6 @@ export const vegaDirectionalJammer: Product = {
         file: "/products/vega/videos/demo.mp4",
         poster: "/products/vega/images/vega-border-security.webp",
       },
-      
     ],
 
     documents: [
