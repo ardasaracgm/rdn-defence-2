@@ -18,36 +18,55 @@ export type ProductSpec = {
 
 export type ProductDocument = {
   title: string;
-  url: string;
+  file: string;
+  kind?: "pdf" | "doc" | "other";
 };
 
 export type ProductVideo = {
   title: string;
-  url: string;
+  file: string;
+  poster?: string;
+};
+
+export type ProductImage = {
+  src: string;
+  alt: string;
+};
+
+export type ProductMedia = {
+  hero: string;
+  heroAlt: string;
+  gallery: ProductImage[];
+  videos?: ProductVideo[];
+  documents?: ProductDocument[];
+};
+
+export type ProductSeo = {
+  title: string;
+  description: string;
 };
 
 export type Product = {
   slug: string;
   name: string;
   category: ProductCategory;
+
+  tagline: string;
   shortDescription: string;
   description: string;
-  cover: string;
-  featured?: boolean;
   overview?: string;
-  tagline?: string;
-  gallery?: string[];
+
+  featured?: boolean;
+
   features?: ProductFeature[];
   useCases?: string[];
   specifications?: ProductSpec[];
-  documents?: ProductDocument[];
-  videos?: ProductVideo[];
-  seo?: {
-    title: string;
-    description: string;
-  };
+
+  media: ProductMedia;
+  seo: ProductSeo;
 };
 
+/* imports */
 import { alfa850vMobileJammer } from "./products/alfa-850v-mobile-jammer";
 import { vegaDirectionalJammer } from "./products/vega-directional-jammer";
 import { barracudaAirborneEw } from "./products/barracuda-airborne-ew";
