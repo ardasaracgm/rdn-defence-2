@@ -91,6 +91,8 @@ export const alfa850vMobileJammer: Product = {
       {
         title: "Hero Video",
         file: "/products/alfa-850v/videos/hero.mp4",
+        poster: "/products/alfa-850v/images/hero.webp",
+      isHero: true,
       },
       {
         title: "Operational Scenario",
