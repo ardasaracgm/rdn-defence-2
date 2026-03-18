@@ -372,28 +372,23 @@ export default async function ProductDetailPage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <a
-                  <form
-  action="https://formspree.io/f/mwvralbn"
-  method="POST"
-  className="mt-6 space-y-3"
->
-  <input name="name" ... />
-  <input name="email" ... />
-  <input type="hidden" name="product" value={product.name} />
+<div className="flex flex-wrap gap-4">
+  <a
+    href="/contact"
+    className="rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:opacity-90"
+  >
+    Contact Us
+  </a>
 
-  <button>Request Pricing & Specs</button>
-</form>
-                </a>
+  <a
+    href="/products"
+    className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+  >
+    Browse Products
+  </a>
+</div>
 
-                <a
-                  href="/products"
-                  className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Browse Products
-                </a>
-              </div>
+              
             </div>
           </div>
         </div>
