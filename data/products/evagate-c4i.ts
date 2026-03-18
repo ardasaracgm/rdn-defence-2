@@ -4,16 +4,20 @@ export const evagateC4i: Product = {
   slug: "evagate-c4i",
   name: "EvaGate Secure C4I System",
   category: "Secure Communication",
+
   tagline: "Integrated voice, data, radio, and video communication core.",
+
   shortDescription:
     "All-in-one secure communication and command platform for fixed and mobile environments.",
+
   description:
     "EvaGate is a unified command, communication, and network core for secure voice, data, radio, and video integration across tactical and institutional deployments.",
+
   overview:
     "The system is designed to solve communication fragmentation by bringing radio, PBX, secure data, streaming, WAN management, and platform integration into a single structured platform. It supports vehicle, marine, trailer, and portable deployments.",
-  cover: "/images/products/evagate-c4i.jpg",
-  gallery: ["/images/products/evagate-c4i.jpg"],
+
   featured: true,
+
   features: [
     {
       title: "AES-256 Secure Communication",
@@ -46,6 +50,7 @@ export const evagateC4i: Product = {
         "Prepared for third-party integration and platform-level interface requirements.",
     },
   ],
+
   useCases: [
     "Mobile command vehicles",
     "Marine communication platforms",
@@ -54,6 +59,7 @@ export const evagateC4i: Product = {
     "Distributed site communication",
     "Field and HQ interoperability",
   ],
+
   specifications: [
     { label: "System Type", value: "C4I / Communication Core" },
     { label: "Security", value: "AES-256 / VPN" },
@@ -64,13 +70,54 @@ export const evagateC4i: Product = {
     { label: "Power Profile", value: "Low-power operational architecture" },
     { label: "Focus", value: "Unified secure communication" },
   ],
-  documents: [
-    { title: "Core System Brochure", url: "#" },
-    { title: "Use Cases Overview", url: "#" },
-    { title: "Vehicle Configuration", url: "#" },
-    { title: "Marine Configuration", url: "#" },
-  ],
-  videos: [{ title: "Use Case Video", url: "#" }],
+
+  media: {
+    hero: "/products/evagate/images/hero.webp",
+    heroAlt: "EvaGate secure C4I communication system",
+    gallery: [
+      {
+        src: "/products/evagate/images/hero.webp",
+        alt: "EvaGate hero image",
+      },
+      {
+        src: "/products/evagate/images/vehicle.webp",
+        alt: "EvaGate vehicle configuration",
+      },
+      {
+        src: "/products/evagate/images/marine.webp",
+        alt: "EvaGate marine configuration",
+      },
+    ],
+    videos: [
+      {
+        title: "Use Case Video",
+        file: "/products/evagate/videos/use-case.mp4",
+      },
+    ],
+    documents: [
+      {
+        title: "Core System Brochure",
+        file: "/products/evagate/docs/core-system-brochure.pdf",
+        kind: "pdf",
+      },
+      {
+        title: "Use Cases Overview",
+        file: "/products/evagate/docs/use-cases.pdf",
+        kind: "pdf",
+      },
+      {
+        title: "Vehicle Configuration",
+        file: "/products/evagate/docs/vehicle.pdf",
+        kind: "pdf",
+      },
+      {
+        title: "Marine Configuration",
+        file: "/products/evagate/docs/marine.pdf",
+        kind: "pdf",
+      },
+    ],
+  },
+
   seo: {
     title: "EvaGate Secure C4I System | DefenceTech",
     description:
