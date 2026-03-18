@@ -172,28 +172,29 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <section className="section-space">
         <div className="container-main grid gap-10 lg:grid-cols-[1fr_.9fr]">
-          {product.useCases?.length ? (
-            <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-                Use Cases
-              </div>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-                Typical application areas.
-              </h2>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                {product.useCases.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-700 shadow-sm"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div />
-          )}
+          <div>
+            {product.useCases?.length ? (
+              <>
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                  Use Cases
+                </div>
+                <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                  Typical application areas.
+                </h2>
+
+                <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                  {product.useCases.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-700 shadow-sm"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : null}
+          </div>
 
           <div className="card-premium p-8">
             <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
@@ -230,37 +231,25 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
 
       {product.specifications?.length ? (
-  <section className="section-space border-t border-slate-200 bg-white">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Specifications
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Technical and operational summary.
-        </h2>
-      </div>
+        <section className="section-space border-t border-slate-200 bg-white">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Specifications
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Technical and operational summary.
+              </h2>
+            </div>
 
-      <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-        {product.specifications.map((spec, index, arr) => (
-          <div
-            key={spec.label}
-            className={`grid gap-2 px-6 py-5 md:grid-cols-[240px_1fr] ${
-              index !== arr.length - 1 ? "border-b border-slate-200" : ""
-            }`}
-          >
-            <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
-              {spec.label}
-            </div>
-            <div className="text-base font-medium text-slate-900">
-              {spec.value}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
+            <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+              {product.specifications.map((spec, index, arr) => (
+                <div
+                  key={spec.label}
+                  className={`grid gap-2 px-6 py-5 md:grid-cols-[240px_1fr] ${
+                    index !== arr.length - 1 ? "border-b border-slate-200" : ""
+                  }`}
+                >
                   <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
                     {spec.label}
                   </div>
