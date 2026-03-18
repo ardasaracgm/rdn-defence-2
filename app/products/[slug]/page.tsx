@@ -5,6 +5,7 @@ import ProductDocumentCard from "@/components/ProductDocumentCard";
 import ProductVideoPlayer from "@/components/ProductVideoPlayer";
 import ProductGallery from "@/components/ProductGallery";
 import ProductHeroMedia from "@/components/ProductHeroMedia";
+import StickyLeadBar from "@/components/StickyLeadBar";
 
 type Props = {
   params: Promise<{
@@ -399,3 +400,4 @@ export default async function ProductDetailPage({ params }: Props) {
     </main>
   );
 }
+<StickyLeadBar />
