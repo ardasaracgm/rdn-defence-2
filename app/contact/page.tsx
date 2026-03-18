@@ -90,103 +90,122 @@ export default function ContactPage() {
             <form
   action="https://formspree.io/f/mwvralbn"
   method="POST"
-  className="space-y-4"
+  className="mt-10 grid gap-5"
 >
-              <div className="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-800">
-                    Full Name
-                  </label>
-                  <input
-                    className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
-                    placeholder="Your full name"
-                  />
-                </div>
+  <div className="grid gap-5 md:grid-cols-2">
+    <div>
+      <label className="mb-2 block text-sm font-semibold text-slate-800">
+        Full Name
+      </label>
+      <input
+        name="name"
+        className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+        placeholder="Your full name"
+      />
+    </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-800">
-                    Company
-                  </label>
-                  <input
-                    className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
-                    placeholder="Company or institution"
-                  />
-                </div>
-              </div>
+    <div>
+      <label className="mb-2 block text-sm font-semibold text-slate-800">
+        Company
+      </label>
+      <input
+        name="company"
+        className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+        placeholder="Company or institution"
+      />
+    </div>
+  </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-800">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
-                    placeholder="name@company.com"
-                  />
-                </div>
+  <div className="grid gap-5 md:grid-cols-2">
+    <div>
+      <label className="mb-2 block text-sm font-semibold text-slate-800">
+        Email
+      </label>
+      <input
+        name="email"
+        type="email"
+        className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+        placeholder="name@company.com"
+      />
+    </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-800">
-                    Phone
-                  </label>
-                  <input
-                    className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
-                    placeholder="+90 ..."
-                  />
-                </div>
-              </div>
+    <div>
+      <label className="mb-2 block text-sm font-semibold text-slate-800">
+        Phone
+      </label>
+      <input
+        name="phone"
+        className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+        placeholder="+90 ..."
+      />
+    </div>
+  </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-800">
-                    Topic
-                  </label>
-                  <select className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500">
-                    <option>Select a topic</option>
-                    {contactTopics.map((topic) => (
-                      <option key={topic}>{topic}</option>
-                    ))}
-                  </select>
-                </div>
+  <div className="grid gap-5 md:grid-cols-2">
+    <div>
+      <label className="mb-2 block text-sm font-semibold text-slate-800">
+        Topic
+      </label>
+      <select
+        name="topic"
+        className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+        defaultValue=""
+      >
+        <option value="">Select a topic</option>
+        {contactTopics.map((topic) => (
+          <option key={topic} value={topic}>
+            {topic}
+          </option>
+        ))}
+      </select>
+    </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-slate-800">
-                    Focus Area
-                  </label>
-                  <select className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500">
-                    <option>Select a focus area</option>
-                    {focusAreas.map((area) => (
-                      <option key={area}>{area}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+    <div>
+      <label className="mb-2 block text-sm font-semibold text-slate-800">
+        Focus Area
+      </label>
+      <select
+        name="focusArea"
+        className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+        defaultValue=""
+      >
+        <option value="">Select a focus area</option>
+        {focusAreas.map((area) => (
+          <option key={area} value={area}>
+            {area}
+          </option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-              <div>
-                <label className="mb-2 block text-sm font-semibold text-slate-800">
-                  Message
-                </label>
-                <textarea
-                  className="min-h-[160px] w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
-                  placeholder="Share your requirement, project background, or product interest..."
-                />
-              </div>
+  <div>
+    <label className="mb-2 block text-sm font-semibold text-slate-800">
+      Message
+    </label>
+    <textarea
+      name="message"
+      className="min-h-[160px] w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+      placeholder="Share your requirement, project background, or product interest..."
+    />
+  </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
-                <p className="max-w-xl text-sm leading-6 text-slate-500">
-                  By submitting this form, you provide your contact details for
-                  project communication and consultation purposes.
-                </p>
+  <input type="hidden" name="source" value="contact-page" />
 
-                <button
-                  type="submit"
-                  className="rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:opacity-90"
-                >
-                  Send Inquiry
-                </button>
-              </div>
-            </form>
+  <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6">
+    <p className="max-w-xl text-sm leading-6 text-slate-500">
+      By submitting this form, you provide your contact details for
+      project communication and consultation purposes.
+    </p>
+
+    <button
+      type="submit"
+      className="rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:opacity-90"
+    >
+      Send Inquiry
+    </button>
+  </div>
+</form>
           </div>
 
           <div className="space-y-6">
