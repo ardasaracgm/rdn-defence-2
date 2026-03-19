@@ -183,6 +183,24 @@ missionFit: [
       "Barracuda can be positioned for defense, infrastructure, border, coastal, or industrial missions through platform and payload customization strategy.",
   },
 ],
+
+  programReadiness: [
+  {
+    title: "Suitable for Capability Development Programs",
+    description:
+      "Barracuda can be positioned within ISR, airborne support, and mission-adaptive platform programs where flexibility and long-term capability growth matter.",
+  },
+  {
+    title: "Prepared for Multi-Role Operational Planning",
+    description:
+      "Its VTOL architecture and payload flexibility support phased program use across surveillance, mapping, overwatch, and airborne EW mission sets.",
+  },
+  {
+    title: "Supportable in Institutional Deployment Contexts",
+    description:
+      "The platform is well suited for defense, government, and industrial users that evaluate systems not only by performance, but also by operational fit and lifecycle relevance.",
+  },
+],
   
   media: {
     hero: "/products/barracuda/images/hero.webp",
