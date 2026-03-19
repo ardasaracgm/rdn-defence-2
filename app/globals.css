@@ -188,29 +188,33 @@ body {
   mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
 }
 
-.evagate-line {
+.evagate-line-base {
   fill: none;
-  stroke: url(#evagate-line);
-  stroke-width: 4;
+  stroke: rgba(56, 189, 248, 0.28);
+  stroke-width: 3;
   stroke-linecap: round;
-  filter: url(#evagate-glow);
-  stroke-dasharray: 10 14;
-  animation: evagateFlow 3.2s linear infinite;
 }
 
 .evagate-core-ring {
   fill: none;
-  stroke: rgba(125, 211, 252, 0.4);
+  stroke: rgba(125, 211, 252, 0.5);
   stroke-width: 2;
-  filter: url(#evagate-glow);
-  animation: evagatePulse 3.4s ease-in-out infinite;
+  animation: evagatePulse 2.8s ease-in-out infinite;
   transform-origin: center;
+}
+
+.evagate-rotating-ring {
+  fill: none;
+  stroke: rgba(56, 189, 248, 0.18);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 18;
+  transform-origin: center;
+  animation: evagateRotate 20s linear infinite;
 }
 
 .evagate-node-dot {
   fill: rgb(125, 211, 252);
-  filter: url(#evagate-glow);
-  animation: evagateNodePulse 2.2s ease-in-out infinite;
+  animation: evagateNodePulse 2s ease-in-out infinite;
 }
 
 .delay-150 { animation-delay: 150ms; }
@@ -219,15 +223,6 @@ body {
 .delay-700 { animation-delay: 700ms; }
 .delay-1000 { animation-delay: 1000ms; }
 
-@keyframes evagateFlow {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: -140;
-  }
-}
-
 @keyframes evagatePulse {
   0%, 100% {
     opacity: 0.45;
@@ -235,7 +230,7 @@ body {
   }
   50% {
     opacity: 1;
-    transform: scale(1.035);
+    transform: scale(1.04);
   }
 }
 
@@ -246,6 +241,15 @@ body {
   }
   50% {
     opacity: 1;
-    transform: scale(1.25);
+    transform: scale(1.35);
+  }
+}
+
+@keyframes evagateRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
