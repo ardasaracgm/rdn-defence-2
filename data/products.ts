@@ -52,6 +52,11 @@ export type ProductValuePoint = {
   description: string;
 };
 
+export type ProductMissionFit = {
+  title: string;
+  description: string;
+};
+
 export type ProductOperationalAdvantage = {
   title: string;
   description: string;
@@ -75,6 +80,7 @@ export type Product = {
   specifications?: ProductSpec[];
   whyThisProduct?: ProductValuePoint[];
   operationalAdvantages?: ProductOperationalAdvantage[];
+  missionFit?: ProductMissionFit[];
 
 
   media: ProductMedia;
