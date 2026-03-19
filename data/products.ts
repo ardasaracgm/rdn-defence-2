@@ -11,6 +11,11 @@ export type ProductFeature = {
   description: string;
 };
 
+export type ProductDeploymentModel = {
+  title: string;
+  description: string;
+};
+
 export type ProductSpec = {
   label: string;
   value: string;
@@ -81,6 +86,7 @@ export type Product = {
   whyThisProduct?: ProductValuePoint[];
   operationalAdvantages?: ProductOperationalAdvantage[];
   missionFit?: ProductMissionFit[];
+  deploymentModels?: ProductDeploymentModel[];
 
 
   media: ProductMedia;
