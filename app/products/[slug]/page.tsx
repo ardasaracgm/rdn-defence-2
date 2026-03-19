@@ -175,7 +175,8 @@ export default async function ProductDetailPage({ params }: Props) {
       ) : null}
 
       {product.whyThisProduct?.length ? (
-        <section className="section-space border-t border-slate-200 bg-slate-50/60">
+      
+          <section className="section-space bg-slate-950 text-white">
           <div className="container-main">
             <div className="max-w-3xl">
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
