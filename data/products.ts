@@ -14,7 +14,10 @@ export type ProductIntegrationItem = {
   title: string;
   description: string;
 };
-
+export type ProductDecisionSupportItem = {
+  title: string;
+  description: string;
+};
 export type ProductSupportItem = {
   title: string;
   description: string;
@@ -98,6 +101,7 @@ export type Product = {
   deploymentModels?: ProductDeploymentModel[];
   integrationCustomization?: ProductIntegrationItem[];
   programReadiness?: ProductSupportItem[];
+  decisionSupport?: ProductDecisionSupportItem[];
 
 
   media: ProductMedia;
