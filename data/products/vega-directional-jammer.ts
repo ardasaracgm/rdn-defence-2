@@ -7,16 +7,16 @@ export const vegaDirectionalJammer: Product = {
   productType: "Directional Electronic Warfare System",
 
   tagline:
-    "Long-range directional suppression system for UAV, GNSS, and RF-based threats.",
+    "Long-range directional suppression for counter-UAV and high-value site protection.",
 
   shortDescription:
-    "A high-power directional electronic warfare system designed for long-range counter-UAV and RF suppression missions.",
+    "A high-power directional electronic warfare system built for long-range RF denial, perimeter security, and strategic counter-UAV operations.",
 
   description:
-    "VEGA is a multi-band directional jammer system developed for advanced electronic warfare operations. With high RF output, steerable directional antennas, and modular band architecture, the system is positioned to suppress UAV control links, GNSS signals, telemetry, video transmission, and other hostile RF activity across extended ranges.",
+    "VEGA is a high-power multi-band directional jammer developed for long-range counter-UAV and RF suppression missions. Designed for controlled denial in security-sensitive environments, it focuses jamming effect toward the threat axis instead of dispersing power across all directions.",
 
   overview:
-    "Designed for mission environments where range, directional effect, and RF flexibility are critical, VEGA provides focused suppression against airborne and communication-based threats. Its modular architecture enables adaptation to different frequency requirements, while the directional antenna structure supports controlled long-range engagement in operationally demanding environments. It is suitable for perimeter protection, fixed-site deployment, critical infrastructure defense, and tactical electronic warfare scenarios where controlled high-power directional output is required.",
+    "VEGA is best suited for missions where controlled directional effect, long engagement distance, and infrastructure protection matter more than broad omnidirectional coverage. Its motorized directional architecture and configurable band structure support perimeter defense, airport protection, border security, coastal monitoring, and critical infrastructure security.",
 
   featured: true,
 
@@ -24,54 +24,42 @@ export const vegaDirectionalJammer: Product = {
     {
       title: "Directional RF Suppression",
       description:
-        "Uses a high-gain directional antenna structure to focus jamming power toward targeted threats with greater precision and range.",
+        "Focuses jamming energy toward the threat direction for stronger and more controlled denial effect.",
     },
     {
-      title: "Long-Range Operational Effect",
+      title: "Long-Range Operational Reach",
       description:
-        "Designed for scenarios where extended suppression distance and controlled directional engagement are mission priorities.",
+        "Designed for scenarios where the threat must be engaged before it enters the protected perimeter.",
     },
     {
-      title: "Multi-Band Architecture",
+      title: "Multi-Band Coverage",
       description:
-        "Supports a broad operational frequency structure for disrupting UAV links, GNSS, telemetry, video transmission, and other RF-based threats.",
+        "Supports suppression of UAV control links, GNSS, telemetry, video transmission, and other RF-based threats.",
+    },
+    {
+      title: "Motorized Orientation",
+      description:
+        "Enables rapid directional alignment for more effective response in dynamic operational environments.",
     },
     {
       title: "High Power Output",
       description:
-        "Built for demanding suppression missions requiring strong and stable RF power across multiple active bands.",
+        "Built for demanding security missions requiring stable, high-energy RF denial capability.",
     },
     {
-      title: "Motorized Steering Capability",
+      title: "Mission-Specific Band Logic",
       description:
-        "Directional alignment can be adjusted rapidly for more effective target orientation and faster operational response.",
-    },
-    {
-      title: "Modular Band Configuration",
-      description:
-        "Mission-specific band configuration enables adaptation to regional threat profiles and customer-specific deployment needs.",
-    },
-    {
-      title: "Field-Ready Reliability",
-      description:
-        "Engineered for harsh operational environments where ruggedization, continuity, and mission adaptability are essential.",
-    },
-    {
-      title: "Controlled Area Protection",
-      description:
-        "Supports focused denial effects in security-sensitive areas without relying only on broad omnidirectional suppression logic.",
+        "Band structure can be aligned with regional frequency profiles and deployment-specific threat environments.",
     },
   ],
 
   useCases: [
-    "Long-range counter-UAV operations",
-    "Strategic perimeter protection",
-    "Critical infrastructure defense",
-    "Border security support",
+    "Critical infrastructure protection",
     "Airport security operations",
+    "Border security support",
     "Coastal security missions",
-    "Military base and tactical site protection",
-    "Mission-specific RF denial operations",
+    "Strategic perimeter defense",
+    "Military base protection",
   ],
 
   specifications: [
@@ -85,141 +73,106 @@ export const vegaDirectionalJammer: Product = {
       label: "Antenna Type",
       value: "High-gain directional antenna with motorized rotation",
     },
-    { label: "Steering", value: "Motorized directional orientation" },
     { label: "Power Supply", value: "220 VAC" },
     {
       label: "Effective Range",
-      value: "Up to 20 km depending on environment, band, and target conditions",
+      value: "Up to 20 km depending on environment and band",
     },
   ],
 
   whyThisProduct: [
     {
-      title: "Focused Effect Instead of Broad Waste",
+      title: "Built for Controlled Protection",
       description:
-        "VEGA uses directional suppression logic to concentrate RF effect on the threat axis, making it more suitable for controlled, high-value protection environments.",
+        "VEGA is designed for users who need targeted RF denial in high-value areas, not broad and inefficient omnidirectional effect.",
     },
     {
-      title: "Built for Long-Range Security Missions",
+      title: "Stronger Perimeter Logic",
       description:
-        "Its motorized directional structure and high-power architecture position VEGA for perimeter defense, strategic site protection, and long-range counter-UAV roles.",
+        "Its directional architecture supports earlier engagement against incoming threats before they reach critical assets.",
     },
     {
-      title: "Adaptable to Mission and Region",
+      title: "Better Fit for Strategic Sites",
       description:
-        "The modular band structure allows the system to be aligned with regional frequencies, threat profiles, and deployment-specific operational needs.",
+        "It is especially suitable for airports, energy facilities, communication hubs, borders, and coastal protection roles.",
     },
   ],
 
   operationalAdvantages: [
-  {
-    title: "Better Control in Sensitive Areas",
-    description:
-      "Directional suppression helps reduce unnecessary wide-area RF impact and supports more controlled protection of strategic facilities and high-value zones.",
-  },
-  {
-    title: "Long-Range Threat Denial",
-    description:
-      "VEGA is positioned for mission profiles where the threat must be engaged before it reaches the protected perimeter.",
-  },
-  {
-    title: "Deployment Flexibility",
-    description:
-      "Its architecture supports use in fixed-site protection, border security, airport security, and coastal defense scenarios.",
-  },
-],
+    {
+      title: "More Efficient Threat Engagement",
+      description:
+        "Power is concentrated where it matters most, improving denial effect in the threat corridor.",
+    },
+    {
+      title: "Reduced Wide-Area Interference Logic",
+      description:
+        "Directional engagement supports more controlled protection in sensitive operational environments.",
+    },
+    {
+      title: "Mission-Ready for Long Security Lines",
+      description:
+        "Well positioned for perimeter, border, airport, and coastal security concepts requiring standoff distance.",
+    },
+  ],
+
   missionFit: [
-  {
-    title: "Critical Infrastructure Operators",
-    description:
-      "Ideal for airports, energy facilities, communication hubs, and other strategic assets that require focused long-range RF denial capability.",
-  },
-  {
-    title: "Border and Coastal Security Units",
-    description:
-      "Well suited for perimeter-oriented protection where directional engagement and extended standoff distance are mission priorities.",
-  },
-  {
-    title: "Military and Government Security Programs",
-    description:
-      "Appropriate for defense and public security environments where controlled, high-power counter-UAV protection must be integrated into a larger security posture.",
-  },
-],
+    {
+      title: "Critical Infrastructure Operators",
+      description:
+        "Ideal for organizations protecting strategic facilities with exposed perimeter or approach corridors.",
+    },
+    {
+      title: "Border and Coastal Security Units",
+      description:
+        "Suitable for teams that need long-range directional engagement against aerial and RF-based threats.",
+    },
+    {
+      title: "Defense and Government Programs",
+      description:
+        "A strong fit for users requiring controlled, high-power counter-UAV protection within layered security planning.",
+    },
+  ],
 
   deploymentModels: [
-  {
-    title: "Fixed-Site Protection",
-    description:
-      "Suitable for permanent installation at strategic facilities such as airports, energy sites, and communication hubs requiring focused directional protection.",
-  },
-  {
-    title: "Perimeter and Border Deployment",
-    description:
-      "Can be positioned to secure long perimeter lines, border sectors, and exposed approach corridors where standoff engagement is essential.",
-  },
-  {
-    title: "Rapid Security Integration",
-    description:
-      "Supports integration into broader security and electronic warfare concepts for government, military, and critical infrastructure users.",
-  },
-],
+    {
+      title: "Fixed-Site Protection",
+      description:
+        "Appropriate for permanent deployment at strategic assets and protected infrastructure.",
+    },
+    {
+      title: "Perimeter Defense",
+      description:
+        "Can be positioned to secure exposed sectors and long perimeter lines with directional standoff effect.",
+    },
+    {
+      title: "Layered Security Role",
+      description:
+        "Can operate as one focused RF denial layer inside a broader protection architecture.",
+    },
+  ],
 
-integrationCustomization: [
-  {
-    title: "Band Configuration by Mission Need",
-    description:
-      "VEGA can be aligned with mission-specific and region-specific RF requirements through configurable band structure and operational tuning.",
-  },
-  {
-    title: "Security Architecture Integration",
-    description:
-      "The system can be positioned as part of a broader facility, perimeter, or layered security concept depending on operational doctrine.",
-  },
-  {
-    title: "Deployment-Oriented Customization",
-    description:
-      "Configuration choices can be adapted according to site conditions, protection range expectations, infrastructure profile, and user requirements.",
-  },
-],
-
-  programReadiness: [
-  {
-    title: "Ready for Structured Security Programs",
-    description:
-      "VEGA can be positioned within long-term infrastructure protection, perimeter security, and counter-UAV modernization programs requiring controlled deployment planning.",
-  },
-  {
-    title: "Aligned with Multi-Layer Protection Concepts",
-    description:
-      "The system fits broader security architectures where directional RF denial is one layer within an integrated response and protection model.",
-  },
-  {
-    title: "Supportable at Project Level",
-    description:
-      "Its configurable architecture and deployment-oriented structure support evaluation, alignment, and phased adoption in program-driven environments.",
-  },
-],
   decisionSupport: [
-  {
-    title: "Evaluate the Protected Area",
-    description:
-      "Start by defining the facility type, threat direction, perimeter length, and the required engagement distance for directional protection.",
-  },
-  {
-    title: "Match Bands to Threat Profile",
-    description:
-      "Confirm which UAV, GNSS, telemetry, and communication frequencies are relevant to the operating region and mission environment.",
-  },
-  {
-    title: "Plan the Deployment Concept",
-    description:
-      "Determine whether the system is needed for fixed-site defense, perimeter control, or layered security integration before final configuration is selected.",
-  },
-],
+    {
+      title: "Define the Threat Axis",
+      description:
+        "Start by identifying the likely approach direction, perimeter exposure, and required engagement distance.",
+    },
+    {
+      title: "Match Frequency Needs",
+      description:
+        "Confirm which UAV, telemetry, GNSS, and communication bands are relevant to the mission region.",
+    },
+    {
+      title: "Choose the Protection Model",
+      description:
+        "Determine whether the mission requires fixed-site defense, perimeter security, or layered integration.",
+    },
+  ],
+
   media: {
     hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
-
     gallery: [
       {
         src: "/products/vega/images/vega-hero.webp",
@@ -242,7 +195,6 @@ integrationCustomization: [
         alt: "VEGA coastal security deployment scenario",
       },
     ],
-
     videos: [
       {
         title: "VEGA Operational Overview",
@@ -256,7 +208,6 @@ integrationCustomization: [
         poster: "/products/vega/images/vega-border-security.webp",
       },
     ],
-
     documents: [
       {
         title: "Technical Specifications Document",
@@ -280,6 +231,6 @@ integrationCustomization: [
     title:
       "VEGA Multi-Band Directional Jammer | Long-Range Counter UAV System",
     description:
-      "VEGA is a high-power multi-band directional jammer designed for long-range counter-UAV, GNSS, telemetry, and RF suppression missions.",
+      "VEGA is a high-power directional jammer for long-range counter-UAV operations, perimeter defense, airport security, border security, and critical infrastructure protection.",
   },
 };
