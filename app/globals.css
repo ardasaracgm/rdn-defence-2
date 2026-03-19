@@ -179,3 +179,74 @@ body {
   line-height: 1.65;
   color: #cbd5e1;
 }
+
+
+.evgate-grid {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
+}
+
+.evgate-line {
+  fill: none;
+  stroke: url(#evagate-line);
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: url(#evagate-glow);
+  stroke-dasharray: 12 16;
+  animation: evagateFlow 6s linear infinite;
+}
+
+.evgate-core-ring {
+  fill: none;
+  stroke: rgba(125, 211, 252, 0.4);
+  stroke-width: 2;
+  filter: url(#evagate-glow);
+  animation: evagatePulse 3.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.evgate-node-dot {
+  fill: rgb(125, 211, 252);
+  filter: url(#evagate-glow);
+  animation: evagateNodePulse 2.2s ease-in-out infinite;
+}
+
+.delay-150 { animation-delay: 150ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+@keyframes evagateFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -140;
+  }
+}
+
+@keyframes evagatePulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+}
+
+@keyframes evagateNodePulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
