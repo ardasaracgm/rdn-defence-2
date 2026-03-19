@@ -52,6 +52,11 @@ export type ProductValuePoint = {
   description: string;
 };
 
+export type ProductOperationalAdvantage = {
+  title: string;
+  description: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
