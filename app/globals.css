@@ -180,8 +180,7 @@ body {
   color: #cbd5e1;
 }
 
-
-.evgate-grid {
+.evagate-grid {
   background-image:
     linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
@@ -189,17 +188,17 @@ body {
   mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
 }
 
-.evgate-line {
+.evagate-line {
   fill: none;
   stroke: url(#evagate-line);
-  stroke-width: 3;
+  stroke-width: 4;
   stroke-linecap: round;
   filter: url(#evagate-glow);
-  stroke-dasharray: 12 16;
-  animation: evagateFlow 6s linear infinite;
+  stroke-dasharray: 10 14;
+  animation: evagateFlow 3.2s linear infinite;
 }
 
-.evgate-core-ring {
+.evagate-core-ring {
   fill: none;
   stroke: rgba(125, 211, 252, 0.4);
   stroke-width: 2;
@@ -208,7 +207,7 @@ body {
   transform-origin: center;
 }
 
-.evgate-node-dot {
+.evagate-node-dot {
   fill: rgb(125, 211, 252);
   filter: url(#evagate-glow);
   animation: evagateNodePulse 2.2s ease-in-out infinite;
