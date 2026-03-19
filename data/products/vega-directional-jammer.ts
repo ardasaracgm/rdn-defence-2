@@ -164,6 +164,24 @@ export const vegaDirectionalJammer: Product = {
   },
 ],
 
+integrationCustomization: [
+  {
+    title: "Band Configuration by Mission Need",
+    description:
+      "VEGA can be aligned with mission-specific and region-specific RF requirements through configurable band structure and operational tuning.",
+  },
+  {
+    title: "Security Architecture Integration",
+    description:
+      "The system can be positioned as part of a broader facility, perimeter, or layered security concept depending on operational doctrine.",
+  },
+  {
+    title: "Deployment-Oriented Customization",
+    description:
+      "Configuration choices can be adapted according to site conditions, protection range expectations, infrastructure profile, and user requirements.",
+  },
+],
+  
   media: {
     hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
