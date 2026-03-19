@@ -365,6 +365,38 @@ export default async function ProductDetailPage({ params }: Props) {
     </div>
   </section>
 ) : null}
+
+      {product.decisionSupport?.length ? (
+  <section className="section-space border-t border-slate-200 bg-slate-50/60">
+    <div className="container-main">
+      <div className="max-w-3xl">
+        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+          Decision Support
+        </div>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+          A practical next-step framework for evaluation.
+        </h2>
+        <p className="mt-5 text-lg leading-8 text-slate-600">
+          If this product is under consideration, these are the key questions
+          and planning steps that typically shape the right deployment decision.
+        </p>
+      </div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {product.decisionSupport.map((item) => (
+          <div key={item.title} className="card-premium p-7">
+            <h3 className="text-xl font-semibold text-slate-950">
+              {item.title}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+) : null}
       
       {product.integrationCustomization?.length ? (
   <section className="section-space border-t border-slate-200 bg-slate-50/60">
