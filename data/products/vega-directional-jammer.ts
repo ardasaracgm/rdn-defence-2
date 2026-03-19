@@ -128,6 +128,23 @@ export const vegaDirectionalJammer: Product = {
       "Its architecture supports use in fixed-site protection, border security, airport security, and coastal defense scenarios.",
   },
 ],
+  missionFit: [
+  {
+    title: "Critical Infrastructure Operators",
+    description:
+      "Ideal for airports, energy facilities, communication hubs, and other strategic assets that require focused long-range RF denial capability.",
+  },
+  {
+    title: "Border and Coastal Security Units",
+    description:
+      "Well suited for perimeter-oriented protection where directional engagement and extended standoff distance are mission priorities.",
+  },
+  {
+    title: "Military and Government Security Programs",
+    description:
+      "Appropriate for defense and public security environments where controlled, high-power counter-UAV protection must be integrated into a larger security posture.",
+  },
+],
 
   media: {
     hero: "/products/vega/images/vega-hero.webp",
