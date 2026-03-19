@@ -242,6 +242,11 @@ export const aiFaceRecognition: Product = {
 
     documents: [
       {
+        title: "specifications",
+        file: "/products/ai-face-recognition/docs/specifications.pdf",
+        kind: "pdf",
+      },
+      {
         title: "Capability Overview",
         file: "/products/ai-face-recognition/docs/capability-overview.pdf",
         kind: "pdf",
