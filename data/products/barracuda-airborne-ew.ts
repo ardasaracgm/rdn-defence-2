@@ -129,6 +129,25 @@ export const barracudaAirborneEw: Product = {
       "The same platform can be positioned for ISR, EW support, mapping, or overwatch roles depending on payload and mission need.",
   },
 ],
+
+missionFit: [
+  {
+    title: "Forces Operating in Complex Terrain",
+    description:
+      "Ideal for missions in mountainous, coastal, remote, or infrastructure-limited environments where runway-independent airborne support is required.",
+  },
+  {
+    title: "Teams Requiring ISR and Airborne Support Together",
+    description:
+      "Well suited for organizations that need surveillance, overwatch, mapping, and airborne mission flexibility from a single platform.",
+  },
+  {
+    title: "Programs Seeking Modular Tactical Air Capability",
+    description:
+      "Appropriate for defense, security, and industrial missions where payload flexibility and rapid role adaptation are operational priorities.",
+  },
+],
+  
   media: {
     hero: "/products/barracuda/images/hero.webp",
     heroAlt: "Barracuda VTOL UAS airborne mission hero view",
