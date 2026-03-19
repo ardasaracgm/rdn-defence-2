@@ -206,6 +206,40 @@ export default async function ProductDetailPage({ params }: Props) {
         </section>
       ) : null}
 
+{product.operationalAdvantages?.length ? (
+  <section className="section-space border-t border-slate-200 bg-white">
+    <div className="container-main">
+      <div className="max-w-3xl">
+        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+          Operational Advantages
+        </div>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+          Structured for real mission environments.
+        </h2>
+        <p className="mt-5 text-lg leading-8 text-slate-600">
+          Beyond specifications, this system provides concrete field advantages
+          in deployment flexibility, mission effectiveness, and operational reach.
+        </p>
+      </div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {product.operationalAdvantages.map((item) => (
+          <div key={item.title} className="card-premium p-7">
+            <h3 className="text-xl font-semibold text-slate-950">
+              {item.title}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+) : null}
+
+
+      
       <section className="section-space">
         <div className="container-main grid gap-10 lg:grid-cols-[1fr_.9fr]">
           <div>
