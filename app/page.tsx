@@ -1,134 +1,131 @@
 import Link from "next/link";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
-import SectionTitle from "@/components/SectionTitle";
 
-const featuredProducts = products.filter((item) => item.featured).slice(0, 4);
+const featuredProducts = products.filter((product) => product.featured).slice(0, 3);
 
-const categories = [
+const solutionAreas = [
   {
-    title: "Electronic Warfare",
-    text: "Ground-based and directional RF suppression systems for counter-UAV, RF denial, and tactical protection.",
+    title: "Counter-UAV Protection",
+    description:
+      "Solutions for drone threat suppression, directional denial, airborne overwatch, and tactical RF response.",
   },
   {
-    title: "UAV Systems",
-    text: "Mission-ready unmanned platforms for ISR, tactical deployment, payload delivery, and autonomous operations.",
+    title: "Critical Infrastructure Security",
+    description:
+      "Protection concepts for airports, energy facilities, communication hubs, and strategic industrial assets.",
   },
   {
-    title: "AI Security",
-    text: "Biometric identification, advanced analytics, and real-time situational awareness tools.",
-  },
-  {
-    title: "Secure Communication",
-    text: "Integrated C4I, secure networking, voice, radio, and video communication infrastructure.",
+    title: "Border & Coastal Operations",
+    description:
+      "Mission-aligned systems for perimeter control, border monitoring, coastal awareness, and remote deployment.",
   },
 ];
 
-const solutions = [
-  "Critical Infrastructure Protection",
-  "Border & Facility Security",
-  "Counter-UAV Operations",
-  "Mobile Tactical Command",
-  "Secure Field Communication",
-  "AI-Enhanced Surveillance",
+const trustPoints = [
+  "Mission-oriented product positioning",
+  "Defense and security deployment focus",
+  "Flexible product and solution architecture",
+  "Structured consultation and project evaluation",
 ];
 
 export default function HomePage() {
   return (
     <main>
-      <section className="hero-glow grid-lines relative overflow-hidden border-b border-slate-200">
-        <div className="container-main section-space grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
-          <div>
-            <div className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
-              Advanced Defense & Security Technologies
-            </div>
-
-            <h1 className="mt-7 max-w-4xl text-5xl font-bold leading-tight tracking-tight text-slate-950 md:text-6xl">
-              Integrated solutions for electronic warfare, UAV systems, AI
-              security, and secure communication.
-            </h1>
-
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
-              We deliver high-technology defense and security solutions
-              designed for operational resilience, situational awareness, and
-              mission-critical performance across land, air, and mobile
-              environments.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/products"
-                className="rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:opacity-90"
-              >
-                Explore Products
-              </Link>
-
-              <Link
-                href="/contact"
-                className="rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
-              >
-                Request Consultation
-              </Link>
-            </div>
-
-            <div className="mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
-              <div className="card-premium p-5">
-                <div className="text-3xl font-bold text-slate-950">6+</div>
-                <p className="mt-2 text-sm text-slate-600">
-                  Core technology categories
-                </p>
+      <section className="hero-glow border-b border-slate-200">
+        <div className="container-main section-space">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+            <div>
+              <div className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Advanced Defense & Security Technologies
               </div>
 
-              <div className="card-premium p-5">
-                <div className="text-3xl font-bold text-slate-950">
-                  Land · Air · Mobile
-                </div>
-                <p className="mt-2 text-sm text-slate-600">
-                  Operational deployment domains
-                </p>
+              <h1 className="mt-7 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
+                Electronic warfare, airborne systems, and mission-ready security solutions.
+              </h1>
+
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
+                We position advanced defense technologies for counter-UAV protection,
+                airborne ISR and EW missions, secure communication infrastructure, and
+                project-based security deployments.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/products"
+                  className="rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:opacity-90"
+                >
+                  Explore Products
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+                >
+                  Request Consultation
+                </Link>
               </div>
 
-              <div className="card-premium p-5">
-                <div className="text-3xl font-bold text-slate-950">
-                  AI + RF + C4I
-                </div>
-                <p className="mt-2 text-sm text-slate-600">
-                  Integrated mission capability
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="card-premium overflow-hidden">
-            <div className="aspect-[4/5] bg-[linear-gradient(135deg,#eff6ff,#ffffff_45%,#e2e8f0)] p-8">
-              <div className="flex h-full flex-col justify-between rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
-                <div>
-                  <div className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
-                    Operational Focus
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                <div className="card-premium p-5">
+                  <div className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-700">
+                    Focus
                   </div>
-                  <h2 className="mt-4 text-2xl font-bold text-slate-950">
-                    Mission-ready systems for modern defense and security
-                    environments.
-                  </h2>
+                  <div className="mt-2 text-base font-semibold text-slate-950">
+                    Defense & Security
+                  </div>
                 </div>
 
-                <div className="grid gap-4">
-                  {[
-                    "Electronic Warfare",
-                    "Counter-UAV",
-                    "Airborne EW",
-                    "Secure Communication",
-                    "AI Recognition",
-                    "Command & Control",
-                  ].map((item) => (
+                <div className="card-premium p-5">
+                  <div className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-700">
+                    Positioning
+                  </div>
+                  <div className="mt-2 text-base font-semibold text-slate-950">
+                    Mission-Oriented
+                  </div>
+                </div>
+
+                <div className="card-premium p-5">
+                  <div className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-700">
+                    Model
+                  </div>
+                  <div className="mt-2 text-base font-semibold text-slate-950">
+                    Product + Solution
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
+              <div className="p-8 md:p-10">
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">
+                  Strategic Capability Areas
+                </div>
+
+                <h2 className="mt-4 text-2xl font-bold leading-tight md:text-3xl">
+                  Built for organizations operating in high-security and mission-critical environments.
+                </h2>
+
+                <div className="mt-8 space-y-4">
+                  {trustPoints.map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+                      className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm font-medium text-slate-200"
                     >
                       {item}
                     </div>
                   ))}
                 </div>
+
+                <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <div className="text-xs font-semibold uppercase tracking-[0.14em] text-sky-300">
+                    Consultation Flow
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">
+                    Start with product fit, mission scope, and deployment model. We structure
+                    discussions around operational context rather than generic catalog selection.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -137,20 +134,28 @@ export default function HomePage() {
 
       <section className="section-space">
         <div className="container-main">
-          <SectionTitle
-            eyebrow="Core Capability Areas"
-            title="A structured technology portfolio built for defense, security, and critical operations."
-            description="Our portfolio brings together advanced RF suppression, UAV systems, AI-based security, and secure communication infrastructure under one integrated technology framework."
-          />
+          <div className="max-w-3xl">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+              Capability Overview
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              Product and solution structure built around operational use.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Our portfolio is positioned around real deployment logic including counter-UAV,
+              airborne support, infrastructure protection, perimeter security, and tactical
+              mission requirements.
+            </p>
+          </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {categories.map((item) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {solutionAreas.map((item) => (
               <div key={item.title} className="card-premium p-7">
                 <h3 className="text-xl font-semibold text-slate-950">
                   {item.title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">
-                  {item.text}
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -158,45 +163,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-y border-slate-200 bg-white">
+      <section className="section-space border-t border-slate-200 bg-slate-50/60">
         <div className="container-main">
-          <SectionTitle
-            eyebrow="Featured Products"
-            title="Selected systems from our defense and security portfolio."
-            description="Each product is designed to support mission continuity, field reliability, and technology integration across demanding operational environments."
-          />
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Featured Products
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Systems positioned for real deployment environments.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Explore selected products structured for perimeter defense, airborne support,
+                electronic warfare, and security-sensitive operational scenarios.
+              </p>
+            </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
-          </div>
-
-          <div className="mt-10">
             <Link
               href="/products"
-              className="inline-flex rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+              className="inline-flex rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
             >
               View All Products
             </Link>
           </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section-space">
-        <div className="container-main grid gap-10 lg:grid-cols-[1fr_.9fr]">
+      <section className="section-space border-t border-slate-200 bg-white">
+        <div className="container-main grid gap-10 lg:grid-cols-[1fr_.95fr]">
           <div>
-            <SectionTitle
-              eyebrow="Solutions"
-              title="Technology aligned to operational needs."
-              description="Beyond individual products, our systems support complete security and mission solutions for public security, defense, mobility, and critical infrastructure protection."
-            />
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+              Why Work With Us
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              A structured path from product interest to deployment planning.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              We do not position products as isolated catalog items. We help align capability,
+              mission fit, deployment concept, and operational requirements within a clear evaluation process.
+            </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {solutions.map((item) => (
+              {[
+                "Product fit evaluation",
+                "Mission and use-case alignment",
+                "Deployment model discussion",
+                "Project-level consultation",
+              ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-700 shadow-sm"
+                  className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-medium text-slate-700"
                 >
                   {item}
                 </div>
@@ -204,40 +226,66 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="card-premium p-8">
-            <div className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
-              Why This Platform
+          <div className="card-premium p-8 md:p-10">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+              Start a Discussion
             </div>
-
-            <h3 className="mt-4 text-2xl font-bold text-slate-950">
-              A unified approach to defense technology.
+            <h3 className="mt-3 text-2xl font-bold text-slate-950">
+              Tell us what you are evaluating.
             </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              Use the consultation form to share product interest, mission profile, or deployment context.
+            </p>
 
-            <div className="mt-8 space-y-6">
-              {[
-                {
-                  title: "Integrated Portfolio",
-                  text: "Electronic warfare, UAV systems, AI security, and communication systems are positioned as one coherent technology ecosystem.",
-                },
-                {
-                  title: "Operational Flexibility",
-                  text: "Solutions are adaptable to fixed, mobile, tactical, and maritime deployment scenarios.",
-                },
-                {
-                  title: "Scalable Product Architecture",
-                  text: "The site is built on a single product structure, making it easy to add and manage new systems without rebuilding pages.",
-                },
-              ].map((item) => (
-                <div key={item.title}>
-                  <h4 className="text-lg font-semibold text-slate-950">
-                    {item.title}
-                  </h4>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <form
+              action="https://formspree.io/f/mwvralbn"
+              method="POST"
+              className="mt-6 space-y-4"
+            >
+              <input
+                name="name"
+                type="text"
+                placeholder="Your Name"
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+              />
+
+              <input
+                name="email"
+                type="email"
+                placeholder="Email Address"
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+              />
+
+              <select
+                name="interest"
+                defaultValue=""
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+              >
+                <option value="">Select interest area</option>
+                <option value="VEGA Multi-Band Directional Jammer">
+                  VEGA Multi-Band Directional Jammer
+                </option>
+                <option value="Barracuda VTOL UAS">
+                  Barracuda VTOL UAS
+                </option>
+                <option value="General consultation">General consultation</option>
+              </select>
+
+              <textarea
+                name="message"
+                placeholder="Share your project scope, protection requirement, or mission need..."
+                className="min-h-[140px] w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-slate-500"
+              />
+
+              <input type="hidden" name="source" value="homepage" />
+
+              <button
+                type="submit"
+                className="w-full rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:opacity-90"
+              >
+                Request Consultation
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -248,34 +296,30 @@ export default function HomePage() {
             <div className="grid gap-8 p-10 md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">
-                  Contact & Consultation
+                  Next Step
                 </div>
-
                 <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
-                  Build the right technology stack for your mission
-                  requirements.
+                  Explore products, compare deployment logic, and start the right conversation.
                 </h2>
-
                 <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
-                  From counter-UAV and electronic warfare systems to AI-powered
-                  surveillance and secure communication infrastructure, we can
-                  help you shape the right solution architecture.
+                  Whether your focus is counter-UAV, airborne ISR and EW, or infrastructure protection,
+                  the next step is to align product fit with mission context.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/products"
                   className="rounded-2xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:opacity-90"
                 >
-                  Contact Us
+                  Browse Products
                 </Link>
 
                 <Link
-                  href="/solutions"
+                  href="/contact"
                   className="rounded-2xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  View Solutions
+                  Contact Us
                 </Link>
               </div>
             </div>
