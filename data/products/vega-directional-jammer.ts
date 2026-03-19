@@ -181,6 +181,24 @@ integrationCustomization: [
       "Configuration choices can be adapted according to site conditions, protection range expectations, infrastructure profile, and user requirements.",
   },
 ],
+
+  programReadiness: [
+  {
+    title: "Ready for Structured Security Programs",
+    description:
+      "VEGA can be positioned within long-term infrastructure protection, perimeter security, and counter-UAV modernization programs requiring controlled deployment planning.",
+  },
+  {
+    title: "Aligned with Multi-Layer Protection Concepts",
+    description:
+      "The system fits broader security architectures where directional RF denial is one layer within an integrated response and protection model.",
+  },
+  {
+    title: "Supportable at Project Level",
+    description:
+      "Its configurable architecture and deployment-oriented structure support evaluation, alignment, and phased adoption in program-driven environments.",
+  },
+],
   
   media: {
     hero: "/products/vega/images/vega-hero.webp",
