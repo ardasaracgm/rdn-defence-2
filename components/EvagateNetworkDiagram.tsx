@@ -30,56 +30,111 @@ export default function EvagateNetworkDiagram() {
               aria-hidden="true"
             >
               <defs>
-                <linearGradient id="evagate-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(56,189,248,0.12)" />
-                  <stop offset="50%" stopColor="rgba(125,211,252,0.95)" />
-                  <stop offset="100%" stopColor="rgba(56,189,248,0.12)" />
-                </linearGradient>
-
-                <filter id="evagate-glow">
-                  <feGaussianBlur stdDeviation="6" result="blur" />
+                <filter id="evagate-soft-glow">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
                   <feMerge>
                     <feMergeNode in="blur" />
                     <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
+
+                <radialGradient id="evagate-core-fill" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(14,165,233,0.38)" />
+                  <stop offset="60%" stopColor="rgba(14,165,233,0.12)" />
+                  <stop offset="100%" stopColor="rgba(2,6,23,0.08)" />
+                </radialGradient>
+
+                <linearGradient id="evagate-flow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(56,189,248,0)" />
+                  <stop offset="50%" stopColor="rgba(125,211,252,1)" />
+                  <stop offset="100%" stopColor="rgba(56,189,248,0)" />
+                </linearGradient>
               </defs>
 
-              <path
-                d="M800 450 C640 360, 420 250, 245 170"
-                className="evagate-line"
-              />
-              <path
-                d="M800 450 C560 430, 350 470, 180 650"
-                className="evagate-line"
-              />
-              <path
-                d="M800 450 C870 340, 1080 210, 1330 165"
-                className="evagate-line"
-              />
-              <path
-                d="M800 450 C990 420, 1180 400, 1395 455"
-                className="evagate-line"
-              />
-              <path
-                d="M800 450 C920 520, 1120 650, 1320 735"
-                className="evagate-line"
-              />
-              <path
-                d="M800 450 C760 575, 800 690, 800 785"
-                className="evagate-line"
-              />
+              <g filter="url(#evagate-soft-glow)">
+                <path
+                  id="path-sat"
+                  d="M800 450 C640 360, 420 250, 245 170"
+                  className="evagate-line-base"
+                />
+                <path
+                  id="path-mobile"
+                  d="M800 450 C560 430, 350 470, 180 650"
+                  className="evagate-line-base"
+                />
+                <path
+                  id="path-air"
+                  d="M800 450 C870 340, 1080 210, 1330 165"
+                  className="evagate-line-base"
+                />
+                <path
+                  id="path-marine"
+                  d="M800 450 C990 420, 1180 400, 1395 455"
+                  className="evagate-line-base"
+                />
+                <path
+                  id="path-portable"
+                  d="M800 450 C920 520, 1120 650, 1320 735"
+                  className="evagate-line-base"
+                />
+                <path
+                  id="path-hq"
+                  d="M800 450 C760 575, 800 690, 800 785"
+                  className="evagate-line-base"
+                />
 
-              <circle cx="800" cy="450" r="118" className="evagate-core-ring" />
-              <circle cx="800" cy="450" r="84" className="evagate-core-ring delay-150" />
-              <circle cx="800" cy="450" r="52" className="evagate-core-ring delay-300" />
+                <circle cx="800" cy="450" r="130" className="evagate-rotating-ring" />
+                <circle cx="800" cy="450" r="102" className="evagate-core-ring" />
+                <circle cx="800" cy="450" r="72" className="evagate-core-ring delay-300" />
+                <circle cx="800" cy="450" r="42" fill="url(#evagate-core-fill)" />
+              </g>
 
-              <circle cx="245" cy="170" r="8" className="evagate-node-dot" />
-              <circle cx="180" cy="650" r="8" className="evagate-node-dot delay-150" />
-              <circle cx="1330" cy="165" r="8" className="evagate-node-dot delay-300" />
-              <circle cx="1395" cy="455" r="8" className="evagate-node-dot delay-500" />
-              <circle cx="1320" cy="735" r="8" className="evagate-node-dot delay-700" />
-              <circle cx="800" cy="785" r="8" className="evagate-node-dot delay-1000" />
+              <g>
+                <circle cx="245" cy="170" r="8" className="evagate-node-dot" />
+                <circle cx="180" cy="650" r="8" className="evagate-node-dot delay-150" />
+                <circle cx="1330" cy="165" r="8" className="evagate-node-dot delay-300" />
+                <circle cx="1395" cy="455" r="8" className="evagate-node-dot delay-500" />
+                <circle cx="1320" cy="735" r="8" className="evagate-node-dot delay-700" />
+                <circle cx="800" cy="785" r="8" className="evagate-node-dot delay-1000" />
+              </g>
+
+              <g>
+                <circle r="10" fill="rgba(125,211,252,0.95)" filter="url(#evagate-soft-glow)">
+                  <animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#path-sat" />
+                  </animateMotion>
+                </circle>
+
+                <circle r="10" fill="rgba(125,211,252,0.95)" filter="url(#evagate-soft-glow)">
+                  <animateMotion dur="3.6s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#path-mobile" />
+                  </animateMotion>
+                </circle>
+
+                <circle r="10" fill="rgba(125,211,252,0.95)" filter="url(#evagate-soft-glow)">
+                  <animateMotion dur="3s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#path-air" />
+                  </animateMotion>
+                </circle>
+
+                <circle r="10" fill="rgba(125,211,252,0.95)" filter="url(#evagate-soft-glow)">
+                  <animateMotion dur="3.4s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#path-marine" />
+                  </animateMotion>
+                </circle>
+
+                <circle r="10" fill="rgba(125,211,252,0.95)" filter="url(#evagate-soft-glow)">
+                  <animateMotion dur="3.8s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#path-portable" />
+                  </animateMotion>
+                </circle>
+
+                <circle r="10" fill="rgba(125,211,252,0.95)" filter="url(#evagate-soft-glow)">
+                  <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#path-hq" />
+                  </animateMotion>
+                </circle>
+              </g>
             </svg>
 
             <div className="absolute left-1/2 top-1/2 z-10 flex h-52 w-52 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-sky-300/30 bg-[radial-gradient(circle,rgba(14,165,233,0.25),rgba(2,6,23,0.85)_72%)] shadow-[0_0_70px_rgba(56,189,248,0.2)]">
