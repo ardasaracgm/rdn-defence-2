@@ -74,6 +74,8 @@ export type Product = {
   useCases?: string[];
   specifications?: ProductSpec[];
   whyThisProduct?: ProductValuePoint[];
+  operationalAdvantages?: ProductOperationalAdvantage[];
+
 
   media: ProductMedia;
   seo: ProductSeo;
