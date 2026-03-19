@@ -5,6 +5,7 @@ import ProductDocumentCard from "@/components/ProductDocumentCard";
 import ProductVideoPlayer from "@/components/ProductVideoPlayer";
 import ProductGallery from "@/components/ProductGallery";
 import ProductHeroMedia from "@/components/ProductHeroMedia";
+import EvagateNetworkDiagram from "@/components/EvagateNetworkDiagram";
 
 type Props = {
   params: Promise<{
@@ -123,6 +124,8 @@ export default async function ProductDetailPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {product.slug === "evagate-c4i" ? <EvagateNetworkDiagram /> : null}
 
       <section className="section-space bg-slate-950 text-white">
   <div className="container-main">
