@@ -146,6 +146,24 @@ export const vegaDirectionalJammer: Product = {
   },
 ],
 
+  deploymentModels: [
+  {
+    title: "Fixed-Site Protection",
+    description:
+      "Suitable for permanent installation at strategic facilities such as airports, energy sites, and communication hubs requiring focused directional protection.",
+  },
+  {
+    title: "Perimeter and Border Deployment",
+    description:
+      "Can be positioned to secure long perimeter lines, border sectors, and exposed approach corridors where standoff engagement is essential.",
+  },
+  {
+    title: "Rapid Security Integration",
+    description:
+      "Supports integration into broader security and electronic warfare concepts for government, military, and critical infrastructure users.",
+  },
+],
+
   media: {
     hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
