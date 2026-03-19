@@ -333,6 +333,38 @@ export default async function ProductDetailPage({ params }: Props) {
     </div>
   </section>
 ) : null}
+
+      {product.programReadiness?.length ? (
+  <section className="section-space border-t border-slate-200 bg-white">
+    <div className="container-main">
+      <div className="max-w-3xl">
+        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+          Program Readiness
+        </div>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+          Positioned for more than procurement.
+        </h2>
+        <p className="mt-5 text-lg leading-8 text-slate-600">
+          This system can be evaluated not only as a product, but as part of a
+          broader operational program, capability plan, or institutional rollout.
+        </p>
+      </div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {product.programReadiness.map((item) => (
+          <div key={item.title} className="card-premium p-7">
+            <h3 className="text-xl font-semibold text-slate-950">
+              {item.title}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+) : null}
       
       {product.integrationCustomization?.length ? (
   <section className="section-space border-t border-slate-200 bg-slate-50/60">
