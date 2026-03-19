@@ -147,6 +147,24 @@ missionFit: [
       "Appropriate for defense, security, and industrial missions where payload flexibility and rapid role adaptation are operational priorities.",
   },
 ],
+
+  deploymentModels: [
+  {
+    title: "Runway-Independent Field Launch",
+    description:
+      "Can be deployed directly from tactical terrain, remote staging points, and infrastructure-limited areas without requiring conventional runway support.",
+  },
+  {
+    title: "Persistent Airborne Overwatch",
+    description:
+      "Suitable for long-duration ISR, convoy support, border monitoring, and infrastructure observation missions where continued aerial presence is required.",
+  },
+  {
+    title: "Mission-Configurable Payload Use",
+    description:
+      "Supports different deployment profiles depending on ISR, mapping, observation, or airborne EW requirements through modular payload integration.",
+  },
+],
   
   media: {
     hero: "/products/barracuda/images/hero.webp",
