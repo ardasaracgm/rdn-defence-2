@@ -199,7 +199,23 @@ integrationCustomization: [
       "Its configurable architecture and deployment-oriented structure support evaluation, alignment, and phased adoption in program-driven environments.",
   },
 ],
-  
+  decisionSupport: [
+  {
+    title: "Evaluate the Protected Area",
+    description:
+      "Start by defining the facility type, threat direction, perimeter length, and the required engagement distance for directional protection.",
+  },
+  {
+    title: "Match Bands to Threat Profile",
+    description:
+      "Confirm which UAV, GNSS, telemetry, and communication frequencies are relevant to the operating region and mission environment.",
+  },
+  {
+    title: "Plan the Deployment Concept",
+    description:
+      "Determine whether the system is needed for fixed-site defense, perimeter control, or layered security integration before final configuration is selected.",
+  },
+],
   media: {
     hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
