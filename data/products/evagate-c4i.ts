@@ -7,17 +7,16 @@ export const evagateC4i: Product = {
   productType: "Integrated Secure Communication & C4I Platform",
 
   tagline:
-    "Unified voice, data, radio, and video communication core for tactical and institutional operations.",
+  "One platform for secure voice, data, video, and radio control across field, vehicle, marine, and command environments.",
 
-  shortDescription:
-    "A secure multi-layer communication platform designed for command, coordination, interoperability, and field-ready deployment.",
+shortDescription:
+  "A unified C4I communication platform built to connect mobile units, control rooms, marine assets, and tactical teams through one secure operational core.",
 
-  description:
-    "EvaGate is an integrated secure communication and C4I platform developed to unify voice, data, radio, video, and network services within a single operational structure. It is positioned for institutions and security-focused organizations that require resilient communication, interoperability, and deployment flexibility across fixed, mobile, and field environments.",
+description:
+  "EvaGate is not a single device. It is a unified secure communication platform designed to connect voice, data, video, radio, and network services into one operational ecosystem. Positioned for command environments, tactical deployments, marine platforms, emergency response, and distributed field operations, EvaGate helps transform fragmented communication layers into a single controllable architecture.",
 
-  overview:
-    "EvaGate is best suited for users that need more than isolated communication tools. It is designed as a central operational communication core that can connect radio, PBX, secure IP traffic, video streams, and network services in one structured platform. The system supports tactical vehicles, field deployments, mobile command concepts, marine platforms, and fixed command environments.",
-
+overview:
+  "EvaGate is built for organizations that need command-level communication continuity rather than isolated tools. By combining secure VPN, smart routing, RoIP, IP PBX, video streaming, public announcement, and multi-network redundancy inside one architecture, it creates a scalable communication backbone for modern operational environments.",
   featured: true,
 
   features: [
