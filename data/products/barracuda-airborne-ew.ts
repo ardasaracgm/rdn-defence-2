@@ -201,7 +201,23 @@ missionFit: [
       "The platform is well suited for defense, government, and industrial users that evaluate systems not only by performance, but also by operational fit and lifecycle relevance.",
   },
 ],
-  
+  decisionSupport: [
+  {
+    title: "Define the Mission Role",
+    description:
+      "Clarify whether the platform is needed for ISR, overwatch, airborne EW support, mapping, or a multi-role mission set.",
+  },
+  {
+    title: "Assess the Operating Environment",
+    description:
+      "Review terrain, launch conditions, endurance expectations, payload needs, and communication range requirements before configuration planning.",
+  },
+  {
+    title: "Align Payload and Deployment Logic",
+    description:
+      "Select the payload concept and operational model according to whether the priority is surveillance, precision observation, airborne EW, or mission adaptability.",
+  },
+],
   media: {
     hero: "/products/barracuda/images/hero.webp",
     heroAlt: "Barracuda VTOL UAS airborne mission hero view",
