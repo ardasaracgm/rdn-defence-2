@@ -111,6 +111,24 @@ export const vegaDirectionalJammer: Product = {
     },
   ],
 
+  operationalAdvantages: [
+  {
+    title: "Better Control in Sensitive Areas",
+    description:
+      "Directional suppression helps reduce unnecessary wide-area RF impact and supports more controlled protection of strategic facilities and high-value zones.",
+  },
+  {
+    title: "Long-Range Threat Denial",
+    description:
+      "VEGA is positioned for mission profiles where the threat must be engaged before it reaches the protected perimeter.",
+  },
+  {
+    title: "Deployment Flexibility",
+    description:
+      "Its architecture supports use in fixed-site protection, border security, airport security, and coastal defense scenarios.",
+  },
+],
+
   media: {
     hero: "/products/vega/images/vega-hero.webp",
     heroAlt: "VEGA multi-band directional jammer system",
