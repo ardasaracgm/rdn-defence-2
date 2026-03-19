@@ -182,7 +182,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
                 Why This Product
               </div>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-50 md:text-4xl">
                 Built for operational advantage, not just specifications.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
