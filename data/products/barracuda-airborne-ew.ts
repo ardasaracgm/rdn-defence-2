@@ -112,6 +112,23 @@ export const barracudaAirborneEw: Product = {
     },
   ],
 
+  operationalAdvantages: [
+  {
+    title: "Above-Terrain Mission Reach",
+    description:
+      "Barracuda operates above terrain obstacles, improving line-of-sight awareness and extending tactical coverage over mountains, valleys, coastlines, and remote zones.",
+  },
+  {
+    title: "Persistent Overwatch",
+    description:
+      "Its endurance and ISR capability allow longer airborne presence for convoy protection, infrastructure monitoring, and tactical reconnaissance.",
+  },
+  {
+    title: "Mission Adaptation Without Platform Change",
+    description:
+      "The same platform can be positioned for ISR, EW support, mapping, or overwatch roles depending on payload and mission need.",
+  },
+],
   media: {
     hero: "/products/barracuda/images/hero.webp",
     heroAlt: "Barracuda VTOL UAS airborne mission hero view",
