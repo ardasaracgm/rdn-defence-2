@@ -32,19 +32,19 @@ const trustPoints = [
 export default function HomePage() {
   return (
     <main>
-      <section className="hero-glow border-b border-slate-200">
+      <section className="hero-glow surface-soft border-b border-slate-200">
         <div className="container-main section-space">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
             <div>
-              <div className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+              <div className="section-eyebrow">
                 Advanced Defense & Security Technologies
               </div>
 
-              <h1 className="mt-7 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
+              <h1 className="hero-heading mt-7 max-w-5xl">
                 Electronic warfare, airborne systems, and mission-ready security solutions.
               </h1>
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
+              <p className="hero-copy mt-6 max-w-3xl">
                 We position advanced defense technologies for counter-UAV protection,
                 airborne ISR and EW missions, secure communication infrastructure, and
                 project-based security deployments.
@@ -53,14 +53,14 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href="/products"
-                  className="rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-semibold text-white transition hover:opacity-90"
+                className="btn-primary-premium"
                 >
                   Explore Products
                 </Link>
 
                 <Link
                   href="/contact"
-                  className="rounded-2xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+                  className="btn-secondary-premium"
                 >
                   Request Consultation
                 </Link>
@@ -96,7 +96,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#0f172a,#1e293b)] text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
+           <div className="surface-dark-premium overflow-hidden rounded-3xl text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
               <div className="p-8 md:p-10">
                 <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">
                   Strategic Capability Areas
@@ -110,7 +110,7 @@ export default function HomePage() {
                   {trustPoints.map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm font-medium text-slate-200"
+                      className="dark-stat-card"
                     >
                       {item}
                     </div>
@@ -135,13 +135,13 @@ export default function HomePage() {
       <section className="section-space">
         <div className="container-main">
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <div className="section-eyebrow">
               Capability Overview
             </div>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+            <h2 className="section-heading mt-3">
               Product and solution structure built around operational use.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="section-copy mt-5">
               Our portfolio is positioned around real deployment logic including counter-UAV,
               airborne support, infrastructure protection, perimeter security, and tactical
               mission requirements.
@@ -163,17 +163,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space border-t border-slate-200 bg-slate-50/60">
+      <section className="section-space border-t border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_100%)]">
         <div className="container-main">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+              <div className="section-eyebrow">
                 Featured Products
               </div>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              <h2 className="section-heading mt-3">
                 Systems positioned for real deployment environments.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="section-copy mt-5">
                 Explore selected products structured for perimeter defense, airborne support,
                 electronic warfare, and security-sensitive operational scenarios.
               </p>
@@ -198,13 +198,13 @@ export default function HomePage() {
       <section className="section-space border-t border-slate-200 bg-white">
         <div className="container-main grid gap-10 lg:grid-cols-[1fr_.95fr]">
           <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <div className="section-eyebrow">
               Why Work With Us
             </div>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+            <h2 className="section-heading mt-3">
               A structured path from product interest to deployment planning.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="section-copy mt-5">
               We do not position products as isolated catalog items. We help align capability,
               mission fit, deployment concept, and operational requirements within a clear evaluation process.
             </p>
@@ -227,7 +227,7 @@ export default function HomePage() {
           </div>
 
           <div className="card-premium p-8 md:p-10">
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <div className="section-eyebrow">
               Start a Discussion
             </div>
             <h3 className="mt-3 text-2xl font-bold text-slate-950">
