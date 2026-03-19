@@ -165,6 +165,24 @@ missionFit: [
       "Supports different deployment profiles depending on ISR, mapping, observation, or airborne EW requirements through modular payload integration.",
   },
 ],
+
+  integrationCustomization: [
+  {
+    title: "Payload-Level Mission Adaptation",
+    description:
+      "Barracuda supports mission-driven payload selection for ISR, observation, mapping, and airborne EW-related configurations.",
+  },
+  {
+    title: "Ground Control and Operational Alignment",
+    description:
+      "The platform can be aligned with different mission workflows, operator structures, and communication/control concepts depending on deployment needs.",
+  },
+  {
+    title: "Program-Specific Configuration Logic",
+    description:
+      "Barracuda can be positioned for defense, infrastructure, border, coastal, or industrial missions through platform and payload customization strategy.",
+  },
+],
   
   media: {
     hero: "/products/barracuda/images/hero.webp",
