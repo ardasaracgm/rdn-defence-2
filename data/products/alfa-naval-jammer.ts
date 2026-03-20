@@ -187,23 +187,19 @@ export const alfaNavalJammer: Product = {
 
   media: {
     hero: "/products/alfa-naval/images/hero.webp",
-    heroAlt: "ALFA NAVAL drone-UAV jammer system mounted on naval vessel",
+    heroAlt: "ALFA NAVAL vessel-mounted counter-UAV jammer system open antenna array",
     gallery: [
       {
         src: "/products/alfa-naval/images/hero.webp",
-        alt: "ALFA NAVAL jammer system overview",
+        alt: "ALFA NAVAL vessel-mounted counter-UAV jammer system",
       },
       {
-        src: "/products/alfa-naval/images/patrol-vessel-counter-uav-deployment.webp",
-        alt: "ALFA NAVAL mounted on naval patrol vessel",
+        src: "/products/alfa-naval/images/naval-vessel-counter-uav-rf-jamming-night.webp",
+        alt: "ALFA NAVAL warship counter-UAV RF jamming night operation",
       },
       {
-        src: "/products/alfa-naval/images/coastal-defense-maritime-jammer.webp",
-        alt: "ALFA NAVAL coastal defense operation",
-      },
-      {
-        src: "/products/alfa-naval/images/port-security-drone-protection.webp",
-        alt: "ALFA NAVAL port and harbor security deployment",
+        src: "/products/alfa-naval/images/warship-electronic-shield-drone-protection-maritime.webp",
+        alt: "ALFA NAVAL warship electronic shield drone protection at sea",
       },
     ],
     videos: [
