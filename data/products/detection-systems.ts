@@ -208,7 +208,7 @@ export const uavRadar: Product = {
     { label: "System Type",         value: "Counter-UAV detection radar" },
     { label: "Scanning Pattern",    value: "360° continuous" },
     { label: "Target Classes",      value: "Micro, small, and medium UAV" },
-    { label: "Detection Capability","Small-signature UAV" },
+    { label: "Detection Capability", value: "Small-signature UAV" },
     { label: "Tracking",            value: "Automatic acquisition and tracking" },
     { label: "Warning Mode",        value: "Early warning with alert output" },
     { label: "Integration",         value: "Jammer and effector system compatible" },
