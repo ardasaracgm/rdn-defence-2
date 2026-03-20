@@ -44,15 +44,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA + mobile toggle */}
+        {/* Mobile toggle */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="hidden rounded-xl bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90 md:inline-flex"
-          >
-            Request Quote
-          </Link>
-
           <button
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 md:hidden"
             onClick={() => setOpen(!open)}
@@ -83,13 +76,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-xl bg-slate-950 px-4 py-3 text-center text-sm font-semibold text-white"
-            >
-              Request Quote
-            </Link>
           </nav>
         </div>
       )}
