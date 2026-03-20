@@ -1,18 +1,29 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-slate-200 bg-white">
       <div className="container-main grid gap-10 py-14 md:grid-cols-4">
+
+        {/* Brand */}
         <div>
-          <div className="text-lg font-semibold text-slate-950">
-            DEFENCE<span className="text-blue-700">TECH</span>
-          </div>
+          <Image
+            src="/rdn-logo.png"
+            alt="RDN Technology"
+            width={140}
+            height={42}
+            className="h-9 w-auto object-contain"
+          />
           <p className="mt-4 text-sm leading-7 text-slate-600">
-            Advanced defense, electronic warfare, UAV, AI security, and secure communication solutions.
+            RDN Danışmanlık Yazılım Turizm Gıda Sanayi ve Dış Ticaret Limited Şirketi
+          </p>
+          <p className="mt-2 text-xs text-slate-400">
+            Vergi No: 7342274416 · Ticaret Sicil: 465313
           </p>
         </div>
 
+        {/* Navigation */}
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">
             Navigation
@@ -26,33 +37,54 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Capabilities */}
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">
-            Focus Areas
+            Capabilities
           </h3>
           <div className="mt-4 space-y-3 text-sm text-slate-700">
             <p>Electronic Warfare</p>
-            <p>UAV Systems</p>
+            <p>Drone Systems</p>
+            <p>Detection Systems</p>
             <p>AI Security</p>
             <p>Secure Communication</p>
           </div>
         </div>
 
+        {/* Contact */}
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">
             Contact
           </h3>
           <div className="mt-4 space-y-3 text-sm text-slate-700">
-            <p>Ankara, Türkiye</p>
-            <p>info@yourcompany.com</p>
-            <p>+90 5xx xxx xx xx</p>
+            <p className="leading-6">
+              Kızılırmak Mah. Dumlupınar Bulvarı No:9A<br />
+              YDA Center D:158 Çankaya / Ankara<br />
+              Türkiye
+            </p>
+            <a href="tel:+905364461135" className="block hover:text-slate-950">
+              +90 536 446 11 35
+            </a>
+            <a href="mailto:info@rdnsoft.com" className="block hover:text-slate-950">
+              info@rdnsoft.com
+            </a>
+            <a
+              href="https://www.rdnsoft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-slate-950"
+            >
+              www.rdnsoft.com
+            </a>
           </div>
         </div>
+
       </div>
 
       <div className="border-t border-slate-200">
-        <div className="container-main py-5 text-sm text-slate-500">
-          © 2026 DefenceTech. All rights reserved.
+        <div className="container-main flex flex-wrap items-center justify-between gap-4 py-5 text-sm text-slate-500">
+          <span>© 2025 RDN Danışmanlık Yazılım Turizm Gıda Sanayi ve Dış Ticaret Limited Şirketi</span>
+          <span>Çankaya V.D. · Mersis: 0734227441600001</span>
         </div>
       </div>
     </footer>
