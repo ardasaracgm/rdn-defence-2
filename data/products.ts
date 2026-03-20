@@ -79,6 +79,34 @@ export type ProductOperationalAdvantage = {
   description: string;
 };
 
+/* ── Drone-specific types ── */
+export type DroneQuickStat = {
+  label: string;
+  value: string;
+  unit: string;
+};
+
+export type DroneMission = {
+  number: string;
+  tag: string;
+  title: string;
+  description: string;
+};
+
+export type DronePayload = {
+  capacity: string;
+  unit: string;
+  name: string;
+  description: string;
+};
+
+export type DroneFlightParam = {
+  name: string;
+  value: string;
+  unit: string;
+  fillPercent: number;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -103,6 +131,11 @@ export type Product = {
   programReadiness?: ProductSupportItem[];
   decisionSupport?: ProductDecisionSupportItem[];
 
+  /* ── Drone-specific optional fields ── */
+  droneQuickStats?: DroneQuickStat[];
+  droneMissions?: DroneMission[];
+  dronePayloads?: DronePayload[];
+  droneFlightParams?: DroneFlightParam[];
 
   media: ProductMedia;
   seo: ProductSeo;
@@ -118,6 +151,7 @@ import { vegaDirectionalJammer } from "./products/vega-directional-jammer";
 import { barracudaAirborneEw } from "./products/barracuda-airborne-ew";
 import { evagateC4i } from "./products/evagate-c4i";
 import { aiFaceRecognition } from "./products/ai-face-recognition";
+import { atalay } from "./products/atalay";
 
 export const products: Product[] = [
   alfa850vMobileJammer,
@@ -130,4 +164,5 @@ export const products: Product[] = [
   barracudaAirborneEw,
   evagateC4i,
   aiFaceRecognition,
+  atalay,
 ];
