@@ -184,45 +184,37 @@ export const alfa850vMobile: Product = {
   ],
 
   media: {
-    hero: "/products/alfa-850v/images/hero.webp",
-    heroAlt: "ALFA 850V Mobile drone jammer mounted on tactical vehicle",
+    hero: "/products/alfa-850v-mobile/images/hero.webp",
+    heroAlt: "ALFA 850V Mobile drone jammer system antenna array open enclosure",
     gallery: [
       {
-        src: "/products/alfa-850v/images/hero.webp",
-        alt: "ALFA 850V Mobile system overview",
+        src: "/products/alfa-850v-mobile/images/hero.webp",
+        alt: "ALFA 850V Mobile drone jammer system antenna array open enclosure",
       },
       {
-        src: "/products/alfa-850v/images/field.webp",
-        alt: "ALFA 850V Mobile field deployment",
+        src: "/products/alfa-850v-mobile/images/vip-escort-urban-counter-uav-operation.webp",
+        alt: "ALFA 850V Mobile VIP escort urban counter-UAV operation",
       },
       {
-        src: "/products/alfa-850v/images/mobile.webp",
-        alt: "ALFA 850V Mobile vehicle integration",
+        src: "/products/alfa-850v-mobile/images/convoy-border-security-winter-deployment.webp",
+        alt: "ALFA 850V Mobile convoy border security winter deployment",
       },
       {
-        src: "/products/alfa-850v/images/military.jpg",
-        alt: "ALFA 850V Mobile military deployment",
-      },
-      {
-        src: "/products/alfa-850v/images/tower.webp",
-        alt: "ALFA 850V Mobile elevated deployment",
-      },
-      {
-        src: "/products/alfa-850v/images/infrastructure.webp",
-        alt: "ALFA 850V Mobile infrastructure protection",
+        src: "/products/alfa-850v-mobile/images/critical-infrastructure-protection-mobile-jammer.webp",
+        alt: "ALFA 850V Mobile critical infrastructure protection deployment",
       },
     ],
     videos: [
       {
         title: "ALFA 850V Mobile System Overview",
         file: "/products/alfa-850v-mobile/videos/hero.mp4",
-        poster: "/products/alfa-850v/images/hero.webp",
+        poster: "/products/alfa-850v-mobile/images/hero.webp",
         isHero: true,
       },
       {
         title: "Vehicle Integration Demo",
         file: "/products/alfa-850v-mobile/videos/operation.mp4",
-        poster: "/products/alfa-850v/images/field.webp",
+        poster: "/products/alfa-850v-mobile/images/convoy-border-security-winter-deployment.webp",
       },
     ],
     documents: [
