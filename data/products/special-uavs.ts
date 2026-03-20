@@ -327,7 +327,7 @@ export const mp50: Product = {
   droneMissions: [
     { number: "01", tag: "MAX LIFT", title: "Extreme Payload Transport", description: "Carries 50 kg payloads — vehicle components, heavy equipment, or large munitions — to forward positions at 10 km range." },
     { number: "02", tag: "ISR",      title: "Heavy Sensor Deployment",   description: "Deploys large integrated sensor arrays or ground surveillance equipment in a single sortie." },
-    { number: "03", tag: "LOGISTICS","Rapid Heavy Resupply",             description: "30-minute endurance with 50 kg payload supports rapid heavy resupply cycles in contested logistics environments." },
+    { number: "03", tag: "LOGISTICS", title: "Rapid Heavy Resupply",      description: "30-minute endurance with 50 kg payload supports rapid heavy resupply cycles in contested logistics environments." },
   ],
   droneFlightParams: [
     { name: "Payload",   value: "50", unit: "kg",  fillPercent: 100 },
@@ -565,9 +565,9 @@ export const k750: Product = {
     { label: "Camera",    value: "D/N",unit: ""    },
   ],
   droneMissions: [
-    { number: "01", tag: "OPERATIONAL STRIKE","750 KM Deep Strike", description: "Penetrates defended airspace to 750 km, delivering 15 kg payloads against high-value operational targets." },
-    { number: "02", tag: "LOITERING",         "7-Hour Mission Window", description: "Extended 7-hour endurance enables persistent target area coverage and time-optimized engagement." },
-    { number: "03", tag: "HEAVY STRIKE",      "15 KG Warhead Capacity", description: "Largest warhead capacity in the K-series enables effective engagement of hardened or reinforced targets." },
+    { number: "01", tag: "OPERATIONAL STRIKE", title: "750 KM Deep Strike",       description: "Penetrates defended airspace to 750 km, delivering 15 kg payloads against high-value operational targets." },
+    { number: "02", tag: "LOITERING",          title: "7-Hour Mission Window",     description: "Extended 7-hour endurance enables persistent target area coverage and time-optimized engagement." },
+    { number: "03", tag: "HEAVY STRIKE", title: "15 KG Warhead Capacity", description: "Largest warhead capacity in the K-series enables effective engagement of hardened or reinforced targets." },
   ],
   droneFlightParams: [
     { name: "Range",     value: "750",unit: "km",  fillPercent: 100 },
