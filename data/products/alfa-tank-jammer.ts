@@ -187,19 +187,27 @@ export const alfaTankJammer: Product = {
 
   media: {
     hero: "/products/alfa-tank/images/hero.webp",
-    heroAlt: "ALFA TANK drone-UAV jammer system mounted on armored vehicle",
+    heroAlt: "ALFA TANK armored vehicle counter-UAV jammer system unit",
     gallery: [
       {
         src: "/products/alfa-tank/images/hero.webp",
-        alt: "ALFA TANK system overview",
+        alt: "ALFA TANK counter-UAV jammer system unit",
       },
       {
-        src: "/products/alfa-tank/images/tank-integration.webp",
-        alt: "ALFA TANK integrated on main battle tank",
+        src: "/products/alfa-tank/images/armored-column-counter-uav-rf-jamming.webp",
+        alt: "ALFA TANK armored column counter-UAV RF jamming operation",
       },
       {
-        src: "/products/alfa-tank/images/field.webp",
-        alt: "ALFA TANK field operation",
+        src: "/products/alfa-tank/images/tank-counter-uav-rf-beam-night-operation.webp",
+        alt: "ALFA TANK counter-UAV RF beam night battlefield operation",
+      },
+      {
+        src: "/products/alfa-tank/images/tank-electronic-shield-drone-neutralization.webp",
+        alt: "ALFA TANK electronic shield drone neutralization",
+      },
+      {
+        src: "/products/alfa-tank/images/tank-360-protection-dome-desert-battlefield.webp",
+        alt: "ALFA TANK 360 degree RF protection dome desert battlefield",
       },
     ],
     videos: [
