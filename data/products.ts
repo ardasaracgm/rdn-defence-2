@@ -113,6 +113,7 @@ import { alfa850vMobile } from "./products/alfa-850v-mobile";
 import { alfaTankJammer } from "./products/alfa-tank-jammer";
 import { alfaNavalJammer } from "./products/alfa-naval-jammer";
 import { securadioRfShielding } from "./products/securadio-rf-shielding";
+import { iedJammer } from "./products/ied-jammer";
 import { vegaDirectionalJammer } from "./products/vega-directional-jammer";
 import { barracudaAirborneEw } from "./products/barracuda-airborne-ew";
 import { evagateC4i } from "./products/evagate-c4i";
@@ -124,6 +125,7 @@ export const products: Product[] = [
   alfaTankJammer,
   alfaNavalJammer,
   securadioRfShielding,
+  iedJammer,
   vegaDirectionalJammer,
   barracudaAirborneEw,
   evagateC4i,
