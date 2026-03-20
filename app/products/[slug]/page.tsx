@@ -127,32 +127,34 @@ export default async function ProductDetailPage({ params }: Props) {
 
       {product.slug === "evagate-c4i" ? <EvagateNetworkDiagram /> : null}
 
-      <section className="section-space bg-slate-950 text-white">
-  <div className="container-main">
-    <div className="max-w-3xl">
-      <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-400">
-        System Architecture
-      </div>
+      {product.slug === "evagate-c4i" && (
+        <section className="section-space bg-slate-950 text-white">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-400">
+                System Architecture
+              </div>
 
-      <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-        One platform. Multi-domain control.
-      </h2>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+                One platform. Multi-domain control.
+              </h2>
 
-      <p className="mt-4 text-slate-300">
-        EVAGATE connects command centers, mobile units, marine platforms, and
-        tactical teams into a single integrated communication ecosystem.
-      </p>
-    </div>
+              <p className="mt-4 text-slate-300">
+                EVAGATE connects command centers, mobile units, marine platforms, and
+                tactical teams into a single integrated communication ecosystem.
+              </p>
+            </div>
 
-    <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
-      <img
-        src="/products/evagate/images/diagram.webp"
-        alt="EVAGATE system architecture diagram"
-        className="w-full h-auto object-cover"
-      />
-    </div>
-  </div>
-</section>
+            <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
+              <img
+                src="/products/evagate/images/diagram.webp"
+                alt="EVAGATE system architecture diagram"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {product.overview ? (
         <section className="section-space">
