@@ -6,6 +6,7 @@ import ProductVideoPlayer from "@/components/ProductVideoPlayer";
 import ProductGallery from "@/components/ProductGallery";
 import ProductHeroMedia from "@/components/ProductHeroMedia";
 import EvagateNetworkDiagram from "@/components/EvagateNetworkDiagram";
+import DroneProductPage from "@/components/DroneProductPage";
 
 type Props = {
   params: Promise<{
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!product) {
     return {
-      title: "Product Not Found | DefenceTech",
+      title: "Product Not Found | RDN Technology",
       description: "The requested product could not be found.",
     };
   }
@@ -44,6 +45,12 @@ export default async function ProductDetailPage({ params }: Props) {
     notFound();
   }
 
+  /* ── Drone Systems → dedicated dark layout ── */
+  if (product.category === "Drone Systems") {
+    return <DroneProductPage product={product} />;
+  }
+
+  /* ── All other categories → existing layout ── */
   return (
     <main>
       <section className="hero-glow border-b border-slate-200">
@@ -207,8 +214,7 @@ export default async function ProductDetailPage({ params }: Props) {
       ) : null}
 
       {product.whyThisProduct?.length ? (
-      
-          <section className="section-space bg-slate-950 text-white">
+        <section className="section-space bg-slate-950 text-white">
           <div className="container-main">
             <div className="max-w-3xl">
               <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
@@ -239,230 +245,198 @@ export default async function ProductDetailPage({ params }: Props) {
         </section>
       ) : null}
 
-{product.operationalAdvantages?.length ? (
-  <section className="section-space border-t border-slate-200 bg-white">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Operational Advantages
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Structured for real mission environments.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          Beyond specifications, this system provides concrete field advantages
-          in deployment flexibility, mission effectiveness, and operational reach.
-        </p>
-      </div>
+      {product.operationalAdvantages?.length ? (
+        <section className="section-space border-t border-slate-200 bg-white">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Operational Advantages
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Structured for real mission environments.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Beyond specifications, this system provides concrete field advantages
+                in deployment flexibility, mission effectiveness, and operational reach.
+              </p>
+            </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.operationalAdvantages.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.operationalAdvantages.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
+        </section>
+      ) : null}
 
-{product.missionFit?.length ? (
-  <section className="section-space border-t border-slate-200 bg-slate-50/60">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Mission Fit
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Ideal for organizations with mission-specific requirements.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          This product is best aligned with users who need more than a catalog
-          item and require capability matched to a real operational context.
-        </p>
-      </div>
+      {product.missionFit?.length ? (
+        <section className="section-space border-t border-slate-200 bg-slate-50/60">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Mission Fit
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Ideal for organizations with mission-specific requirements.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                This product is best aligned with users who need more than a catalog
+                item and require capability matched to a real operational context.
+              </p>
+            </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.missionFit.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.missionFit.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
+        </section>
+      ) : null}
 
       {product.deploymentModels?.length ? (
-  <section className="section-space border-t border-slate-200 bg-white">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Deployment Models
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Structured for flexible deployment and mission alignment.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          The system can be positioned in different operational models depending
-          on mission environment, infrastructure constraints, and protection scope.
-        </p>
-      </div>
+        <section className="section-space border-t border-slate-200 bg-white">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Deployment Models
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Structured for flexible deployment and mission alignment.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                The system can be positioned in different operational models depending
+                on mission environment, infrastructure constraints, and protection scope.
+              </p>
+            </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.deploymentModels.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.deploymentModels.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
+        </section>
+      ) : null}
 
       {product.integrationCustomization?.length ? (
-  <section className="section-space border-t border-slate-200 bg-slate-50/60">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Integration &amp; Customization
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Adaptable to program, mission, and deployment requirements.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          This product can be positioned and configured according to operational
-          context, infrastructure needs, and project-specific priorities.
-        </p>
-      </div>
+        <section className="section-space border-t border-slate-200 bg-slate-50/60">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Integration &amp; Customization
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Adaptable to program, mission, and deployment requirements.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                This product can be positioned and configured according to operational
+                context, infrastructure needs, and project-specific priorities.
+              </p>
+            </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.integrationCustomization.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.integrationCustomization.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
+        </section>
+      ) : null}
 
       {product.programReadiness?.length ? (
-  <section className="section-space border-t border-slate-200 bg-white">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Program Readiness
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Positioned for more than procurement.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          This system can be evaluated not only as a product, but as part of a
-          broader operational program, capability plan, or institutional rollout.
-        </p>
-      </div>
+        <section className="section-space border-t border-slate-200 bg-white">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Program Readiness
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                Positioned for more than procurement.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                This system can be evaluated not only as a product, but as part of a
+                broader operational program, capability plan, or institutional rollout.
+              </p>
+            </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.programReadiness.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.programReadiness.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
+        </section>
+      ) : null}
 
       {product.decisionSupport?.length ? (
-  <section className="section-space border-t border-slate-200 bg-slate-50/60">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Decision Support
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          A practical next-step framework for evaluation.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          If this product is under consideration, these are the key questions
-          and planning steps that typically shape the right deployment decision.
-        </p>
-      </div>
+        <section className="section-space border-t border-slate-200 bg-slate-50/60">
+          <div className="container-main">
+            <div className="max-w-3xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Decision Support
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                A practical next-step framework for evaluation.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                If this product is under consideration, these are the key questions
+                and planning steps that typically shape the right deployment decision.
+              </p>
+            </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.decisionSupport.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {product.decisionSupport.map((item) => (
+                <div key={item.title} className="card-premium p-7">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
-      
-      {product.integrationCustomization?.length ? (
-  <section className="section-space border-t border-slate-200 bg-slate-50/60">
-    <div className="container-main">
-      <div className="max-w-3xl">
-        <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
-          Integration &amp; Customization
-        </div>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-          Adaptable to program, mission, and deployment requirements.
-        </h2>
-        <p className="mt-5 text-lg leading-8 text-slate-600">
-          This product can be positioned and configured according to operational
-          context, infrastructure needs, and project-specific priorities.
-        </p>
-      </div>
+        </section>
+      ) : null}
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {product.integrationCustomization.map((item) => (
-          <div key={item.title} className="card-premium p-7">
-            <h3 className="text-xl font-semibold text-slate-950">
-              {item.title}
-            </h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-) : null}
-      
       <section className="section-space">
         <div className="container-main grid gap-10 lg:grid-cols-[1fr_.9fr]">
           <div>
@@ -537,7 +511,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   type="submit"
                   className="w-full rounded-xl bg-white py-3 font-semibold text-slate-950 transition hover:opacity-90"
                 >
-                  Request Pricing & Specs
+                  Request Pricing &amp; Specs
                 </button>
               </form>
             </div>
@@ -589,7 +563,6 @@ export default async function ProductDetailPage({ params }: Props) {
                 <h3 className="mt-3 text-2xl font-bold text-slate-950">
                   Product documents and references.
                 </h3>
-
                 <p className="mt-4 text-sm leading-7 text-slate-600">
                   Review technical documentation, capability overviews, manuals,
                   and supporting reference files for this product.
@@ -622,7 +595,6 @@ export default async function ProductDetailPage({ params }: Props) {
                 <h3 className="mt-3 text-2xl font-bold text-slate-950">
                   Product videos and demonstrations.
                 </h3>
-
                 <p className="mt-4 text-sm leading-7 text-slate-600">
                   Review operational footage, technical presentation videos, and
                   deployment scenarios related to this product.
@@ -665,7 +637,6 @@ export default async function ProductDetailPage({ params }: Props) {
                 product presentation visuals for this system.
               </p>
             </div>
-
             <ProductGallery images={product.media.gallery} />
           </div>
         </section>
