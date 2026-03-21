@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
-import { useState } from "react";
+import { startTransition, useState } from "react";
 
 const flags: Record<string, string> = {
   en: "🇬🇧",
@@ -11,6 +11,9 @@ const flags: Record<string, string> = {
   ru: "🇷🇺",
 };
 
+const locales = ["en", "tr", "ar", "ru"] as const;
+type Locale = typeof locales[number];
+
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const t = useTranslations("lang_switcher");
@@ -18,22 +21,26 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const locales = ["en", "tr", "ar", "ru"] as const;
-
-  const switchLocale = (newLocale: string) => {
+  const switchLocale = (newLocale: Locale) => {
     setOpen(false);
-    // Replace current locale prefix in pathname
-    const segments = pathname.split("/");
-    const currentLocales = ["en", "tr", "ar", "ru"];
 
-    if (currentLocales.includes(segments[1])) {
-      segments[1] = newLocale === "en" ? "" : newLocale;
-    } else {
-      segments.splice(1, 0, newLocale === "en" ? "" : newLocale);
+    // pathname includes current locale prefix e.g. /tr/products or /products
+    // Strip current locale prefix if present
+    let pathWithoutLocale = pathname;
+    for (const l of locales) {
+      if (pathname.startsWith(`/${l}/`) || pathname === `/${l}`) {
+        pathWithoutLocale = pathname.slice(l.length + 1) || "/";
+        break;
+      }
     }
 
-    const newPath = segments.filter(Boolean).join("/") || "/";
-    router.push(newLocale === "en" ? `/${newPath}` : `/${newLocale}/${newPath.replace(/^\//, "")}`);
+    const newPath = newLocale === "en"
+      ? pathWithoutLocale
+      : `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+
+    startTransition(() => {
+      router.push(newPath);
+    });
   };
 
   return (
@@ -44,29 +51,29 @@ export default function LanguageSwitcher() {
         aria-label="Switch language"
       >
         <span>{flags[locale]}</span>
-        <span className="hidden sm:inline">{t(locale as any)}</span>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform ${open ? "rotate-180" : ""}`}>
+        <span className="hidden sm:inline">{t(locale as Locale)}</span>
+        <svg
+          width="12" height="12" viewBox="0 0 12 12" fill="none"
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        >
           <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
 
       {open && (
         <>
-          {/* Backdrop */}
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
-
-          {/* Dropdown */}
           <div className="absolute right-0 top-full z-50 mt-1.5 w-36 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
             {locales.map((l) => (
               <button
                 key={l}
                 onClick={() => switchLocale(l)}
                 className={`flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm transition hover:bg-slate-50 ${
-                  l === locale ? "font-semibold text-slate-950 bg-slate-50" : "text-slate-700"
+                  l === locale ? "bg-slate-50 font-semibold text-slate-950" : "text-slate-700"
                 }`}
               >
                 <span>{flags[l]}</span>
-                <span>{t(l as any)}</span>
+                <span>{t(l)}</span>
               </button>
             ))}
           </div>
