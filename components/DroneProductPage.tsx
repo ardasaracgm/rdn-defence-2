@@ -156,8 +156,7 @@ export default function DroneProductPage({ product }: Props) {
           className="relative z-10 border-y"
           style={{ background: "#152844", borderColor: "rgba(68,153,238,0.25)" }}
         >
-          <div className="mx-auto grid max-w-7xl px-6 md:px-12"
-               style={{ gridTemplateColumns: `repeat(${product.droneQuickStats.length}, 1fr)` }}>
+          <div className="mx-auto grid max-w-7xl grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 px-6 md:px-12">
             {product.droneQuickStats.map((s, i) => (
               <div
                 key={i}
@@ -200,8 +199,8 @@ export default function DroneProductPage({ product }: Props) {
 
             <div
               className="grid"
+              className="grid-cols-1 md:grid-cols-3"
               style={{
-                gridTemplateColumns: `repeat(${product.droneMissions.length}, 1fr)`,
                 gap: "1px",
                 background: "rgba(68,153,238,0.25)",
                 border: "1px solid rgba(68,153,238,0.25)",
@@ -315,7 +314,7 @@ export default function DroneProductPage({ product }: Props) {
 
             <div
               className="grid gap-[2px]"
-              style={{ gridTemplateColumns: "1fr 1fr", background: "rgba(68,153,238,0.25)", border: "1px solid rgba(68,153,238,0.25)" }}
+              style={{ gridTemplateColumns: "1fr", background: "rgba(68,153,238,0.25)", border: "1px solid rgba(68,153,238,0.25)" }}
             >
               {product.specifications.map((s, i) => (
                 <div
