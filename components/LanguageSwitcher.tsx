@@ -1,8 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/navigation";
-import { startTransition, useState } from "react";
+import { useState } from "react";
 
 const flags: Record<string, string> = {
   en: "🇬🇧",
@@ -17,16 +16,26 @@ type Locale = (typeof locales)[number];
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const t = useTranslations("lang_switcher");
-  const router = useRouter();
-  const pathname = usePathname(); // next-intl's usePathname — locale-unaware path
   const [open, setOpen] = useState(false);
 
   const switchLocale = (newLocale: Locale) => {
     setOpen(false);
-    startTransition(() => {
-      // next-intl's router.replace handles locale prefix automatically
-      router.replace(pathname, { locale: newLocale });
-    });
+    if (newLocale === locale) return;
+
+    const path = window.location.pathname;
+    let cleanPath = path;
+
+    // Strip existing locale prefix
+    for (const l of locales) {
+      if (path === `/${l}`) { cleanPath = "/"; break; }
+      if (path.startsWith(`/${l}/`)) { cleanPath = path.slice(l.length + 1); break; }
+    }
+
+    const newPath = newLocale === "en"
+      ? cleanPath || "/"
+      : `/${newLocale}${cleanPath === "/" ? "" : cleanPath}`;
+
+    window.location.href = newPath;
   };
 
   return (
@@ -38,10 +47,8 @@ export default function LanguageSwitcher() {
       >
         <span>{flags[locale]}</span>
         <span className="hidden sm:inline">{t(locale as Locale)}</span>
-        <svg
-          width="12" height="12" viewBox="0 0 12 12" fill="none"
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
-        >
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+          className={`transition-transform ${open ? "rotate-180" : ""}`}>
           <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
@@ -55,9 +62,7 @@ export default function LanguageSwitcher() {
                 key={l}
                 onClick={() => switchLocale(l)}
                 className={`flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm transition hover:bg-slate-50 ${
-                  l === locale
-                    ? "bg-slate-50 font-semibold text-slate-950"
-                    : "text-slate-700"
+                  l === locale ? "bg-slate-50 font-semibold text-slate-950" : "text-slate-700"
                 }`}
               >
                 <span>{flags[l]}</span>
