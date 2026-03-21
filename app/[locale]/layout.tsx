@@ -7,6 +7,8 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyLeadBar from "@/components/StickyLeadBar";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
 
 const BASE_URL = "https://www.rdnsoft.com";
 
@@ -68,6 +70,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
       <body className="bg-[var(--bg)] text-[var(--text)] antialiased">
+        <GoogleTagManagerHead />
+        <GoogleTagManagerBody />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
