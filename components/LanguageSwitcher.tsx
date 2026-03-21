@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { startTransition, useState } from "react";
 
 const flags: Record<string, string> = {
@@ -18,34 +18,14 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const t = useTranslations("lang_switcher");
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname(); // next-intl's usePathname — locale-unaware path
   const [open, setOpen] = useState(false);
 
   const switchLocale = (newLocale: Locale) => {
     setOpen(false);
-
-    // Remove any existing locale prefix from pathname
-    let cleanPath = pathname;
-    for (const l of locales) {
-      if (pathname === `/${l}`) {
-        cleanPath = "/";
-        break;
-      }
-      if (pathname.startsWith(`/${l}/`)) {
-        cleanPath = pathname.slice(l.length + 1); // e.g. /tr/products → /products
-        break;
-      }
-    }
-
-    // English has no prefix (as-needed), others get /{locale}{path}
-    const newPath =
-      newLocale === "en"
-        ? cleanPath || "/"
-        : `/${newLocale}${cleanPath === "/" ? "" : cleanPath}`;
-
     startTransition(() => {
-      router.push(newPath);
-      router.refresh();
+      // next-intl's router.replace handles locale prefix automatically
+      router.replace(pathname, { locale: newLocale });
     });
   };
 
