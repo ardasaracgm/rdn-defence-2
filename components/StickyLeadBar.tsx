@@ -56,7 +56,7 @@ export default function StickyLeadBar() {
       {/* BAR */}
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 backdrop-blur">
         <div className="container-main flex items-center justify-between py-3">
-          <p className="text-sm font-medium text-slate-700">{t.bar}</p>
+          <p className="text-sm font-medium text-slate-700 truncate max-w-[200px] sm:max-w-none">{t.bar}</p>
           <button
             onClick={() => setOpen(true)}
             className="rounded-xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
