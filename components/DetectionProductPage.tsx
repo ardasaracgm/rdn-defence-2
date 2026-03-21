@@ -146,8 +146,7 @@ export default function DetectionProductPage({ product }: Props) {
       {product.droneQuickStats?.length ? (
         <div className="relative z-10 border-y" style={{ background: t.surface, borderColor: t.border }}>
           <div
-            className="mx-auto grid max-w-7xl px-6 md:px-12"
-            style={{ gridTemplateColumns: `repeat(${product.droneQuickStats.length}, 1fr)` }}
+            className="mx-auto grid max-w-7xl px-6 md:px-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
           >
             {product.droneQuickStats.map((s, i) => (
               <div
@@ -185,7 +184,9 @@ export default function DetectionProductPage({ product }: Props) {
 
             <div
               className="grid"
-              style={{ gridTemplateColumns: `repeat(${product.droneMissions.length}, 1fr)`, gap: "1px", background: t.border, border: `1px solid ${t.border}` }}
+              className="grid-cols-1 md:grid-cols-3"
+              style={{
+                gap: "1px", background: t.border, border: `1px solid ${t.border}` }}
             >
               {product.droneMissions.map((m, i) => (
                 <div
@@ -291,7 +292,7 @@ export default function DetectionProductPage({ product }: Props) {
 
             <div
               className="grid gap-[2px]"
-              style={{ gridTemplateColumns: "1fr 1fr", background: t.border, border: `1px solid ${t.border}` }}
+              style={{ background: "#264d72", border: `1px solid ${t.border}` }}
             >
               {product.specifications.map((s, i) => (
                 <div
