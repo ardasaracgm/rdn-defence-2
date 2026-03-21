@@ -198,8 +198,7 @@ export default function DroneProductPage({ product }: Props) {
             </p>
 
             <div
-              className="grid"
-              className="grid-cols-1 md:grid-cols-3"
+              className="grid grid-cols-1 md:grid-cols-3"
               style={{
                 gap: "1px",
                 background: "rgba(68,153,238,0.25)",
