@@ -12,7 +12,7 @@ const flags: Record<string, string> = {
 };
 
 const locales = ["en", "tr", "ar", "ru"] as const;
-type Locale = typeof locales[number];
+type Locale = (typeof locales)[number];
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -24,22 +24,28 @@ export default function LanguageSwitcher() {
   const switchLocale = (newLocale: Locale) => {
     setOpen(false);
 
-    // pathname includes current locale prefix e.g. /tr/products or /products
-    // Strip current locale prefix if present
-    let pathWithoutLocale = pathname;
+    // Remove any existing locale prefix from pathname
+    let cleanPath = pathname;
     for (const l of locales) {
-      if (pathname.startsWith(`/${l}/`) || pathname === `/${l}`) {
-        pathWithoutLocale = pathname.slice(l.length + 1) || "/";
+      if (pathname === `/${l}`) {
+        cleanPath = "/";
+        break;
+      }
+      if (pathname.startsWith(`/${l}/`)) {
+        cleanPath = pathname.slice(l.length + 1); // e.g. /tr/products → /products
         break;
       }
     }
 
-    const newPath = newLocale === "en"
-      ? pathWithoutLocale
-      : `/${newLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+    // English has no prefix (as-needed), others get /{locale}{path}
+    const newPath =
+      newLocale === "en"
+        ? cleanPath || "/"
+        : `/${newLocale}${cleanPath === "/" ? "" : cleanPath}`;
 
     startTransition(() => {
       router.push(newPath);
+      router.refresh();
     });
   };
 
@@ -69,7 +75,9 @@ export default function LanguageSwitcher() {
                 key={l}
                 onClick={() => switchLocale(l)}
                 className={`flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm transition hover:bg-slate-50 ${
-                  l === locale ? "bg-slate-50 font-semibold text-slate-950" : "text-slate-700"
+                  l === locale
+                    ? "bg-slate-50 font-semibold text-slate-950"
+                    : "text-slate-700"
                 }`}
               >
                 <span>{flags[l]}</span>
