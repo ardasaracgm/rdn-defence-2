@@ -9,7 +9,7 @@ import EvagateNetworkDiagram from "@/components/EvagateNetworkDiagram";
 import DroneProductPage from "@/components/DroneProductPage";
 import DetectionProductPage from "@/components/DetectionProductPage";
 
-const BASE_URL = "https://rdn-defence-2.vercel.app";
+const BASE_URL = "https://www.rdnsoft.com";
 
 type Props = {
   params: Promise<{ slug: string }>;
