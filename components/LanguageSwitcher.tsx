@@ -22,6 +22,9 @@ export default function LanguageSwitcher() {
     setOpen(false);
     if (newLocale === locale) return;
 
+    // Save preference in cookie so next-intl won't override with browser language
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+
     const path = window.location.pathname;
     let cleanPath = path;
 
