@@ -3,23 +3,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/contact", label: "Contact" },
-];
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("nav");
+
+  const links = [
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about") },
+    { href: "/products", label: t("products") },
+    { href: "/solutions", label: t("solutions") },
+    { href: "/contact", label: t("contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
       <div className="container-main flex h-20 items-center justify-between">
 
-        {/* Brand — logo image */}
+        {/* Brand */}
         <Link href="/" className="flex items-center">
           <Image
             src="/rdn-logo.png"
@@ -44,8 +47,10 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile toggle */}
+        {/* Right side — lang switcher + mobile toggle */}
         <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+
           <button
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 md:hidden"
             onClick={() => setOpen(!open)}
