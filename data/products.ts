@@ -26,7 +26,7 @@ export type ProductValuePoint = { title: string; description: string; };
 export type ProductMissionFit = { title: string; description: string; };
 export type ProductOperationalAdvantage = { title: string; description: string; };
 
-/* ── Drone / Detection specific types ── */
+/* ── Drone / Detection shared types ── */
 export type DroneQuickStat = { label: string; value: string; unit: string; };
 export type DroneMission = { number: string; tag: string; title: string; description: string; };
 export type DronePayload = { capacity: string; unit: string; name: string; description: string; };
@@ -52,7 +52,6 @@ export type Product = {
   integrationCustomization?: ProductIntegrationItem[];
   programReadiness?: ProductSupportItem[];
   decisionSupport?: ProductDecisionSupportItem[];
-  /* Drone / Detection shared optional fields */
   droneQuickStats?: DroneQuickStat[];
   droneMissions?: DroneMission[];
   dronePayloads?: DronePayload[];
@@ -79,6 +78,7 @@ import { yukbey } from "./products/yukbey";
 import { alga } from "./products/alga";
 import { safir } from "./products/safir";
 import { talon } from "./products/talon";
+import { whiteFalconA1 } from "./products/white-falcon-a1";
 
 /* ── Drone Systems — Special Production ── */
 import {
@@ -90,6 +90,7 @@ import {
 import {
   droneJammer, uavRadar, rfDetection, opticalDetection,
 } from "./products/detection-systems";
+import { dr100ab8 } from "./products/dr100-ab-8";
 
 export const products: Product[] = [
   /* Electronic Warfare */
@@ -110,6 +111,7 @@ export const products: Product[] = [
   alga,
   safir,
   talon,
+  whiteFalconA1,
 
   /* Drone Systems — Special Production */
   d1000, d1050, m1000, p5, p10, mp50, p100,
@@ -120,4 +122,5 @@ export const products: Product[] = [
   uavRadar,
   rfDetection,
   opticalDetection,
+  dr100ab8,
 ];
