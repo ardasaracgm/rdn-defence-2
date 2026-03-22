@@ -1,758 +1,126 @@
-import type { Product } from "../products";
+export type ProductCategory =
+  | "Electronic Warfare"
+  | "Drone Systems"
+  | "Airborne Systems"
+  | "Detection Systems"
+  | "Secure Communication"
+  | "AI Systems";
 
-/* ── D-1000 FPV Kamikaze ── */
-export const d1000: Product = {
-  slug: "d-1000",
-  name: "D-1000",
-  category: "Drone Systems",
-  productType: "FPV Kamikaze UAV",
-  tagline: "High-Speed Precision Strike Platform",
-  shortDescription: "FPV kamikaze drone with 1–7 kg payload, 150–200+ km/h speed, and up to 20 km range for precision strike missions.",
-  description: "D-1000 is a high-speed FPV kamikaze UAV designed for precision strike missions. With payload capacity up to 7 kg, speeds exceeding 200 km/h, and optional thermal camera, it delivers decisive first-person strike capability at ranges up to 20 km.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "1–7",  unit: "kg"   },
-    { label: "Speed",     value: "200+", unit: "km/h" },
-    { label: "Endurance", value: "45",   unit: "min"  },
-    { label: "Max Range", value: "20",   unit: "km"   },
-    { label: "Night Ops", value: "OPT",  unit: "THERM"},
-  ],
-  droneMissions: [
-    { number: "01", tag: "STRIKE", title: "Precision Strike", description: "High-speed impact strike against point targets at ranges up to 20 km with FPV precision control." },
-    { number: "02", tag: "ISR",    title: "Pre-Strike Reconnaissance", description: "FPV live feed enables real-time target assessment before engagement decision." },
-    { number: "03", tag: "NIGHT",  title: "Thermal Night Operations", description: "Optional thermal camera enables full operational effectiveness in zero-light environments." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",       value: "1–7",  unit: "kg",   fillPercent: 35 },
-    { name: "Max Speed",     value: "200+", unit: "km/h", fillPercent: 95 },
-    { name: "Endurance",     value: "15–45",unit: "min",  fillPercent: 50 },
-    { name: "Max Range",     value: "20",   unit: "km",   fillPercent: 40 },
-  ],
-  dronePayloads: [
-    { capacity: "7", unit: "KG MAX PAYLOAD", name: "Strike Payload", description: "Up to 7 kg mission payload. Customizable for munition or sensor configurations." },
-    { capacity: "FPV", unit: "GOGGLE CONTROL", name: "First-Person Control", description: "FPV goggle system with live video for immersive precision strike navigation." },
-    { capacity: "IR", unit: "OPTIONAL", name: "Thermal Camera", description: "Optional thermal imaging for night operations and low-visibility targeting." },
-  ],
-  specifications: [
-    { label: "Model",        value: "D-1000" },
-    { label: "Type",         value: "FPV Kamikaze" },
-    { label: "Payload",      value: "1 kg – 7 kg" },
-    { label: "Flight Time",  value: "15 – 45 minutes" },
-    { label: "Max Speed",    value: "150 – 200 km/h and above" },
-    { label: "Range",        value: "10 km / 15 km / 20 km" },
-    { label: "Control",      value: "Customizable FPV goggles" },
-    { label: "Camera",       value: "Optional thermal for night missions" },
-  ],
-  features: [
-    { title: "7 kg Strike Payload", description: "Largest payload in the FPV kamikaze class, supporting a wide range of munition configurations." },
-    { title: "200+ km/h Speed", description: "High-speed approach minimizes target reaction time and air-defense interception window." },
-    { title: "FPV Precision Control", description: "Operator maintains real-time visual control throughout the entire mission profile." },
-  ],
-  useCases: ["Precision strike operations", "Anti-armor missions", "Fixed target neutralization", "Night strike with thermal"],
-  media: {
-    hero: "/products/d-1000/images/hero.webp",
-    heroAlt: "D-1000 FPV Kamikaze UAV",
-    gallery: [
-      { src: "/products/d-1000/images/hero.webp", alt: "D-1000 overview" },
-    ],
-    videos: [{ title: "D-1000 Mission Overview", file: "/products/d-1000/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/d-1000/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "D-1000 FPV Kamikaze UAV | RDN Technology",
-    description: "D-1000 is a high-speed FPV kamikaze drone with 7 kg payload and 200+ km/h speed for precision strike missions up to 20 km.",
-  },
+export type ProductFeature = { title: string; description: string; };
+export type ProductIntegrationItem = { title: string; description: string; };
+export type ProductDecisionSupportItem = { title: string; description: string; };
+export type ProductSupportItem = { title: string; description: string; };
+export type ProductDeploymentModel = { title: string; description: string; };
+export type ProductSpec = { label: string; value: string; };
+export type ProductDocument = { title: string; file: string; kind?: "pdf" | "doc" | "other"; };
+export type ProductVideo = { title: string; file: string; poster?: string; isHero?: boolean; };
+export type ProductImage = { src: string; alt: string; };
+export type ProductMedia = {
+  hero: string; heroAlt: string;
+  gallery: ProductImage[];
+  videos?: ProductVideo[];
+  documents?: ProductDocument[];
+};
+export type ProductSeo = { title: string; description: string; };
+export type ProductValuePoint = { title: string; description: string; };
+export type ProductMissionFit = { title: string; description: string; };
+export type ProductOperationalAdvantage = { title: string; description: string; };
+
+/* ── Drone / Detection shared types ── */
+export type DroneQuickStat = { label: string; value: string; unit: string; };
+export type DroneMission = { number: string; tag: string; title: string; description: string; };
+export type DronePayload = { capacity: string; unit: string; name: string; description: string; };
+export type DroneFlightParam = { name: string; value: string; unit: string; fillPercent: number; };
+
+export type Product = {
+  slug: string;
+  name: string;
+  category: ProductCategory;
+  productType?: string;
+  tagline: string;
+  shortDescription: string;
+  description: string;
+  overview?: string;
+  featured?: boolean;
+  features?: ProductFeature[];
+  useCases?: string[];
+  specifications?: ProductSpec[];
+  whyThisProduct?: ProductValuePoint[];
+  operationalAdvantages?: ProductOperationalAdvantage[];
+  missionFit?: ProductMissionFit[];
+  deploymentModels?: ProductDeploymentModel[];
+  integrationCustomization?: ProductIntegrationItem[];
+  programReadiness?: ProductSupportItem[];
+  decisionSupport?: ProductDecisionSupportItem[];
+  droneQuickStats?: DroneQuickStat[];
+  droneMissions?: DroneMission[];
+  dronePayloads?: DronePayload[];
+  droneFlightParams?: DroneFlightParam[];
+  media: ProductMedia;
+  seo: ProductSeo;
 };
 
-/* ── D-1050 FPV Kamikaze with Fiber Optic Cable ── */
-export const d1050: Product = {
-  slug: "d-1050",
-  name: "D-1050",
-  category: "Drone Systems",
-  productType: "FPV Kamikaze UAV — Fiber Optic Cable System",
-  tagline: "Jam-Proof Precision Strike Platform",
-  shortDescription: "FPV kamikaze drone with fiber optic cable link for GPS-denied and electronic warfare environments. 1–5 kg payload, 25 km range.",
-  description: "D-1050 extends the FPV kamikaze concept with a fiber optic cable communication system, enabling reliable operation in GPS-denied and electronically contested environments. Immune to RF jamming, it delivers precision strike capability at ranges up to 25 km even under heavy electronic warfare conditions.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "1–5", unit: "kg"   },
-    { label: "Speed",     value: "120+",unit: "km/h" },
-    { label: "Endurance", value: "30",  unit: "min"  },
-    { label: "Max Range", value: "25",  unit: "km"   },
-    { label: "Link",      value: "FIBER",unit: "OPTIC"},
-  ],
-  droneMissions: [
-    { number: "01", tag: "EW ENVIRONMENT", title: "Jam-Proof Strike", description: "Fiber optic cable link makes D-1050 immune to RF jamming and GPS spoofing in heavily contested electronic environments." },
-    { number: "02", tag: "GPS DENIED",     title: "GNSS-Independent Ops", description: "Operates reliably in GPS-denied zones where standard RF-linked drones lose navigation and control." },
-    { number: "03", tag: "NIGHT OPS",      title: "Thermal Night Missions", description: "Optional thermal camera enables zero-light operations with the reliability of a hardened fiber optic link." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",       value: "1–5", unit: "kg",   fillPercent: 25 },
-    { name: "Max Speed",     value: "120+",unit: "km/h", fillPercent: 60 },
-    { name: "Endurance",     value: "15–30",unit: "min", fillPercent: 40 },
-    { name: "Max Range",     value: "25",  unit: "km",   fillPercent: 50 },
-  ],
-  dronePayloads: [
-    { capacity: "5", unit: "KG MAX PAYLOAD", name: "Strike Payload", description: "Up to 5 kg mission payload over fiber optic link. Fully customizable munition or sensor configuration." },
-    { capacity: "FOC", unit: "FIBER OPTIC", name: "Jam-Proof Link", description: "Fiber optic cable communication system — immune to RF jamming, GPS spoofing, and electronic countermeasures." },
-    { capacity: "IR", unit: "OPTIONAL", name: "Thermal Camera", description: "Optional thermal imaging for night and low-visibility strike missions." },
-  ],
-  specifications: [
-    { label: "Model",        value: "D-1050" },
-    { label: "Type",         value: "FPV Kamikaze — Fiber Optic Cable" },
-    { label: "Payload",      value: "1 kg – 5 kg" },
-    { label: "Flight Time",  value: "15 – 30 minutes" },
-    { label: "Max Speed",    value: "120 km/h and above" },
-    { label: "Range",        value: "Up to 25 km" },
-    { label: "Link System",  value: "Fiber optic cable" },
-    { label: "Camera",       value: "Optional thermal for night missions" },
-  ],
-  features: [
-    { title: "Fiber Optic Cable Link", description: "Hardened communication system that cannot be jammed, spoofed, or intercepted by electronic warfare systems." },
-    { title: "GPS-Denied Operation", description: "Operates reliably in environments where GPS is blocked, spoofed, or unavailable." },
-    { title: "5 kg Payload Capacity", description: "Carries effective strike munitions over 25 km with jam-proof communication continuity." },
-  ],
-  useCases: ["Electronically contested environments", "GPS-denied strike missions", "Anti-jamming tactical operations", "Urban electronic warfare scenarios"],
-  media: {
-    hero: "/products/d-1050/images/hero.webp",
-    heroAlt: "D-1050 FPV Kamikaze with Fiber Optic Cable",
-    gallery: [
-      { src: "/products/d-1050/images/hero.webp", alt: "D-1050 overview" },
-    ],
-    videos: [{ title: "D-1050 Mission Overview", file: "/products/d-1050/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/d-1050/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "D-1050 FPV Kamikaze Fiber Optic UAV | RDN Technology",
-    description: "D-1050 features a fiber optic cable link for jam-proof precision strike in GPS-denied and electronically contested environments. 5 kg payload, 25 km range.",
-  },
-};
+/* ── Electronic Warfare ── */
+import { alfa850vMobileJammer } from "./products/alfa-850v-mobile-jammer";
+import { alfa850vMobile } from "./products/alfa-850v-mobile";
+import { alfaTankJammer } from "./products/alfa-tank-jammer";
+import { alfaNavalJammer } from "./products/alfa-naval-jammer";
+import { securadioRfShielding } from "./products/securadio-rf-shielding";
+import { iedJammer } from "./products/ied-jammer";
+import { vegaDirectionalJammer } from "./products/vega-directional-jammer";
+import { barracudaAirborneEw } from "./products/barracuda-airborne-ew";
+import { evagateC4i } from "./products/evagate-c4i";
+import { aiFaceRecognition } from "./products/ai-face-recognition";
 
-/* ── M-1000 Observation Multicopter ── */
-export const m1000: Product = {
-  slug: "m-1000",
-  name: "M-1000",
-  category: "Drone Systems",
-  productType: "Observation Multicopter",
-  tagline: "Extended Endurance Surveillance Platform",
-  shortDescription: "1-hour endurance observation multicopter with 30× day gimbal camera and 15 km range for persistent surveillance and reconnaissance.",
-  description: "M-1000 is a compact observation multicopter designed for persistent surveillance and reconnaissance with 1-hour flight endurance. Its 30× day three-axis gimbal camera delivers stable, high-resolution imagery at ranges up to 15 km, with optional thermal camera for night operations.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "2",  unit: "kg"  },
-    { label: "Endurance", value: "60", unit: "min" },
-    { label: "Max Range", value: "15", unit: "km"  },
-    { label: "Camera",    value: "30×",unit: "DAY" },
-    { label: "Night Ops", value: "OPT",unit: "IR"  },
-  ],
-  droneMissions: [
-    { number: "01", tag: "SURVEILLANCE", title: "Persistent Area Monitoring", description: "60-minute endurance enables sustained surveillance of large areas from a single deployment position." },
-    { number: "02", tag: "RECONNAISSANCE", title: "Target Tracking & ISR", description: "30× three-axis gimbal provides stable, high-zoom imagery for target identification and tracking at 15 km." },
-    { number: "03", tag: "NIGHT OPS", title: "Thermal Surveillance", description: "Optional thermal camera enables 24/7 surveillance capability without platform change." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",   value: "2",  unit: "kg",  fillPercent: 10 },
-    { name: "Endurance", value: "60", unit: "min", fillPercent: 100 },
-    { name: "Range",     value: "15", unit: "km",  fillPercent: 30 },
-    { name: "Camera",    value: "30×",unit: "zoom",fillPercent: 75 },
-  ],
-  dronePayloads: [
-    { capacity: "30×", unit: "DAY GIMBAL", name: "3-Axis Stabilized Camera", description: "30× optical zoom three-axis gimbal camera for stable high-resolution imagery at extended ranges." },
-    { capacity: "IR",  unit: "OPTIONAL",   name: "Thermal Camera",           description: "Night vision thermal imaging for 24/7 operational capability." },
-    { capacity: "2",   unit: "KG PAYLOAD", name: "Customizable Payload",      description: "Up to 2 kg payload capacity. Fully customizable for mission-specific sensor requirements." },
-  ],
-  specifications: [
-    { label: "Model",        value: "M-1000" },
-    { label: "Type",         value: "Observation Multicopter" },
-    { label: "Payload",      value: "Up to 2 kg" },
-    { label: "Flight Time",  value: "1 hour" },
-    { label: "Camera",       value: "30× day 3-axis gimbal" },
-    { label: "Range",        value: "Up to 15 km" },
-    { label: "Night Option", value: "Optional thermal camera" },
-  ],
-  features: [
-    { title: "1-Hour Flight Endurance", description: "Extended operational duration for sustained surveillance without battery swaps." },
-    { title: "30× Optical Zoom Gimbal", description: "Three-axis stabilized 30× zoom camera delivers sharp imagery at 15 km operational range." },
-    { title: "Optional Thermal Camera", description: "Night-capable configuration for 24/7 surveillance missions." },
-  ],
-  useCases: ["Area surveillance", "Target tracking", "Border monitoring", "Infrastructure inspection", "Night ISR"],
-  media: {
-    hero: "/products/m-1000/images/hero.webp",
-    heroAlt: "M-1000 Observation Multicopter",
-    gallery: [
-      { src: "/products/m-1000/images/hero.webp", alt: "M-1000 overview" },
-    ],
-    videos: [{ title: "M-1000 Mission Overview", file: "/products/m-1000/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/m-1000/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "M-1000 Observation Multicopter | RDN Technology",
-    description: "M-1000 observation multicopter with 1-hour endurance, 30× gimbal camera, and 15 km range for persistent ISR and surveillance missions.",
-  },
-};
+/* ── Drone Systems — Named ── */
+import { atalay } from "./products/atalay";
+import { yukbey } from "./products/yukbey";
+import { alga } from "./products/alga";
+import { safir } from "./products/safir";
+import { talon } from "./products/talon";
+import { whiteFalconA1 } from "./products/white-falcon-a1";
 
-/* ── P-5 5kg Payload Multicopter ── */
-export const p5: Product = {
-  slug: "p-5",
-  name: "P-5",
-  category: "Drone Systems",
-  productType: "5 KG Payload Multicopter",
-  tagline: "Tactical Payload & Surveillance Multicopter",
-  shortDescription: "5 kg payload multicopter with 45-minute endurance, 30× gimbal camera, dropping ability, and optional thermal camera for tactical operations.",
-  description: "P-5 is a tactical multicopter combining 5 kg payload capacity with persistent surveillance capability. Its 30× three-axis gimbal camera and payload drop mechanism support combined ISR and precision delivery missions. Optional thermal imaging extends operational coverage to night and adverse weather conditions.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "5",  unit: "kg"  },
-    { label: "Endurance", value: "45", unit: "min" },
-    { label: "Max Range", value: "15", unit: "km"  },
-    { label: "Camera",    value: "30×",unit: "DAY" },
-    { label: "Drop",      value: "YES",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "ISR",     title: "Surveillance & Reconnaissance", description: "30× gimbal camera provides stable high-resolution imagery at 15 km for target identification and tracking." },
-    { number: "02", tag: "DELIVERY",title: "Precision Payload Drop",        description: "Integrated drop mechanism enables precise delivery of 5 kg payloads — supplies, munitions, or sensors — at GPS-designated coordinates." },
-    { number: "03", tag: "NIGHT",   title: "Thermal Night Missions",        description: "Optional thermal camera provides full 24/7 operational capability for night surveillance and drop missions." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",   value: "5",  unit: "kg",  fillPercent: 25 },
-    { name: "Endurance", value: "45", unit: "min", fillPercent: 75 },
-    { name: "Range",     value: "15", unit: "km",  fillPercent: 30 },
-  ],
-  dronePayloads: [
-    { capacity: "5",   unit: "KG PAYLOAD",  name: "Mission Payload",  description: "5 kg customizable payload bay for supply drops, sensor packages, or tactical equipment." },
-    { capacity: "30×", unit: "DAY GIMBAL",  name: "3-Axis Camera",    description: "30× optical zoom three-axis stabilized camera for ISR at 15 km." },
-    { capacity: "IR",  unit: "OPTIONAL",    name: "Thermal Camera",   description: "Optional thermal imaging for night and adverse weather operations." },
-  ],
-  specifications: [
-    { label: "Model",        value: "P-5" },
-    { label: "Type",         value: "5 KG Payload Multicopter" },
-    { label: "Payload",      value: "Up to 5 kg" },
-    { label: "Flight Time",  value: "45 minutes" },
-    { label: "Camera",       value: "30× day 3-axis gimbal" },
-    { label: "Range",        value: "Up to 15 km" },
-    { label: "Drop System",  value: "Yes" },
-    { label: "Night Option", value: "Optional thermal camera" },
-  ],
-  features: [
-    { title: "5 kg Tactical Payload", description: "Carries tactical payloads including supply packages, sensors, or light munitions." },
-    { title: "Precision Drop Mechanism", description: "GPS-coordinated payload drop capability for accurate delivery missions." },
-    { title: "30× Stabilized Camera", description: "High-zoom three-axis gimbal for persistent ISR at 15 km operational range." },
-  ],
-  useCases: ["Tactical supply drops", "Surveillance missions", "Precision payload delivery", "Combined ISR and logistics", "Night operations"],
-  media: {
-    hero: "/products/p-5/images/hero.webp",
-    heroAlt: "P-5 5KG Payload Multicopter",
-    gallery: [
-      { src: "/products/p-5/images/hero.webp", alt: "P-5 overview" },
-    ],
-    videos: [{ title: "P-5 Mission Overview", file: "/products/p-5/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/p-5/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "P-5 5KG Payload Multicopter | RDN Technology",
-    description: "P-5 is a 5 kg payload tactical multicopter with 45-minute endurance, 30× gimbal camera, and precision drop capability for ISR and logistics missions.",
-  },
-};
+/* ── Drone Systems — Special Production ── */
+import {
+  d1000, d1050, m1000, p5, p10, mp50, p100,
+  k100, k400, k750, km1000, v2346,
+} from "./products/special-uavs";
 
-/* ── P-10 10kg Payload Multicopter ── */
-export const p10: Product = {
-  slug: "p-10",
-  name: "P-10",
-  category: "Drone Systems",
-  productType: "10 KG Payload Multicopter",
-  tagline: "Heavy Tactical Payload Platform",
-  shortDescription: "10 kg payload multicopter with 40-minute endurance, 30× gimbal camera, and dropping capability for heavy tactical and logistics missions.",
-  description: "P-10 is a heavy-lift tactical multicopter with 10 kg payload capacity for demanding cargo delivery, sensor integration, and fire support missions. Its 40-minute endurance and 12 km operational range support extended mission profiles with heavy payload.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "10", unit: "kg"  },
-    { label: "Endurance", value: "40", unit: "min" },
-    { label: "Max Range", value: "12", unit: "km"  },
-    { label: "Camera",    value: "30×",unit: "DAY" },
-    { label: "Drop",      value: "YES",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "HEAVY LIFT", title: "Tactical Cargo Operations", description: "Carries 10 kg payloads over 12 km. Supports heavy supply delivery, weapons systems, or large sensor packages." },
-    { number: "02", tag: "ISR",        title: "Surveillance & Targeting",  description: "30× gimbal camera provides persistent area surveillance and target designation at extended ranges." },
-    { number: "03", tag: "STRIKE",     title: "Precision Drop Operations", description: "Integrated drop system delivers heavy payloads with GPS-coordinated precision at designated coordinates." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",   value: "10", unit: "kg",  fillPercent: 50 },
-    { name: "Endurance", value: "40", unit: "min", fillPercent: 67 },
-    { name: "Range",     value: "12", unit: "km",  fillPercent: 24 },
-  ],
-  dronePayloads: [
-    { capacity: "10",  unit: "KG PAYLOAD", name: "Heavy Mission Load",  description: "10 kg customizable payload — heavy supply packages, weapons, or large sensor systems." },
-    { capacity: "30×", unit: "DAY GIMBAL", name: "3-Axis Camera",       description: "30× optical zoom three-axis stabilized camera for ISR at 12 km." },
-    { capacity: "IR",  unit: "OPTIONAL",   name: "Thermal Camera",      description: "Optional thermal imaging for night and low-visibility mission profiles." },
-  ],
-  specifications: [
-    { label: "Model",        value: "P-10" },
-    { label: "Type",         value: "10 KG Payload Multicopter" },
-    { label: "Payload",      value: "Up to 10 kg" },
-    { label: "Flight Time",  value: "40 minutes" },
-    { label: "Camera",       value: "30× day 3-axis gimbal" },
-    { label: "Range",        value: "Up to 12 km" },
-    { label: "Drop System",  value: "Yes" },
-    { label: "Night Option", value: "Optional thermal camera" },
-  ],
-  features: [
-    { title: "10 kg Heavy Payload", description: "Supports the heaviest tactical payloads including crew-served weapon components and large sensor systems." },
-    { title: "Precision Drop System", description: "GPS-coordinated heavy payload drop for accurate delivery at designated coordinates." },
-    { title: "40-Minute Endurance", description: "Extended flight time for sustained heavy-lift mission profiles." },
-  ],
-  useCases: ["Heavy tactical resupply", "Large sensor deployment", "Combined ISR and heavy logistics", "Forward fire support positioning"],
-  media: {
-    hero: "/products/p-10/images/hero.webp",
-    heroAlt: "P-10 10KG Payload Multicopter",
-    gallery: [
-      { src: "/products/p-10/images/hero.webp", alt: "P-10 overview" },
-    ],
-    videos: [{ title: "P-10 Mission Overview", file: "/products/p-10/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/p-10/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "P-10 10KG Payload Multicopter | RDN Technology",
-    description: "P-10 heavy-lift tactical multicopter with 10 kg payload, 40-minute endurance, and precision drop capability for demanding logistics and ISR missions.",
-  },
-};
+/* ── Detection Systems ── */
+import {
+  droneJammer, uavRadar, rfDetection, opticalDetection,
+} from "./products/detection-systems";
+import { dr100ab8 } from "./products/dr100-ab-8";
 
-/* ── MP-50 50kg Payload Multicopter ── */
-export const mp50: Product = {
-  slug: "mp-50",
-  name: "MP-50",
-  category: "Drone Systems",
-  productType: "50 KG Payload Multicopter",
-  tagline: "Maximum Capacity Heavy Lift Platform",
-  shortDescription: "50 kg payload multicopter with 30-minute endurance and 10 km range for the heaviest tactical and logistics missions.",
-  description: "MP-50 is the highest-capacity multicopter in the payload series. With 50 kg lift capacity and a 30-minute endurance, it handles the most demanding aerial logistics and heavy equipment delivery missions at ranges up to 10 km.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "50", unit: "kg"  },
-    { label: "Endurance", value: "30", unit: "min" },
-    { label: "Max Range", value: "10", unit: "km"  },
-    { label: "Camera",    value: "30×",unit: "DAY" },
-    { label: "Drop",      value: "YES",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "MAX LIFT", title: "Extreme Payload Transport", description: "Carries 50 kg payloads — vehicle components, heavy equipment, or large munitions — to forward positions at 10 km range." },
-    { number: "02", tag: "ISR",      title: "Heavy Sensor Deployment",   description: "Deploys large integrated sensor arrays or ground surveillance equipment in a single sortie." },
-    { number: "03", tag: "LOGISTICS", title: "Rapid Heavy Resupply",      description: "30-minute endurance with 50 kg payload supports rapid heavy resupply cycles in contested logistics environments." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",   value: "50", unit: "kg",  fillPercent: 100 },
-    { name: "Endurance", value: "30", unit: "min", fillPercent: 50  },
-    { name: "Range",     value: "10", unit: "km",  fillPercent: 20  },
-  ],
-  dronePayloads: [
-    { capacity: "50",  unit: "KG PAYLOAD", name: "Maximum Mission Load",  description: "50 kg maximum payload — the highest capacity in the multicopter series for extreme logistics requirements." },
-    { capacity: "30×", unit: "DAY GIMBAL", name: "3-Axis Camera",         description: "30× three-axis stabilized camera for ISR and payload delivery confirmation." },
-    { capacity: "IR",  unit: "OPTIONAL",   name: "Thermal Imaging",       description: "Optional thermal camera for night operations and low-visibility missions." },
-  ],
-  specifications: [
-    { label: "Model",        value: "MP-50" },
-    { label: "Type",         value: "50 KG Payload Multicopter" },
-    { label: "Payload",      value: "Up to 50 kg" },
-    { label: "Flight Time",  value: "30 minutes" },
-    { label: "Camera",       value: "30× day 3-axis gimbal" },
-    { label: "Range",        value: "Up to 10 km" },
-    { label: "Drop System",  value: "Yes" },
-    { label: "Night Option", value: "Optional thermal camera" },
-  ],
-  features: [
-    { title: "50 kg Maximum Payload", description: "Industry-leading multicopter payload capacity for the most demanding heavy-lift missions." },
-    { title: "Precision Drop System", description: "Heavy payload precision drop at GPS-designated coordinates." },
-    { title: "Rapid Deployment", description: "30-minute operational sorties enable high-frequency resupply cycles." },
-  ],
-  useCases: ["Extreme heavy lift logistics", "Large equipment deployment", "Heavy munitions transport", "Maximum payload ISR"],
-  media: {
-    hero: "/products/mp-50/images/hero.webp",
-    heroAlt: "MP-50 50KG Payload Multicopter",
-    gallery: [
-      { src: "/products/mp-50/images/hero.webp", alt: "MP-50 overview" },
-    ],
-    videos: [{ title: "MP-50 Mission Overview", file: "/products/mp-50/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/mp-50/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "MP-50 50KG Payload Multicopter | RDN Technology",
-    description: "MP-50 heavy-lift multicopter with 50 kg payload capacity, 30-minute endurance, and precision drop system for extreme tactical logistics missions.",
-  },
-};
+export const products: Product[] = [
+  /* Electronic Warfare */
+  alfa850vMobileJammer,
+  alfa850vMobile,
+  alfaTankJammer,
+  alfaNavalJammer,
+  securadioRfShielding,
+  iedJammer,
+  vegaDirectionalJammer,
+  barracudaAirborneEw,
+  evagateC4i,
+  aiFaceRecognition,
 
-/* ── P-100 100kg Payload Multicopter ── */
-export const p100: Product = {
-  slug: "p-100",
-  name: "P-100",
-  category: "Drone Systems",
-  productType: "100 KG Payload Multicopter",
-  tagline: "Ultra Heavy Lift UAV Platform",
-  shortDescription: "100 kg payload multicopter with 25-minute endurance for the heaviest tactical aerial operations at ranges up to 7 km.",
-  description: "P-100 is the ultimate heavy-lift multicopter with 100 kg payload capacity. It handles the most extreme aerial logistics requirements — vehicle components, large weapons systems, or major infrastructure equipment — at operational ranges up to 7 km in 25-minute mission profiles.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Payload",   value: "100",unit: "kg"  },
-    { label: "Endurance", value: "25", unit: "min" },
-    { label: "Max Range", value: "7",  unit: "km"  },
-    { label: "Camera",    value: "30×",unit: "DAY" },
-    { label: "Drop",      value: "YES",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "ULTRA LIFT",  title: "100 KG Cargo Operations",   description: "Transports up to 100 kg of mission-critical cargo — the heaviest payload in the multicopter series." },
-    { number: "02", tag: "EQUIPMENT",   title: "Large Equipment Deployment", description: "Deploys vehicle components, crew-served weapons, or major sensor systems in a single aerial lift." },
-    { number: "03", tag: "PRECISION",   title: "Drop System Operations",     description: "Precision payload drop with GPS coordination for accurate delivery at 7 km range." },
-  ],
-  droneFlightParams: [
-    { name: "Payload",   value: "100",unit: "kg",  fillPercent: 100 },
-    { name: "Endurance", value: "25", unit: "min", fillPercent: 42  },
-    { name: "Range",     value: "7",  unit: "km",  fillPercent: 14  },
-  ],
-  dronePayloads: [
-    { capacity: "100", unit: "KG PAYLOAD", name: "Ultra Heavy Mission Load", description: "100 kg maximum payload — the highest in any rotary-wing UAV for extreme tactical logistics." },
-    { capacity: "30×", unit: "DAY GIMBAL", name: "3-Axis Camera",            description: "30× three-axis stabilized camera for delivery confirmation and ISR." },
-    { capacity: "IR",  unit: "OPTIONAL",   name: "Thermal Camera",           description: "Optional thermal imaging for night and low-visibility operations." },
-  ],
-  specifications: [
-    { label: "Model",        value: "P-100" },
-    { label: "Type",         value: "100 KG Payload Multicopter" },
-    { label: "Payload",      value: "Up to 100 kg" },
-    { label: "Flight Time",  value: "25 minutes" },
-    { label: "Camera",       value: "30× day 3-axis gimbal" },
-    { label: "Range",        value: "Up to 7 km" },
-    { label: "Drop System",  value: "Yes" },
-    { label: "Night Option", value: "Optional thermal camera" },
-  ],
-  features: [
-    { title: "100 kg Payload", description: "Maximum payload capacity for any tactical multicopter — carries the heaviest mission equipment." },
-    { title: "Precision Drop", description: "GPS-coordinated delivery of 100 kg payloads at designated coordinates." },
-    { title: "Rapid Cycle", description: "25-minute operational sorties for high-frequency extreme heavy lift missions." },
-  ],
-  useCases: ["Vehicle equipment aerial delivery", "Extreme heavy logistics", "Large weapons system positioning", "Major infrastructure support"],
-  media: {
-    hero: "/products/p-100/images/hero.webp",
-    heroAlt: "P-100 100KG Payload Multicopter",
-    gallery: [
-      { src: "/products/p-100/images/hero.webp", alt: "P-100 overview" },
-    ],
-    videos: [{ title: "P-100 Mission Overview", file: "/products/p-100/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/p-100/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "P-100 100KG Payload Multicopter | RDN Technology",
-    description: "P-100 ultra heavy-lift multicopter with 100 kg payload capacity and precision drop system for extreme tactical logistics and equipment deployment.",
-  },
-};
+  /* Drone Systems — Named */
+  atalay,
+  yukbey,
+  alga,
+  safir,
+  talon,
+  whiteFalconA1,
 
-/* ── K-100 Kamikaze Fixed Wing 100km ── */
-export const k100: Product = {
-  slug: "k-100",
-  name: "K-100",
-  category: "Drone Systems",
-  productType: "100 KM Kamikaze Fixed-Wing UAV",
-  tagline: "Long-Range Precision Strike Platform",
-  shortDescription: "1.8 m wingspan fixed-wing kamikaze UAV with 2 kg payload, 2-hour flight time, and 100 km operational range.",
-  description: "K-100 is a fixed-wing kamikaze UAV with 1.8 m wingspan and 100 km operational range. Its 2-hour endurance enables deep-strike missions well beyond multicopter range, delivering 2 kg payloads with day and night camera precision guidance.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Range",     value: "100",unit: "km"  },
-    { label: "Endurance", value: "2",  unit: "hrs" },
-    { label: "Payload",   value: "2",  unit: "kg"  },
-    { label: "Wingspan",  value: "1.8",unit: "m"   },
-    { label: "Camera",    value: "D/N",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "DEEP STRIKE",  title: "100 KM Strike Range",        description: "Extended range fixed-wing platform delivers 2 kg payloads to targets 100 km from launch point." },
-    { number: "02", tag: "ENDURANCE",    title: "2-Hour Mission Profile",      description: "2-hour flight endurance supports loitering, target search, and optimized approach timing before engagement." },
-    { number: "03", tag: "NIGHT OPS",    title: "Day / Night Camera Guidance", description: "Day and night camera system provides full mission awareness for both light and zero-visibility strike scenarios." },
-  ],
-  droneFlightParams: [
-    { name: "Range",     value: "100",unit: "km",  fillPercent: 100 },
-    { name: "Endurance", value: "2",  unit: "hrs", fillPercent: 100 },
-    { name: "Payload",   value: "2",  unit: "kg",  fillPercent: 10  },
-    { name: "Wingspan",  value: "1.8",unit: "m",   fillPercent: 30  },
-  ],
-  dronePayloads: [
-    { capacity: "2",  unit: "KG PAYLOAD", name: "Strike Payload",  description: "2 kg precision strike payload delivered at 100 km operational range." },
-    { capacity: "D/N",unit: "CAMERA",     name: "Day/Night Camera",description: "Day and night camera system for full mission guidance across light conditions." },
-    { capacity: "DROP",unit: "ABILITY",   name: "Dropping Option", description: "Optional payload drop capability for non-kinetic mission profiles." },
-  ],
-  specifications: [
-    { label: "Model",       value: "K-100" },
-    { label: "Type",        value: "Fixed-wing kamikaze" },
-    { label: "Wingspan",    value: "1.8 m" },
-    { label: "Payload",     value: "Up to 2 kg" },
-    { label: "Flight Time", value: "2 hours" },
-    { label: "Range",       value: "Up to 100 km" },
-    { label: "Camera",      value: "Day and night" },
-    { label: "Drop Option", value: "Yes" },
-  ],
-  features: [
-    { title: "100 km Strike Range", description: "Fixed-wing efficiency delivers 10× the range of comparable multicopter platforms." },
-    { title: "2-Hour Endurance",    description: "Loitering capability enables target search and optimized engagement timing." },
-    { title: "Day/Night Guidance",  description: "Full camera guidance capability across all lighting conditions." },
-  ],
-  useCases: ["Deep strike operations", "Long-range target engagement", "Loitering strike missions", "Day and night precision strike"],
-  media: {
-    hero: "/products/k-100/images/hero.webp",
-    heroAlt: "K-100 Fixed-Wing Kamikaze UAV",
-    gallery: [
-      { src: "/products/k-100/images/hero.webp", alt: "K-100 overview" },
-    ],
-    videos: [{ title: "K-100 Mission Overview", file: "/products/k-100/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/k-100/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "K-100 100KM Kamikaze Fixed-Wing UAV | RDN Technology",
-    description: "K-100 fixed-wing kamikaze UAV with 100 km strike range, 2-hour endurance, and day/night camera guidance for deep-strike operations.",
-  },
-};
+  /* Drone Systems — Special Production */
+  d1000, d1050, m1000, p5, p10, mp50, p100,
+  k100, k400, k750, km1000, v2346,
 
-/* ── K-400 400km Kamikaze Fixed Wing ── */
-export const k400: Product = {
-  slug: "k-400",
-  name: "K-400",
-  category: "Drone Systems",
-  productType: "400 KM Kamikaze Fixed-Wing UAV",
-  tagline: "Extended Range Strategic Strike Platform",
-  shortDescription: "Fixed-wing kamikaze UAV with 5 kg payload, 4-hour endurance, and 400 km operational range for strategic strike missions.",
-  description: "K-400 is a strategic fixed-wing kamikaze UAV with 400 km operational range and 4-hour endurance. It carries 5 kg payloads deep into contested territory, providing strategic-level precision strike capability with day and night camera guidance.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Range",     value: "400",unit: "km"  },
-    { label: "Endurance", value: "4",  unit: "hrs" },
-    { label: "Payload",   value: "5",  unit: "kg"  },
-    { label: "Camera",    value: "D/N",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "STRATEGIC STRIKE", title: "400 KM Deep Strike", description: "Delivers 5 kg payloads to strategic targets 400 km from launch point — well beyond tactical air defense coverage." },
-    { number: "02", tag: "LOITERING",        title: "4-Hour Mission Profile", description: "Extended endurance enables target search, identification, and optimized engagement over 4-hour mission windows." },
-    { number: "03", tag: "PRECISION",        title: "Day/Night Precision Guidance", description: "Day and night camera system enables precise target engagement across all operational lighting conditions." },
-  ],
-  droneFlightParams: [
-    { name: "Range",     value: "400",unit: "km",  fillPercent: 100 },
-    { name: "Endurance", value: "4",  unit: "hrs", fillPercent: 100 },
-    { name: "Payload",   value: "5",  unit: "kg",  fillPercent: 25  },
-  ],
-  dronePayloads: [
-    { capacity: "5",  unit: "KG PAYLOAD", name: "Strategic Strike Payload", description: "5 kg precision payload for high-value strategic target engagement at 400 km." },
-    { capacity: "D/N",unit: "CAMERA",     name: "Day/Night Guidance",       description: "All-conditions optical guidance system for precision target engagement." },
-  ],
-  specifications: [
-    { label: "Model",       value: "K-400" },
-    { label: "Type",        value: "Fixed-wing kamikaze" },
-    { label: "Payload",     value: "Up to 5 kg" },
-    { label: "Flight Time", value: "4 hours" },
-    { label: "Range",       value: "Up to 400 km" },
-    { label: "Camera",      value: "Day and night" },
-  ],
-  features: [
-    { title: "400 km Strike Range",  description: "Strategic depth penetration well beyond tactical air defense perimeter." },
-    { title: "4-Hour Loitering",    description: "Extended dwell time for target search and time-on-target optimization." },
-    { title: "5 kg Strike Payload", description: "Effective warhead capacity for high-value target engagement." },
-  ],
-  useCases: ["Strategic infrastructure strikes", "Long-range high-value target engagement", "Deep interdiction missions", "Loitering strike operations"],
-  media: {
-    hero: "/products/k-400/images/hero.webp",
-    heroAlt: "K-400 400KM Fixed-Wing Kamikaze UAV",
-    gallery: [
-      { src: "/products/k-400/images/hero.webp", alt: "K-400 overview" },
-    ],
-    videos: [{ title: "K-400 Mission Overview", file: "/products/k-400/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/k-400/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "K-400 400KM Kamikaze Fixed-Wing UAV | RDN Technology",
-    description: "K-400 strategic fixed-wing kamikaze with 400 km range, 4-hour endurance, and 5 kg payload for deep-strike and loitering strike operations.",
-  },
-};
-
-/* ── K-750 750km Kamikaze Fixed Wing ── */
-export const k750: Product = {
-  slug: "k-750",
-  name: "K-750",
-  category: "Drone Systems",
-  productType: "750 KM Kamikaze Fixed-Wing UAV",
-  tagline: "Long-Range Strike Asset",
-  shortDescription: "Fixed-wing kamikaze with 15 kg payload, 7-hour endurance, and 750 km range for operational-level precision strike.",
-  description: "K-750 extends the kamikaze series to operational-level strike range. With 750 km range, 7-hour endurance, and 15 kg payload, it delivers significant strike effect deep into defended territory with day and night guidance capability.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Range",     value: "750",unit: "km"  },
-    { label: "Endurance", value: "7",  unit: "hrs" },
-    { label: "Payload",   value: "15", unit: "kg"  },
-    { label: "Camera",    value: "D/N",unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "OPERATIONAL STRIKE", title: "750 KM Deep Strike",       description: "Penetrates defended airspace to 750 km, delivering 15 kg payloads against high-value operational targets." },
-    { number: "02", tag: "LOITERING",          title: "7-Hour Mission Window",     description: "Extended 7-hour endurance enables persistent target area coverage and time-optimized engagement." },
-    { number: "03", tag: "HEAVY STRIKE", title: "15 KG Warhead Capacity", description: "Largest warhead capacity in the K-series enables effective engagement of hardened or reinforced targets." },
-  ],
-  droneFlightParams: [
-    { name: "Range",     value: "750",unit: "km",  fillPercent: 100 },
-    { name: "Endurance", value: "7",  unit: "hrs", fillPercent: 100 },
-    { name: "Payload",   value: "15", unit: "kg",  fillPercent: 75  },
-  ],
-  dronePayloads: [
-    { capacity: "15",  unit: "KG PAYLOAD", name: "Heavy Strike Payload", description: "15 kg warhead capacity for engagement of reinforced operational-level targets at 750 km." },
-    { capacity: "D/N", unit: "CAMERA",     name: "Day/Night Guidance",   description: "All-conditions optical guidance for precision terminal engagement." },
-  ],
-  specifications: [
-    { label: "Model",       value: "K-750" },
-    { label: "Type",        value: "Fixed-wing kamikaze" },
-    { label: "Payload",     value: "Up to 15 kg" },
-    { label: "Flight Time", value: "7 hours" },
-    { label: "Range",       value: "Up to 750 km" },
-    { label: "Camera",      value: "Day and night" },
-  ],
-  features: [
-    { title: "750 km Operational Range",  description: "Reaches targets at operational depth, beyond most tactical air defense systems." },
-    { title: "15 kg Heavy Warhead",       description: "Significant strike payload for hardened and reinforced target engagement." },
-    { title: "7-Hour Loitering Endurance",description: "Extended dwell time for complex multi-target area operations." },
-  ],
-  useCases: ["Operational-depth infrastructure strikes", "Command and control node targeting", "Hardened facility engagement", "Multi-target area loitering"],
-  media: {
-    hero: "/products/k-750/images/hero.webp",
-    heroAlt: "K-750 750KM Fixed-Wing Kamikaze UAV",
-    gallery: [
-      { src: "/products/k-750/images/hero.webp", alt: "K-750 overview" },
-    ],
-    videos: [{ title: "K-750 Mission Overview", file: "/products/k-750/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/k-750/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "K-750 750KM Kamikaze Fixed-Wing UAV | RDN Technology",
-    description: "K-750 fixed-wing kamikaze with 750 km range, 7-hour endurance, and 15 kg payload for operational-depth precision strike missions.",
-  },
-};
-
-/* ── KM-1000 1000km Kamikaze Fixed Wing ── */
-export const km1000: Product = {
-  slug: "km-1000",
-  name: "KM-1000",
-  category: "Drone Systems",
-  productType: "1000 KM Kamikaze Fixed-Wing UAV",
-  tagline: "Strategic Long-Range Strike System",
-  shortDescription: "Stealth-configured fixed-wing kamikaze with 15 kg payload, 9-hour endurance, and 1,000 km strategic strike range.",
-  description: "KM-1000 is the flagship kamikaze system with 1,000 km strategic range, 9-hour endurance, and stealth-optimized low-radar-signature airframe. It delivers 15 kg payloads against the deepest strategic targets with day and night precision guidance, operating beyond the reach of most air defense networks.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Range",     value: "1000",unit: "km"  },
-    { label: "Endurance", value: "9",   unit: "hrs" },
-    { label: "Payload",   value: "15",  unit: "kg"  },
-    { label: "RCS",       value: "LOW", unit: ""    },
-    { label: "Camera",    value: "D/N", unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "STRATEGIC STRIKE", title: "1,000 KM Strategic Range", description: "Reaches strategic targets at 1,000 km depth — beyond the coverage of most integrated air defense systems." },
-    { number: "02", tag: "STEALTH",          title: "Low Radar Signature",       description: "Stealth-optimized airframe geometry minimizes radar cross-section for penetration of contested airspace." },
-    { number: "03", tag: "ENDURANCE",        title: "9-Hour Mission Window",     description: "Extended loitering capability enables complex multi-phase strategic strike missions over 9-hour windows." },
-  ],
-  droneFlightParams: [
-    { name: "Range",     value: "1000",unit: "km",  fillPercent: 100 },
-    { name: "Endurance", value: "9",   unit: "hrs", fillPercent: 100 },
-    { name: "Payload",   value: "15",  unit: "kg",  fillPercent: 75  },
-  ],
-  dronePayloads: [
-    { capacity: "15",   unit: "KG PAYLOAD",  name: "Strategic Warhead",  description: "15 kg precision payload for strategic target engagement at 1,000 km range." },
-    { capacity: "LO",   unit: "STEALTH RCS", name: "Stealth Airframe",   description: "Low radar cross-section optimized geometry for penetration of integrated air defense networks." },
-    { capacity: "D/N",  unit: "CAMERA",      name: "Day/Night Guidance", description: "All-conditions terminal guidance camera for precision strategic target engagement." },
-  ],
-  specifications: [
-    { label: "Model",       value: "KM-1000" },
-    { label: "Type",        value: "Fixed-wing kamikaze — stealth configuration" },
-    { label: "Payload",     value: "Up to 15 kg" },
-    { label: "Flight Time", value: "9 hours" },
-    { label: "Range",       value: "Up to 1,000 km" },
-    { label: "Radar Signature", value: "Low RCS optimized" },
-    { label: "Camera",      value: "Day and night" },
-    { label: "Air Defense", value: "Systems penetration capable" },
-  ],
-  features: [
-    { title: "1,000 km Strategic Range",   description: "Operates beyond the reach of most tactical and operational air defense systems." },
-    { title: "Low Radar Cross-Section",    description: "Stealth-optimized airframe geometry for air defense network penetration." },
-    { title: "9-Hour Mission Endurance",   description: "Longest endurance in the K-series for complex strategic mission profiles." },
-    { title: "15 kg Strategic Payload",    description: "Effective warhead capacity for hardened strategic target engagement." },
-  ],
-  useCases: ["Strategic infrastructure targeting", "Command and control deep strike", "Air defense system suppression", "Strategic loitering strike operations"],
-  media: {
-    hero: "/products/km-1000/images/hero.webp",
-    heroAlt: "KM-1000 1000KM Strategic Kamikaze Fixed-Wing UAV",
-    gallery: [
-      { src: "/products/km-1000/images/hero.webp", alt: "KM-1000 overview" },
-    ],
-    videos: [{ title: "KM-1000 Mission Overview", file: "/products/km-1000/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/km-1000/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "KM-1000 1000KM Strategic Kamikaze UAV | RDN Technology",
-    description: "KM-1000 stealth fixed-wing kamikaze with 1,000 km range, 9-hour endurance, low RCS, and 15 kg payload for strategic precision strike operations.",
-  },
-};
-
-/* ── V-2346 Fixed-Wing VTOL Series ── */
-export const v2346: Product = {
-  slug: "v-2346",
-  name: "V-2346",
-  category: "Drone Systems",
-  productType: "Fixed-Wing VTOL UAV Series",
-  tagline: "Multi-Wingspan Long-Range VTOL Platform",
-  shortDescription: "Fixed-wing VTOL UAV series in 2m, 3.2m, 4m, and 6m wingspan variants with 2–8 hour endurance and optional Anti-GNSS card for electronic warfare environments.",
-  description: "V-2346 is a fixed-wing VTOL UAV series combining the endurance of fixed-wing flight with the runway-independent takeoff and landing of rotary-wing platforms. Available in four wingspan configurations from 2 m to 6 m, it carries up to 30 kg payload with day and night gimbal camera over 2–8 hour mission profiles. Optional Anti-GNSS card enables operation in denied navigation environments.",
-  featured: false,
-  droneQuickStats: [
-    { label: "Wingspan",  value: "2–6",  unit: "m"   },
-    { label: "Endurance", value: "2–8",  unit: "hrs" },
-    { label: "Payload",   value: "30",   unit: "kg"  },
-    { label: "VTOL",      value: "YES",  unit: ""    },
-    { label: "Anti-GNSS", value: "OPT",  unit: ""    },
-  ],
-  droneMissions: [
-    { number: "01", tag: "LONG ENDURANCE", title: "Extended ISR Missions",        description: "2–8 hour endurance enables persistent surveillance and ISR over wide areas from a single launch point without refueling." },
-    { number: "02", tag: "VTOL OPS",       title: "No-Runway Deployment",         description: "Vertical takeoff and landing capability enables deployment from any terrain — ships, vehicles, confined spaces — without ground infrastructure." },
-    { number: "03", tag: "EW RESILIENT",   title: "Anti-GNSS Operations",         description: "Optional Anti-GNSS card enables continued operation in GPS-denied and electronic warfare environments." },
-  ],
-  droneFlightParams: [
-    { name: "Min Wingspan",  value: "2",   unit: "m",   fillPercent: 25  },
-    { name: "Max Wingspan",  value: "6",   unit: "m",   fillPercent: 100 },
-    { name: "Min Endurance", value: "2",   unit: "hrs", fillPercent: 25  },
-    { name: "Max Endurance", value: "8",   unit: "hrs", fillPercent: 100 },
-    { name: "Payload",       value: "30",  unit: "kg",  fillPercent: 60  },
-  ],
-  dronePayloads: [
-    { capacity: "30",   unit: "KG PAYLOAD",  name: "Customizable Payload",  description: "Up to 30 kg payload capacity across all wingspan variants. Fully customizable for ISR or cargo missions." },
-    { capacity: "D/N",  unit: "GIMBAL CAM",  name: "Day/Night Gimbal",      description: "Day and night stabilized gimbal camera for persistent ISR across lighting conditions." },
-    { capacity: "EW",   unit: "ANTI-GNSS",   name: "EW-Resilient Navigation",description: "Optional Anti-GNSS card for operation in GPS-denied and electronically contested environments." },
-  ],
-  specifications: [
-    { label: "Model",          value: "V-2346" },
-    { label: "Type",           value: "Fixed-wing VTOL" },
-    { label: "Wingspan Variants", value: "2 m / 3.2 m / 4 m / 6 m" },
-    { label: "Payload",        value: "Up to 30 kg" },
-    { label: "Endurance",      value: "2 – 8 hours" },
-    { label: "Takeoff/Landing",value: "VTOL — no runway required" },
-    { label: "Camera",         value: "Day and night gimbal" },
-    { label: "Anti-GNSS",      value: "Optional" },
-  ],
-  features: [
-    { title: "Four Wingspan Variants",      description: "2 m, 3.2 m, 4 m, and 6 m configurations to match mission range and payload requirements." },
-    { title: "VTOL — No Runway Required",   description: "Vertical takeoff and landing from any platform — ship deck, vehicle roof, or confined terrain." },
-    { title: "8-Hour Maximum Endurance",    description: "Longest endurance option for persistent area surveillance and extended ISR missions." },
-    { title: "Optional Anti-GNSS Card",     description: "Electronic warfare resilience for GPS-denied operational environments." },
-    { title: "Day/Night Gimbal Camera",     description: "All-conditions stabilized imaging for 24/7 operational coverage." },
-    { title: "30 kg Payload Capacity",      description: "Heavy payload in a fixed-wing VTOL platform — maximum mission flexibility." },
-  ],
-  useCases: ["Extended endurance ISR", "Maritime surveillance", "No-runway forward deployment", "GPS-denied environment operations", "Border patrol", "Long-range reconnaissance"],
-  media: {
-    hero: "/products/v-2346/images/hero.webp",
-    heroAlt: "V-2346 Fixed-Wing VTOL UAV Series",
-    gallery: [
-      { src: "/products/v-2346/images/hero.webp", alt: "V-2346 overview" },
-    ],
-    videos: [{ title: "V-2346 Mission Overview", file: "/products/v-2346/videos/hero.mp4", isHero: true }],
-    documents: [{ title: "Technical Datasheet", file: "/products/v-2346/docs/datasheet.pdf", kind: "pdf" }],
-  },
-  seo: {
-    title: "V-2346 Fixed-Wing VTOL UAV Series | RDN Technology",
-    description: "V-2346 fixed-wing VTOL series with 2–6 m wingspan, 2–8 hour endurance, 30 kg payload, and optional Anti-GNSS for EW-resilient ISR and logistics missions.",
-  },
-};
+  /* Detection Systems */
+  droneJammer,
+  uavRadar,
+  rfDetection,
+  opticalDetection,
+  dr100ab8,
+];
