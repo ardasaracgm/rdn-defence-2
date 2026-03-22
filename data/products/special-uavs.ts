@@ -52,8 +52,9 @@ export const d1000: Product = {
   media: {
     hero: "/products/d-1000/images/hero.webp",
     heroAlt: "D-1000 FPV Kamikaze UAV",
-    gallery: [],
-    videos: [{ title: "D-1000 Mission Overview", file: "/products/d-1000/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/d-1000/images/hero.webp", alt: "D-1000 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/d-1000/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -114,8 +115,9 @@ export const d1050: Product = {
   media: {
     hero: "/products/d-1050/images/hero.webp",
     heroAlt: "D-1050 FPV Kamikaze with Fiber Optic Cable",
-    gallery: [],
-    videos: [{ title: "D-1050 Mission Overview", file: "/products/d-1050/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/d-1050/images/hero.webp", alt: "D-1050 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/d-1050/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -175,8 +177,9 @@ export const m1000: Product = {
   media: {
     hero: "/products/m-1000/images/hero.webp",
     heroAlt: "M-1000 Observation Multicopter",
-    gallery: [],
-    videos: [{ title: "M-1000 Mission Overview", file: "/products/m-1000/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/m-1000/images/hero.webp", alt: "M-1000 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/m-1000/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -236,8 +239,9 @@ export const p5: Product = {
   media: {
     hero: "/products/p-5/images/hero.webp",
     heroAlt: "P-5 5KG Payload Multicopter",
-    gallery: [],
-    videos: [{ title: "P-5 Mission Overview", file: "/products/p-5/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/p-5/images/hero.webp", alt: "P-5 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/p-5/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -297,8 +301,9 @@ export const p10: Product = {
   media: {
     hero: "/products/p-10/images/hero.webp",
     heroAlt: "P-10 10KG Payload Multicopter",
-    gallery: [],
-    videos: [{ title: "P-10 Mission Overview", file: "/products/p-10/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/p-10/images/hero.webp", alt: "P-10 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/p-10/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -358,8 +363,9 @@ export const mp50: Product = {
   media: {
     hero: "/products/mp-50/images/hero.webp",
     heroAlt: "MP-50 50KG Payload Multicopter",
-    gallery: [],
-    videos: [{ title: "MP-50 Mission Overview", file: "/products/mp-50/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/mp-50/images/hero.webp", alt: "MP-50 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/mp-50/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -419,8 +425,9 @@ export const p100: Product = {
   media: {
     hero: "/products/p-100/images/hero.webp",
     heroAlt: "P-100 100KG Payload Multicopter",
-    gallery: [],
-    videos: [{ title: "P-100 Mission Overview", file: "/products/p-100/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/p-100/images/hero.webp", alt: "P-100 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/p-100/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -481,8 +488,9 @@ export const k100: Product = {
   media: {
     hero: "/products/k-100/images/hero.webp",
     heroAlt: "K-100 Fixed-Wing Kamikaze UAV",
-    gallery: [],
-    videos: [{ title: "K-100 Mission Overview", file: "/products/k-100/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/k-100/images/hero.webp", alt: "K-100 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/k-100/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -538,8 +546,9 @@ export const k400: Product = {
   media: {
     hero: "/products/k-400/images/hero.webp",
     heroAlt: "K-400 400KM Fixed-Wing Kamikaze UAV",
-    gallery: [],
-    videos: [{ title: "K-400 Mission Overview", file: "/products/k-400/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/k-400/images/hero.webp", alt: "K-400 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/k-400/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -595,8 +604,9 @@ export const k750: Product = {
   media: {
     hero: "/products/k-750/images/hero.webp",
     heroAlt: "K-750 750KM Fixed-Wing Kamikaze UAV",
-    gallery: [],
-    videos: [{ title: "K-750 Mission Overview", file: "/products/k-750/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/k-750/images/hero.webp", alt: "K-750 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/k-750/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -657,8 +667,9 @@ export const km1000: Product = {
   media: {
     hero: "/products/km-1000/images/hero.webp",
     heroAlt: "KM-1000 1000KM Strategic Kamikaze Fixed-Wing UAV",
-    gallery: [],
-    videos: [{ title: "KM-1000 Mission Overview", file: "/products/km-1000/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/km-1000/images/hero.webp", alt: "KM-1000 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/km-1000/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
@@ -723,8 +734,9 @@ export const v2346: Product = {
   media: {
     hero: "/products/v-2346/images/hero.webp",
     heroAlt: "V-2346 Fixed-Wing VTOL UAV Series",
-    gallery: [],
-    videos: [{ title: "V-2346 Mission Overview", file: "/products/v-2346/videos/hero.mp4", isHero: true }],
+    gallery: [
+      { src: "/products/v-2346/images/hero.webp", alt: "V-2346 overview" },
+    ],
     documents: [{ title: "Technical Datasheet", file: "/products/v-2346/docs/datasheet.pdf", kind: "pdf" }],
   },
   seo: {
