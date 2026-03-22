@@ -151,7 +151,7 @@ export const atalay: Product = {
     gallery: [
       { src: "/products/atalay/images/firefighting-operation.webp", alt: "ATALAY firefighting operation" },
       { src: "/products/atalay/images/facade-cleaning.webp",        alt: "ATALAY facade cleaning mission" },
-      { src: "/products/atalay/images/inspection-mode.webp",        alt: "ATALAY structural inspection" },
+      
     ],
     videos: [
       { title: "ATALAY — Mission Overview",     file: "/products/atalay/videos/hero.mp4",      isHero: true },
