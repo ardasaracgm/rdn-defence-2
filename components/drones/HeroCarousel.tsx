@@ -7,6 +7,7 @@ type MediaItem = {
   src: string;
   alt?: string;
   label?: string;
+  fallbackSrc?: string;
 };
 
 type Props = {
@@ -77,16 +78,30 @@ export default function HeroCarousel({ items }: Props) {
               onError={(e) => e.currentTarget.classList.add("hidden")}
             />
           ) : (
-            <video
-              ref={(el) => { videoRefs.current[i] = el; }}
-              src={item.src}
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover"
-              onError={(e) => e.currentTarget.classList.add("hidden")}
-            />
+            <>
+              <video
+                ref={(el) => { videoRefs.current[i] = el; }}
+                src={item.src}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.classList.add("hidden");
+                  // Show fallback image sibling
+                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = "block";
+                }}
+              />
+              {/* Hero image fallback shown when video fails to load */}
+              <img
+                src={item.fallbackSrc ?? item.src.replace("/videos/hero.mp4", "/images/hero.webp")}
+                alt={item.alt ?? item.label ?? ""}
+                className="h-full w-full object-cover"
+                style={{ display: "none" }}
+              />
+            </>
           )}
 
           {/* Fallback overlay (shows when media missing) */}
