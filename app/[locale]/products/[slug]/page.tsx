@@ -39,7 +39,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function ProductJsonLd({ slug }: { slug: string }) {
   const product = products.find((p) => p.slug === slug);
   if (!product) return null;
-  const jsonLd = { "@context": "https://schema.org", "@type": "Product", name: product.name, description: product.seo.description, brand: { "@type": "Brand", name: "RDN Technology" }, manufacturer: { "@type": "Organization", name: "RDN Danışmanlık Yazılım Turizm Gıda Sanayi ve Dış Ticaret Limited Şirketi", url: BASE_URL, telephone: "+905364461135", email: "info@rdnsoft.com" }, category: product.category, url: `${BASE_URL}/products/${product.slug}`, image: product.media.hero.startsWith("/") ? `${BASE_URL}${product.media.hero}` : product.media.hero, offers: { "@type": "Offer", availability: "https://schema.org/InStock", seller: { "@type": "Organization", name: "RDN Technology", url: BASE_URL } } };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.seo.description,
+    brand: { "@type": "Brand", name: "RDN Technology" },
+    manufacturer: {
+      "@type": "Organization",
+      name: "RDN Danışmanlık Yazılım Turizm Gıda Sanayi ve Dış Ticaret Limited Şirketi",
+      url: BASE_URL,
+      telephone: "+905364461135",
+      email: "info@rdnsoft.com",
+    },
+    category: product.category,
+    url: `${BASE_URL}/products/${product.slug}`,
+    image: product.media.hero.startsWith("/") ? `${BASE_URL}${product.media.hero}` : product.media.hero,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      price: "0",
+      priceCurrency: "USD",
+      priceValidUntil: "2099-12-31",
+      description: "Price available upon request. Contact us for a quote.",
+      seller: {
+        "@type": "Organization",
+        name: "RDN Technology",
+        url: BASE_URL,
+      },
+    },
+  };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
 }
 
