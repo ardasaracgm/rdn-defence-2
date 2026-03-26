@@ -5,7 +5,7 @@ import ProductsClient from "@/components/ProductsClient";
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("products");
   return {
-    title: `${t("badge")} | RDN Technology`,
+    title: t("badge"),
     description: t("subtitle"),
   };
 }
