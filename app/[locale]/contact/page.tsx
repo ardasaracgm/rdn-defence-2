@@ -1,9 +1,73 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+const BASE_URL = "https://www.rdnsoft.com";
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("contact");
-  return { title: `${t("badge")} | RDN Technology`, description: t("subtitle") };
+  return {
+    title: t("badge"),
+    description: t("subtitle"),
+    alternates: { canonical: `${BASE_URL}/contact` },
+  };
+}
+
+function ContactJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact RDN Technology",
+    url: `${BASE_URL}/contact`,
+    description:
+      "Contact RDN Technology for defense and security system inquiries, technical information, and pricing.",
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: "RDN Technology",
+      legalName:
+        "RDN Danışmanlık Yazılım Turizm Gıda Sanayi ve Dış Ticaret Limited Şirketi",
+      url: BASE_URL,
+      logo: `${BASE_URL}/rdn-logo.png`,
+      image: `${BASE_URL}/rdn-logo.png`,
+      description:
+        "Advanced defense and security technologies — electronic warfare, drone systems, counter-UAV detection, and AI security solutions.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Kızılırmak Mah. Dumlupınar Bulvarı No:9A YDA Center D:158",
+        addressLocality: "Çankaya",
+        addressRegion: "Ankara",
+        addressCountry: "TR",
+      },
+      telephone: "+90-536-446-11-35",
+      faxNumber: "+90-302-302-48-15",
+      email: "info@rdnsoft.com",
+      taxID: "7342274416",
+      areaServed: { "@type": "Place", name: "Worldwide" },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+90-536-446-11-35",
+          contactType: "sales",
+          email: "info@rdnsoft.com",
+          availableLanguage: ["English", "Turkish", "Arabic", "Russian"],
+        },
+      ],
+      knowsAbout: [
+        "Electronic Warfare",
+        "Counter-UAV Systems",
+        "Drone Jammer",
+        "UAV Detection",
+        "Defense Technology",
+        "C4I Systems",
+        "Tactical Drones",
+      ],
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
 }
 
 const PhoneIcon = () => (
@@ -54,7 +118,9 @@ export default async function ContactPage() {
   ];
 
   return (
-    <main>
+    <>
+      <ContactJsonLd />
+      <main>
       <section className="hero-glow border-b border-slate-200">
         <div className="container-main section-space">
           <div className="max-w-3xl">
@@ -163,5 +229,6 @@ export default async function ContactPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
