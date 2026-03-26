@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog";
 
 const BASE_URL = "https://www.rdnsoft.com";
 const locales = ["en", "tr", "ar", "ru"] as const;
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: "/",          priority: 1.0,  freq: "weekly"  },
     { path: "/products",  priority: 0.9,  freq: "weekly"  },
+    { path: "/blog",      priority: 0.8,  freq: "weekly"  },
     { path: "/solutions", priority: 0.7,  freq: "monthly" },
     { path: "/about",     priority: 0.6,  freq: "monthly" },
     { path: "/contact",   priority: 0.6,  freq: "monthly" },
@@ -36,5 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticUrls, ...productUrls];
+  const blogUrls = blogPosts.flatMap((post) =>
+    locales.map((locale) => ({
+      url: url(`/blog/${post.slug}`, locale),
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
+
+  return [...staticUrls, ...productUrls, ...blogUrls];
 }
