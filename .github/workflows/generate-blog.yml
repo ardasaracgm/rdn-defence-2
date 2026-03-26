@@ -1,0 +1,73 @@
+name: Weekly Blog Article Generator
+
+on:
+  # Her Pazartesi sabah 08:00 UTC (11:00 Türkiye saati)
+  schedule:
+    - cron: "0 8 * * 1"
+
+  # Manuel tetikleme (test için)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (dosyaya yazma, sadece üret ve göster)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  generate-blog-post:
+    name: Generate & Publish Blog Article
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate blog article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: node scripts/generate-blog.mjs
+
+      - name: Check if blog.ts was modified
+        id: check_changes
+        run: |
+          if git diff --quiet data/blog.ts; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push new article
+        if: steps.check_changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "RDN Blog Bot"
+          git add data/blog.ts
+          git commit -m "📝 Weekly blog article added [$(date +'%Y-%m-%d')]"
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 📝 Blog Article Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ New article successfully generated and committed." >> $GITHUB_STEP_SUMMARY
+            echo "🚀 Vercel will auto-deploy the changes." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ No changes detected in blog.ts." >> $GITHUB_STEP_SUMMARY
+          fi
