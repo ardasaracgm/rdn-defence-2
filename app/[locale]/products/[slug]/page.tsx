@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog";
 import ProductDocumentCard from "@/components/ProductDocumentCard";
 import ProductVideoPlayer from "@/components/ProductVideoPlayer";
 import ProductGallery from "@/components/ProductGallery";
@@ -191,6 +193,51 @@ export default async function ProductDetailPage({ params }: Props) {
         ) : null}
 
         {product.media.gallery?.length ? (<section className="section-space border-t border-slate-200 bg-white"><div className="container-main"><div className="max-w-3xl"><div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">{t("gallery")}</div><h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">{t("gallery_title")}</h2></div><ProductGallery images={product.media.gallery} /></div></section>) : null}
+
+        {/* ── RELATED BLOG ARTICLES ── */}
+        {(() => {
+          const related = blogPosts.filter(
+            (p) => p.category === product.category || p.tags.some((tag) =>
+              product.name.toLowerCase().includes(tag.toLowerCase()) ||
+              tag.toLowerCase().includes(product.category.toLowerCase().split(" ")[0])
+            )
+          ).slice(0, 2);
+          if (!related.length) return null;
+          return (
+            <section className="section-space border-t border-slate-200 bg-slate-50/60">
+              <div className="container-main">
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700 mb-8">
+                  Related Articles
+                </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {related.map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="group card-premium flex flex-col justify-between p-7 transition hover:shadow-md"
+                    >
+                      <div>
+                        <span className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                          {post.category}
+                        </span>
+                        <h3 className="mt-4 text-base font-bold leading-snug text-slate-950 group-hover:text-blue-700 transition">
+                          {post.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-slate-600">{post.excerpt}</p>
+                      </div>
+                      <div className="mt-6 flex items-center justify-between">
+                        <span className="text-xs text-slate-400">{post.readTime} min read</span>
+                        <span className="flex items-center gap-1 text-xs font-semibold text-slate-950 group-hover:text-blue-700 transition">
+                          Read →
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        })()}
 
         <section className="section-space">
           <div className="container-main">
