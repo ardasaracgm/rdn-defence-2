@@ -56,11 +56,74 @@ const steps = [
   { num: "03", titleKey: "step3_title" as const, descKey: "step3_desc" as const },
 ];
 
+function OrganizationJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "RDN Technology",
+    legalName: "RDN Danışmanlık Yazılım Turizm Gıda Sanayi ve Dış Ticaret Limited Şirketi",
+    url: "https://www.rdnsoft.com",
+    logo: "https://www.rdnsoft.com/rdn-logo.png",
+    image: "https://www.rdnsoft.com/rdn-logo.png",
+    description:
+      "RDN Technology delivers advanced defense and security solutions including electronic warfare, counter-UAV drone systems, UAV detection, and AI security technologies.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Kızılırmak Mah. Dumlupınar Bulvarı No:9A YDA Center D:158",
+      addressLocality: "Çankaya",
+      addressRegion: "Ankara",
+      addressCountry: "TR",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+90-536-446-11-35",
+      contactType: "sales",
+      email: "info@rdnsoft.com",
+      availableLanguage: ["English", "Turkish", "Arabic", "Russian"],
+    },
+    sameAs: ["https://www.rdnsoft.com"],
+    taxID: "7342274416",
+    knowsAbout: [
+      "Electronic Warfare",
+      "Counter-UAV Systems",
+      "Drone Jammer",
+      "UAV Detection",
+      "Defense Technology",
+      "Tactical Drones",
+      "RF Jamming",
+      "C4I Systems",
+    ],
+    areaServed: {
+      "@type": "Place",
+      name: "Worldwide",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Defense & Security Systems",
+      itemListElement: [
+        { "@type": "OfferCatalog", name: "Electronic Warfare Systems" },
+        { "@type": "OfferCatalog", name: "Drone Systems" },
+        { "@type": "OfferCatalog", name: "Counter-UAV Detection Systems" },
+        { "@type": "OfferCatalog", name: "AI Security Systems" },
+        { "@type": "OfferCatalog", name: "Secure Communication & C4I" },
+      ],
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function HomePage() {
   const t = useTranslations("home");
 
   return (
-    <main>
+    <>
+      <OrganizationJsonLd />
+      <main>
       {/* ── HERO ── */}
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-950">
         <div className="pointer-events-none absolute inset-0"
@@ -283,5 +346,6 @@ export default function HomePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }
