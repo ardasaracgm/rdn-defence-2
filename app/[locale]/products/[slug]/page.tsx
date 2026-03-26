@@ -72,6 +72,40 @@ function ProductJsonLd({ slug }: { slug: string }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
 }
 
+function BreadcrumbJsonLd({ slug, name, category }: { slug: string; name: string; category: string }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: `${BASE_URL}/products`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: category,
+        item: `${BASE_URL}/products?category=${encodeURIComponent(category)}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: name,
+        item: `${BASE_URL}/products/${slug}`,
+      },
+    ],
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
+}
+
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
@@ -79,12 +113,13 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const t = await getTranslations("products");
 
-  if (product.category === "Drone Systems") return (<><ProductJsonLd slug={slug} /><DroneProductPage product={product} /></>);
-  if (product.category === "Detection Systems") return (<><ProductJsonLd slug={slug} /><DetectionProductPage product={product} /></>);
+  if (product.category === "Drone Systems") return (<><ProductJsonLd slug={slug} /><BreadcrumbJsonLd slug={slug} name={product.name} category={product.category} /><DroneProductPage product={product} /></>);
+  if (product.category === "Detection Systems") return (<><ProductJsonLd slug={slug} /><BreadcrumbJsonLd slug={slug} name={product.name} category={product.category} /><DetectionProductPage product={product} /></>);
 
   return (
     <>
       <ProductJsonLd slug={slug} />
+      <BreadcrumbJsonLd slug={slug} name={product.name} category={product.category} />
       <main>
         <section className="hero-glow border-b border-slate-200">
           <div className="container-main section-space">
