@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog";
 import ProductCard from "@/components/ProductCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -317,6 +318,61 @@ export default function HomePage() {
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BLOG / INSIGHTS ── */}
+      <section className="section-space border-t border-slate-200 bg-white">
+        <div className="container-main">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="section-eyebrow">Insights</div>
+              <h2 className="section-heading mt-3">Defense Technology Articles</h2>
+              <p className="section-copy mt-4">
+                Technical guides and industry analysis on electronic warfare, counter-UAV systems, and defense technology.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-50"
+            >
+              All articles
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group card-premium flex flex-col justify-between p-7 transition hover:shadow-md"
+              >
+                <div>
+                  <span className="inline-flex rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                    {post.category}
+                  </span>
+                  <h3 className="mt-4 text-base font-bold leading-snug text-slate-950 group-hover:text-blue-700 transition">
+                    {post.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                </div>
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-xs text-slate-400">{post.readTime} min read</span>
+                  <span className="flex items-center gap-1 text-xs font-semibold text-slate-950 group-hover:text-blue-700 transition">
+                    Read
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
