@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("solutions");
   return {
-    title: `${t("badge")} | RDN Technology`,
+    title: t("badge"),
     description: t("subtitle"),
   };
 }
