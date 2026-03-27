@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHmac } from "crypto";
 
+// FREE_PROVIDERS kontrolünden önce bunu ekle:
+const WHITELIST = new Set(["rdnsoft.com", "tutanota.de"]);
+
+function isCorporateEmail(email: string): boolean {
+  const domain = email.split("@")[1]?.toLowerCase();
+  if (!domain) return false;
+  if (WHITELIST.has(domain)) return true;  // ← whitelist önce kontrol edilir
+  return !FREE_PROVIDERS.has(domain);
+}
+
 // Free email providers to block
 const FREE_PROVIDERS = new Set([
   "gmail.com", "googlemail.com", "hotmail.com", "hotmail.co.uk",
