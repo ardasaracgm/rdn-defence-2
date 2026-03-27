@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       card: "summary_large_image",
       title: "RDN Technology — Defense & Security Systems",
       description: "Advanced defense and security solutions: electronic warfare, counter-UAV, drone systems, and UAV detection technologies.",
-      images: ["/rdn-logo.png"],
+      images: ["/og-image.png"],
     },
     icons: { icon: "/rdn-logo.png", shortcut: "/rdn-logo.png", apple: "/rdn-logo.png" },
     alternates: {
