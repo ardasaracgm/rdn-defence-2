@@ -65,11 +65,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     alternates: {
      canonical: locale === "en" ? BASE_URL : currentUrl,
       languages: {
-        "en":       {BASE_URL},
+        "en":       BASE_URL,
         "tr":       `${BASE_URL}/tr`,
         "ar":       `${BASE_URL}/ar`,
         "ru":       `${BASE_URL}/ru`,
-        "x-default": {BASE_URL},
+        "x-default": BASE_URL,
       },
     },
   };
