@@ -35,6 +35,7 @@ export default function Footer() {
             <Link className="block hover:text-slate-950" href="/about">{nav("about")}</Link>
             <Link className="block hover:text-slate-950" href="/products">{nav("products")}</Link>
             <Link className="block hover:text-slate-950" href="/solutions">{nav("solutions")}</Link>
+            <Link className="block hover:text-slate-950" href="/blog">{nav("blog")}</Link>
             <Link className="block hover:text-slate-950" href="/contact">{nav("contact")}</Link>
           </div>
         </div>
