@@ -143,7 +143,7 @@ const translations = {
 } as const;
 
 type Lang = keyof typeof translations;
-type T = typeof translations.en;
+type T = typeof translations[Lang];
 
 const companyInfo = {
   title: "RDN Technology",
