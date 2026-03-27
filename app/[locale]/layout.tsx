@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       siteName: "RDN Technology",
       title: "RDN Technology — Defense & Security Systems",
       description: "Advanced defense and security solutions: electronic warfare, counter-UAV, drone systems, and UAV detection technologies.",
-      images: [{ url: "/rdn-logo.png", width: 1200, height: 630, alt: "RDN Technology" }],
+      images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "RDN Technology" }],
     },
     twitter: {
       card: "summary_large_image",
