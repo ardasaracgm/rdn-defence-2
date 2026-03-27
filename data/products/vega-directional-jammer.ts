@@ -229,7 +229,7 @@ export const vegaDirectionalJammer: Product = {
 
   seo: {
     title:
-      "VEGA Multi-Band Directional Jammer | Long-Range Counter UAV System",
+      "VEGA Directional Jammer | RDN Technology",
     description:
       "VEGA is a high-power directional jammer for long-range counter-UAV operations, perimeter defense, airport security, border security, and critical infrastructure protection.",
   },

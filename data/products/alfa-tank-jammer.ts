@@ -234,7 +234,7 @@ export const alfaTankJammer: Product = {
 
   seo: {
     title:
-      "ALFA TANK Drone-UAV Jammer | Tank & Armored Vehicle Counter-UAV System",
+      "ALFA TANK Drone-UAV Jammer | RDN Technology",
     description:
       "ALFA TANK is a purpose-built drone-UAV jammer for tanks and armored vehicles. 500W RF output, 400 MHz–6 GHz, 24V DC integration, 360° coverage. Counter-UAV protection for frontline armored operations.",
   },

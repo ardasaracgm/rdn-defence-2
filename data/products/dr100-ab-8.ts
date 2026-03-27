@@ -182,7 +182,7 @@ export const dr100ab8: Product = {
   },
 
   seo: {
-    title: "DR100-AB-8 Vehicle-Mounted Counter-UAV System | RDN Technology",
+    title: "DR100-AB-8 Mobile Counter-UAV | RDN Technology",
     description:
       "DR100-AB-8 vehicle-mounted drone detection and jamming system. 5 km detection, 3 km jamming, 360° coverage, operates at 150 km/h. IP65 military grade for convoy and perimeter protection.",
   },

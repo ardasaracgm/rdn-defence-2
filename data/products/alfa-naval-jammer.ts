@@ -226,7 +226,7 @@ export const alfaNavalJammer: Product = {
 
   seo: {
     title:
-      "ALFA NAVAL Drone-UAV Jammer | Vessel-Mounted Maritime Counter-UAV System",
+      "ALFA NAVAL Drone-UAV Jammer | RDN Technology",
     description:
       "ALFA NAVAL is a vessel-mounted drone-UAV jammer for naval ships, patrol boats, and maritime platforms. 500W RF output, 400 MHz–6 GHz, 360° coverage, 220V AC / 24V DC. Maritime counter-UAV protection.",
   },

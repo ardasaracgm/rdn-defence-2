@@ -233,7 +233,7 @@ export const alfa850vMobile: Product = {
 
   seo: {
     title:
-      "ALFA 850V Mobile Drone Jammer | Vehicle-Mounted Counter-UAV System",
+      "ALFA 850V Mobile Drone Jammer | RDN Technology",
     description:
       "ALFA 850V Mobile is a vehicle roof-mounted drone-UAV jammer delivering 360° counter-UAV protection during mobile operations, convoy security, and tactical deployments. 850W RF output, 430 MHz–6 GHz coverage.",
   },

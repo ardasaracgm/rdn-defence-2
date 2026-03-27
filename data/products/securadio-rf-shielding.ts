@@ -226,7 +226,7 @@ export const securadioRfShielding: Product = {
 
   seo: {
     title:
-      "SECURADIO RF Shielding System | Advanced Radio Frequency Blocker for Critical Facilities",
+      "SECURADIO RF Shielding | RDN Technology",
     description:
       "SECURADIO is a precision radio frequency shielding system for critical institutions. 1 Hz blocking resolution, 5-12 MHz range, 35W RF output, indoor deployment. Stops unauthorized AM/FM radio communication.",
   },

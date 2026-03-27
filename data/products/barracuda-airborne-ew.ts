@@ -285,7 +285,7 @@ missionFit: [
 
   seo: {
     title:
-      "Barracuda VTOL UAS | Airborne ISR and Electronic Warfare Platform",
+      "Barracuda VTOL UAS | Airborne ISR & EW",
     description:
       "Barracuda VTOL UAS is a mission-adaptive airborne platform for ISR, airborne electronic warfare, convoy overwatch, coastal security, and tactical support operations.",
   },

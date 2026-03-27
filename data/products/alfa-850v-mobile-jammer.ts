@@ -258,7 +258,7 @@ export const alfa850vMobileJammer: Product = {
 
   seo: {
     title:
-      "ALFA Drone-UAV Jammer System | Fixed-Site 360° Counter-UAV Protection",
+      "ALFA Drone-UAV Jammer System | RDN Technology",
     description:
       "ALFA is a fixed-type omnidirectional drone-UAV jammer for 24/7 counter-UAV protection at airports, military bases, energy facilities, ports, and critical infrastructure. 850W RF output, 360° coverage, 4 km effective range.",
   },

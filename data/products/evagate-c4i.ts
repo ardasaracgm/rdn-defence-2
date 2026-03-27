@@ -264,7 +264,7 @@ overview:
   },
 
   seo: {
-    title: "EvaGate Secure C4I System | Integrated Secure Communication Platform",
+    title: "EvaGate Secure C4I System | RDN Technology",
     description:
       "EvaGate is an integrated secure communication and C4I platform for voice, data, radio, video, and command interoperability across field, vehicle, marine, and fixed environments.",
   },
