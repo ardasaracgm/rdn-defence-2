@@ -31,11 +31,11 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   return {
     metadataBase: new URL(BASE_URL),
     title: {
-      default: "RDN Technology — Defense & Security Systems",
+      default: "RDN Technology | Defense & Security Systems Turkey",
       template: "%s | RDN Technology",
     },
     description:
-      "RDN Technology delivers advanced defense and security solutions including electronic warfare, counter-UAV drone systems, UAV detection, and AI security technologies.",
+      "Advanced defense & security systems: electronic warfare, counter-UAV jammers, drone systems, UAV detection and AI security technologies. Ankara, Turkey.",
     keywords: [
       "electronic warfare", "counter-UAV", "drone jammer", "UAV detection",
       "defense technology", "tactical drone", "RF jamming", "ALFA jammer",
@@ -51,13 +51,13 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       alternateLocale: Object.values(ogLocaleMap).filter((l) => l !== (ogLocaleMap[locale] ?? "en_US")),
       url: currentUrl,
       siteName: "RDN Technology",
-      title: "RDN Technology — Defense & Security Systems",
+      title: "RDN Technology | Defense & Security Systems Turkey",
       description: "Advanced defense and security solutions: electronic warfare, counter-UAV, drone systems, and UAV detection technologies.",
       images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "RDN Technology" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "RDN Technology — Defense & Security Systems",
+      title: "RDN Technology | Defense & Security Systems Turkey",
       description: "Advanced defense and security solutions: electronic warfare, counter-UAV, drone systems, and UAV detection technologies.",
       images: ["/og-image.png"],
     },
