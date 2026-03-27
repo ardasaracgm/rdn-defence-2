@@ -63,13 +63,13 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     },
     icons: { icon: "/rdn-logo.png", shortcut: "/rdn-logo.png", apple: "/rdn-logo.png" },
     alternates: {
-      canonical: currentUrl,
+     canonical: locale === "en" ? BASE_URL : currentUrl,
       languages: {
-        "en":       `${BASE_URL}/en`,
+        "en":       {BASE_URL},
         "tr":       `${BASE_URL}/tr`,
         "ar":       `${BASE_URL}/ar`,
         "ru":       `${BASE_URL}/ru`,
-        "x-default": `${BASE_URL}/en`,
+        "x-default": {BASE_URL},
       },
     },
   };
