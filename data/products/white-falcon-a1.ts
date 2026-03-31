@@ -6,7 +6,7 @@ export const whiteFalconA1: Product = {
   category: "Drone Systems",
   productType: "High-Speed FPV Attack UAV",
 
-  tagline: "Precision Strike at 400+ km/h",
+  tagline: "Precision Strike at 400+ km/h,Designed by Hakan",
 
   shortDescription:
     "Compact high-speed FPV attack drone with AI guidance module, 1 kg payload capacity, and 400+ km/h top speed for precision strike missions.",
