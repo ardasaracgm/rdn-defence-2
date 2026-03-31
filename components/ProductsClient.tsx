@@ -9,9 +9,11 @@ import ProductCard from "@/components/ProductCard";
 const CATEGORIES = [
   "Electronic Warfare",
   "Drone Systems",
+  "Airborne Systems",
   "Detection Systems",
   "AI Systems",
   "Secure Communication",
+  "Ammunition Systems",
 ] as const;
 
 type Category = (typeof CATEGORIES)[number] | "All";
