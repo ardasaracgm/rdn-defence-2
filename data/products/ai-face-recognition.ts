@@ -235,7 +235,7 @@ export const aiFaceRecognition: Product = {
       },
       {
         title: "Operational Demonstration",
-        file: "/products/ai-face-recognition/videos/demo.mp4",
+        file: "/products/ai-face-recognition/videos/overview.mp4",
         poster: "/products/ai-face-recognition/images/checkpoint.webp",
       },
     ],
