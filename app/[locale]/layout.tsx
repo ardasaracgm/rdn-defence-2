@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyLeadBar from "@/components/StickyLeadBar";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/GoogleTagManager";
+import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 
 const BASE_URL = "https://www.rdnsoft.com";
 
@@ -27,7 +28,6 @@ type LayoutProps = {
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
   const { locale } = await params;
   const currentUrl = `${BASE_URL}/${locale}`;
-
   return {
     metadataBase: new URL(BASE_URL),
     title: {
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     },
     icons: { icon: "/rdn-logo.png", shortcut: "/rdn-logo.png", apple: "/rdn-logo.png" },
     alternates: {
-     canonical: locale === "en" ? BASE_URL : currentUrl,
+      canonical: locale === "en" ? BASE_URL : currentUrl,
       languages: {
         "en":       BASE_URL,
         "tr":       `${BASE_URL}/tr`,
@@ -81,17 +81,25 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
-
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
-
   const messages = await getMessages();
   const isRTL = locale === "ar";
+
+  // JSON-LD structured data — Organization + WebSite (graph)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [organizationSchema, websiteSchema],
+  };
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
       <body className="bg-[var(--bg)] text-[var(--text)] antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <GoogleTagManagerHead />
         <GoogleTagManagerBody />
         <NextIntlClientProvider messages={messages}>
