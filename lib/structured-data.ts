@@ -88,5 +88,82 @@ export const websiteSchema = {
   url: SITE_URL,
   name: "RDN Technology",
   publisher: { "@id": `${SITE_URL}/#organization` },
-  inLanguage: ["en", "ru", "tr"],
+  inLanguage: ["en", "tr", "ar", "ru"],
 };
+
+// ─── Product schema builder ──────────────────────────────────────────────
+
+export type ProductFeature = {
+  name: string;   // "Antenna Gain" | "Operating Temperature" | "Frequency Coverage"
+  value: string;  // "min. 4 dBi" | "-20°C to +55°C" | "400 MHz – 6 GHz"
+  unitText?: string;
+};
+
+export type ProductSchemaInput = {
+  slug: string;                    // "alfa-850v"
+  name: string;                    // "ALFA Drone-UAV Jammer System"
+  description: string;             // Kısa özet (140-160 char ideal)
+  longDescription?: string;        // Daha uzun açıklama (varsa)
+  category:                        // Kategorimiz şimdilik 3 sabit değerden biri
+    | "Electronic Warfare"
+    | "Drone Systems"
+    | "Detection Systems";
+  productModel?: string;           // "ALFA 850V"
+  image: string;                   // "/products/alfa-850v.jpg" veya tam URL
+  features?: ProductFeature[];     // Teknik özellikler
+  locale?: string;                 // URL üretimi için, default "en"
+  countryOfOrigin?: string;        // Default "TR"
+};
+
+export function buildProductSchema(input: ProductSchemaInput) {
+  const {
+    slug,
+    name,
+    description,
+    longDescription,
+    category,
+    productModel,
+    image,
+    features = [],
+    locale = "en",
+    countryOfOrigin = "TR",
+  } = input;
+
+  const localePrefix = locale === "en" ? "" : `/${locale}`;
+  const productUrl = `${SITE_URL}${localePrefix}/products/${slug}`;
+  const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${productUrl}#product`,
+    name,
+    description: longDescription ?? description,
+    url: productUrl,
+    image: imageUrl,
+    sku: slug.toUpperCase(),
+    ...(productModel && { model: productModel, mpn: productModel }),
+    category,
+    brand: {
+      "@type": "Brand",
+      name: "RDN Technology",
+    },
+    manufacturer: { "@id": `${SITE_URL}/#organization` },
+    countryOfOrigin: {
+      "@type": "Country",
+      name: countryOfOrigin,
+    },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Defense and Military Organizations",
+    },
+    ...(features.length > 0 && {
+      additionalProperty: features.map((f) => ({
+        "@type": "PropertyValue",
+        name: f.name,
+        value: f.value,
+        ...(f.unitText && { unitText: f.unitText }),
+      })),
+    }),
+  };
+}
