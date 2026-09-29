@@ -1,0 +1,15 @@
+# RDNSoft
+
+> RDNSoft is a software development and technology consulting company based in Ankara, Türkiye. It builds custom software, AI and computer vision applications, data and signal processing software, and system integrations.
+
+## Services
+- [Software Development](https://www.rdnsoft.com/software-development): Custom web applications, enterprise platforms, internal tools, APIs and process automation.
+- [AI & Computer Vision](https://www.rdnsoft.com/ai-computer-vision): Video analytics, object detection, image processing and recognition systems.
+- [Data & Signal Technologies](https://www.rdnsoft.com/data-signal-technologies): Software for signal measurement, analysis, synchronization and technical data processing.
+- [System Integration](https://www.rdnsoft.com/system-integration): Connecting software, hardware, APIs, databases and third-party platforms.
+- [Technology Consulting](https://www.rdnsoft.com/technology-consulting): Architecture, integration planning and technical project delivery.
+
+## Company
+- [Industries](https://www.rdnsoft.com/industries)
+- [About](https://www.rdnsoft.com/about)
+- [Contact](https://www.rdnsoft.com/contact): info@rdnsoft.com, +90 536 446 11 35

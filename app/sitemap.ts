@@ -1,51 +1,25 @@
-import { MetadataRoute } from "next";
-import { products } from "@/data/products";
-import { blogPosts } from "@/data/blog";
+import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://www.rdnsoft.com";
-const locales = ["en", "tr", "ar", "ru"] as const;
+const BASE = "https://www.rdnsoft.com";
 
-function url(path: string, locale?: string) {
-  if (!locale || locale === "en") return `${BASE_URL}${path}`;
-  return `${BASE_URL}/${locale}${path}`;
-}
+const routes = [
+  "",
+  "/software-development",
+  "/ai-computer-vision",
+  "/data-signal-technologies",
+  "/system-integration",
+  "/technology-consulting",
+  "/industries",
+  "/about",
+  "/contact",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = [
-    { path: "/",          priority: 1.0,  freq: "weekly"  },
-    { path: "/products",  priority: 0.9,  freq: "weekly"  },
-    { path: "/blog",      priority: 0.8,  freq: "weekly"  },
-    { path: "/solutions", priority: 0.7,  freq: "monthly" },
-    { path: "/about",     priority: 0.6,  freq: "monthly" },
-    { path: "/contact",   priority: 0.6,  freq: "monthly" },
-  ] as const;
-
-  const staticUrls = staticPages.flatMap(({ path, priority, freq }) =>
-    locales.map((locale) => ({
-      url: url(path, locale),
-      lastModified: new Date(),
-      changeFrequency: freq,
-      priority,
-    }))
-  );
-
-  const productUrls = products.flatMap((product) =>
-    locales.map((locale) => ({
-      url: url(`/products/${product.slug}`, locale),
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: product.featured ? 0.9 : 0.7,
-    }))
-  );
-
-  const blogUrls = blogPosts.flatMap((post) =>
-    locales.map((locale) => ({
-      url: url(`/blog/${post.slug}`, locale),
-      lastModified: new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-  );
-
-  return [...staticUrls, ...productUrls, ...blogUrls];
+  const lastModified = new Date();
+  return routes.map((route) => ({
+    url: `${BASE}${route}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: route === "" ? 1 : 0.7,
+  }));
 }
